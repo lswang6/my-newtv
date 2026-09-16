@@ -443,14 +443,6 @@
  },
  {
   "group": "体育",
-  "title": "足球频道",
-  "logo": "https://www.xn--rgv465a.top/tvlogo/足球频道.png",
-  "uris": [
-   "https://epg.pw/stream/c7df950876e6a1ceb8be74ee86f9f702cebbbae29f1d15124ef8f86fd43161cf.m3u8"
-  ]
- },
- {
-  "group": "体育",
   "title": "江苏体育",
   "logo": "https://www.xn--rgv465a.top/tvlogo/江苏体育.png",
   "uris": [
@@ -464,16 +456,6 @@
   "uris": [
    "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv5",
    "http://38.75.136.137:98/gslb/dsdqpub/tjtv5.m3u8?auth=testpub"
-  ]
- },
- {
-  "group": "体育",
-  "title": "精品体育",
-  "logo": "https://www.xn--rgv465a.top/tvlogo/精品体育.png",
-  "uris": [
-   "https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8",
-   "https://epg.pw/stream/866a097a0907c9832440f8df38272dd555abf05200dfbafcc137e214c9b30ca7.m3u8",
-   "https://epg.pw/stream/94ed0232b61ce8d89883160a4cdfbfc8f3225cae70ef8e17d93eec249a3c8ad6.m3u8"
   ]
  },
  {
