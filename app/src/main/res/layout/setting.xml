@@ -121,13 +121,13 @@
                 android:textSize="14sp"
                 />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/appreciate"
+                android:id="@+id/star"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@color/description_blur"
                 android:textColor="@color/blur"
                 android:layout_marginEnd="5dp"
-                android:text="@string/appreciate"
+                android:text="@string/star"
                 android:textSize="14sp"
                 />
         </LinearLayout>

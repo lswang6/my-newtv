@@ -18,3 +18,9 @@ files
 .kotlin/
 app/release/
 .README.md
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# built apks live in GitHub Releases, not the tree
+/*.apk

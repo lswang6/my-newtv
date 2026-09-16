@@ -1,0 +1,874 @@
+canonical_name,group,url,source,headers_json,tv_status,tv_playlist_ms,tv_segment_ms,seg_bytes,codec,width,height,verdict
+CCTV1 综合,央视,http://198.204.228.26/live/cctv1hd.m3u8,guovin,{},ok,1360,1534,200001,h264,1920,1080,pass
+CCTV1 综合,央视,http://204.12.221.218:8181/3m1080p/cctv1.m3u8,guovin,{},ok,1376,1874,200001,h264,1920,1080,pass
+CCTV1 综合,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009,guovin,{},ok,2092,1576,200001,h264,1280,720,pass
+CCTV1 综合,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv1hd,guovin,{},ok,2199,2004,200001,h264,1920,1080,pass
+CCTV1 综合,央视,http://69.30.245.50/live/cctv1.m3u8,cn,{},short-body,510,510,60,,,,fail
+CCTV1 综合,央视,http://74.91.26.218:82/live/cctv1hd.m3u8,cn,{},ok,1185,1475,200001,h264,1280,720,pass
+CCTV1 综合,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265001/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265001&livemode=1&stbId=3,itv,{},http-403,279,0,0,,,,fail
+CCTV1 综合,央视,http://gslbserv.itv.cmvideo.cn/5000000004000002226/1.m3u8?channel-id=bestzb&Contentid=5000000004000002226&livemode=1&stbId=3,itv,{},http-403,275,0,0,,,,fail
+CCTV1 综合,央视,http://gslbserv.itv.cmvideo.cn/6000000001000029752/1.m3u8?channel-id=wasusyt&Contentid=6000000001000029752&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV1 综合,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226559/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV2 财经,央视,http://107.150.60.122/live/cctv2hd.m3u8,guovin,{},ok,1298,1574,200001,h264,1920,1080,pass
+CCTV2 财经,央视,http://192.151.150.154/live/cctv2hd.m3u8,guovin,{},ok,1345,1508,200001,h264,1920,1080,pass
+CCTV2 财经,央视,http://198.204.228.26/live/cctv2hd.m3u8,guovin,{},ok,1450,1342,200001,h264,1280,720,pass
+CCTV2 财经,央视,http://204.12.221.218:8181/3m1080p/cctv2.m3u8,guovin,{},ok,1088,1362,200001,h264,1280,720,pass
+CCTV2 财经,央视,http://74.91.26.218:82/live/cctv2hd.m3u8,cn,{},ok,1276,1300,200001,h264,1280,720,pass
+CCTV2 财经,央视,http://bztv.tvbus.cc:8081/cdnlive/cctv2.m3u8,guovin,{},ok,1207,1546,200001,h264,1280,720,pass
+CCTV2 财经,央视,http://gslbserv.itv.cmvideo.cn/1000000001000023315/1.m3u8?channel-id=ystenlive&Contentid=1000000001000023315&livemode=1&stbId=3,itv,{},http-403,504,0,0,,,,fail
+CCTV2 财经,央视,http://gslbserv.itv.cmvideo.cn/6000000001000014161/1.m3u8?channel-id=wasusyt&Contentid=6000000001000014161&livemode=1&stbId=3,itv,{},http-403,310,0,0,,,,fail
+CCTV2 财经,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225588/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV3 综艺,央视,http://107.150.60.122/live/cctv3hd.m3u8,guovin,{},ok,1098,1405,200001,h264,1920,1080,pass
+CCTV3 综艺,央视,http://112.30.73.119:229/tsfile/live/0003_2.m3u8?key=txiptv&playlive=0&authid=0,guovin,{},ok,72,510,200001,h264,1920,1080,pass
+CCTV3 综艺,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv3hd,guovin,{},ok,2119,2389,200001,h264,1280,720,pass
+CCTV3 综艺,央视,http://69.30.245.50/live/cctv3.m3u8,guovin,{},ok,1212,1759,200001,h264,1920,1080,pass
+CCTV3 综艺,央视,http://74.91.26.218:82/live/cctv3hd.m3u8,cn,{},ok,2135,1305,200001,h264,1920,1080,pass
+CCTV3 综艺,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265003/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265003&livemode=1&stbId=3,itv,{},http-403,234,0,0,,,,fail
+CCTV3 综艺,央视,http://gslbserv.itv.cmvideo.cn/6000000001000022313/1.m3u8?channel-id=wasusyt&Contentid=6000000001000022313&livemode=1&stbId=3,itv,{},http-403,286,0,0,,,,fail
+CCTV3 综艺,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226021/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+CCTV4 中文国际,央视,http://107.150.60.122/live/cctv4hd.m3u8,guovin,{},ok,1106,1318,200001,h264,1920,1080,pass
+CCTV4 中文国际,央视,http://173.208.212.130:8181/1080p/cctv4.m3u8,guovin,{},ok,1167,1808,200001,h264,1920,1080,pass
+CCTV4 中文国际,央视,http://207.56.13.146:81/cdnlive/cctv4.m3u8,guovin,{},ok,1105,1893,200001,h264,1280,720,pass
+CCTV4 中文国际,央视,http://38.75.136.137:98/gslb/dsdqpub/cctv4k.m3u8?auth=testpub,guovin,{},ok,2073,2748,200001,h264,1920,1080,pass
+CCTV4 中文国际,央视,http://74.91.26.218:82/live/cctv4hd.m3u8,freetv,{},ok,1165,1373,200001,h264,1280,720,pass
+CCTV4 中文国际,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265004/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265004&livemode=1&stbId=3,itv,{},http-403,282,0,0,,,,fail
+CCTV4 中文国际,央视,http://gslbserv.itv.cmvideo.cn/5000000011000031102/1.m3u8?channel-id=bestzb&Contentid=5000000011000031102&livemode=1&stbId=3,itv,{},http-403,260,0,0,,,,fail
+CCTV4 中文国际,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226428/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+CCTV4 欧洲,央视,https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8,freetv,{},ok,1370,4091,1064268,h264,1280,720,pass
+CCTV4 美洲,央视,https://global.cgtn.cicc.media.caton.cloud/master/cgtn-america.m3u8,freetv,{},variant-http-403,1084,0,0,,,,fail
+CCTV5 体育,央视,http://107.150.60.122/live/cctv5hd.m3u8,guovin,{},ok,1252,1414,200001,h264,1920,1080,pass
+CCTV5 体育,央视,http://112.30.73.119:9901/tsfile/live/0005_2.m3u8?key=txiptv&playlive=0&authid=0,guovin,{},ok,74,535,200001,h264,1920,1080,pass
+CCTV5 体育,央视,http://173.208.212.130:8181/720p/cctv5.m3u8,guovin,{},ok,3123,1456,200001,h264,1920,1080,pass
+CCTV5 体育,央视,http://207.56.13.146:81/cdnlive/cctv5.m3u8,guovin,{},ok,2418,1507,200001,h264,1280,720,pass
+CCTV5 体育,央视,http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub,guovin,{},ok,1074,3532,200001,h264,1280,720,pass
+CCTV5 体育,央视,http://iptv.huuc.edu.cn/hls/cctv5hd.m3u8,guovin,{},no-response,10000,0,0,,,,fail
+CCTV5 体育,央视,https://migu.188766.xyz/?migutoken=3803480da7c3ee6e07115f4bb5827c0d&id=CCTV5&type=yy,guovin,{},no-response,104,0,0,,,,fail
+CCTV5 体育,央视,https://www.freetv.top/migu/641886683.m3u8?migutoken=3e5c01f93922de8d1c940fe15bb47349b27e8f7a2e624dde1a83dff3b2a80f58b7624151a3a4d00488edee34f202818557340903382fae02bb754084eb942bd50e59061df36fab62fb5b908903,guovin,{},http-512,302,0,0,,,,fail
+CCTV5 体育,央视,https://zby.130519.xyz/PLTV/11/224/3221225734/index.m3u8,guovin,{},skipped-cap,,,,,,,skipped
+CCTV5 体育,央视,http://gslbserv.itv.cmvideo.cn/1000000005000025222/1.m3u8?channel-id=ystenlive&Contentid=1000000005000025222&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV5 体育,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265005/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265005&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV5 体育,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226019/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV5+ 体育赛事,央视,http://120.76.248.139/live/bfgd/4200000246.m3u8,guovin,{},seg-http-0,27,12001,0,,,,fail
+CCTV5+ 体育赛事,央视,http://223.78.65.165:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0,guovin,{},ok,1581,2973,200001,h264,1920,1080,pass
+CCTV5+ 体育赛事,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009,guovin,{},ok,1134,5807,200001,h264,1280,720,pass
+CCTV5+ 体育赛事,央视,https://myip.pdtvhd.com/Sports/streams/CCTV5pul.m3u8,cn,{},ok,663,1146,200001,h264,1280,720,pass
+CCTV5+ 体育赛事,央视,https://smart.pendy.dpdns.org/Smart.php?id=cctv5plus,guovin,{},no-response,107,0,0,,,,fail
+CCTV5+ 体育赛事,央视,https://www.freetv.top/migu/641886773.m3u8?migutoken=03a1b82e35e58cd89a95034ecb29e77e50493397000ec2b1e4d1ce59af01e6420d6dbc068c8230ec03be3a35a20eed8714e0959e3570a08713a7a2e8d86085eabf8f1aa85744c80c38343988b2,guovin,{},http-512,364,0,0,,,,fail
+CCTV5+ 体育赛事,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265016/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265016&livemode=1&stbId=3,itv,{},http-403,243,0,0,,,,fail
+CCTV5+ 体育赛事,央视,http://gslbserv.itv.cmvideo.cn/6000000001000015875/1.m3u8?channel-id=wasusyt&Contentid=6000000001000015875&livemode=1&stbId=3,itv,{},http-403,303,0,0,,,,fail
+CCTV5+ 体育赛事,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225603/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV6 电影,央视,http://198.204.228.26/live/cctv6hd.m3u8,guovin,{},ok,2148,1656,200001,h264,1280,720,pass
+CCTV6 电影,央视,http://198.204.240.250:82/live/cctv6.m3u8,guovin,{},ok,1772,1281,200001,h264,1280,720,pass
+CCTV6 电影,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv6hd,guovin,{},ok,1779,3438,200001,h264,1280,720,pass
+CCTV6 电影,央视,http://69.30.245.50/live/cctv6.m3u8,cn,{},ok,2181,1333,200001,h264,1280,720,pass
+CCTV6 电影,央视,http://74.91.26.218:82/live/cctv6hd.m3u8,guovin,{},ok,1197,1360,200001,h264,1280,720,pass
+CCTV6 电影,央视,https://live.eac-news.com/CCTV/streams/cctv6.m3u8,cn,{},http-500,571,0,0,,,,fail
+CCTV6 电影,央视,http://gslbserv.itv.cmvideo.cn/1000000001000001737/1.m3u8?channel-id=ystenlive&Contentid=1000000001000001737&livemode=1&stbId=3,itv,{},http-403,252,0,0,,,,fail
+CCTV6 电影,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265006/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265006&livemode=1&stbId=3,itv,{},http-403,303,0,0,,,,fail
+CCTV6 电影,央视,http://gslbserv.itv.cmvideo.cn/6000000001000004574/1.m3u8?channel-id=wasusyt&Contentid=6000000001000004574&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV6 电影,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226010/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV7 国防军事,央视,http://107.150.60.122/live/cctv7hd.m3u8,guovin,{},ok,1493,1308,200001,h264,1920,1080,pass
+CCTV7 国防军事,央视,http://207.56.13.146:81/cdnlive/cctv7.m3u8,guovin,{},ok,1283,1457,200001,h264,1280,720,pass
+CCTV7 国防军事,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv7hd,guovin,{},ok,3775,1867,200001,h264,1920,1080,pass
+CCTV7 国防军事,央视,http://69.30.245.50/live/cctv7.m3u8,guovin,{},ok,1184,2172,200001,h264,1920,1080,pass
+CCTV7 国防军事,央视,http://74.91.26.218:82/live/cctv7hd.m3u8,cn,{},ok,1392,1347,200001,h264,1280,720,pass
+CCTV7 国防军事,央视,http://gslbserv.itv.cmvideo.cn/1000000001000024341/1.m3u8?channel-id=ystenlive&Contentid=1000000001000024341&livemode=1&stbId=3,itv,{},http-403,217,0,0,,,,fail
+CCTV7 国防军事,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265007/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265007&livemode=1&stbId=3,itv,{},http-403,237,0,0,,,,fail
+CCTV7 国防军事,央视,http://gslbserv.itv.cmvideo.cn/6000000001000009055/1.m3u8?channel-id=wasusyt&Contentid=6000000001000009055&livemode=1&stbId=3,itv,{},http-403,251,0,0,,,,fail
+CCTV7 国防军事,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225733/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV8 电视剧,央视,http://207.56.13.146:81/cdnlive/cctv8.m3u8,guovin,{},ok,1141,1423,200001,h264,1280,720,pass
+CCTV8 电视剧,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv8k,guovin,{},http-404,1521,0,0,,,,fail
+CCTV8 电视剧,央视,http://69.30.245.50/live/cctv8.m3u8,guovin,{},ok,1196,1288,200001,h264,1280,720,pass
+CCTV8 电视剧,央视,http://74.91.26.218:82/live/cctv8hd.m3u8,cn,{},ok,1163,3365,200001,h264,1280,720,pass
+CCTV8 电视剧,央视,http://bztv.tvbus.cc:8081/cdnlive/cctv8.m3u8,guovin,{},ok,1364,1317,200001,h264,1280,720,pass
+CCTV8 电视剧,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265008/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265008&livemode=1&stbId=3,itv,{},http-403,297,0,0,,,,fail
+CCTV8 电视剧,央视,http://gslbserv.itv.cmvideo.cn/6000000001000001070/1.m3u8?channel-id=wasusyt&Contentid=6000000001000001070&livemode=1&stbId=3,itv,{},http-403,240,0,0,,,,fail
+CCTV8 电视剧,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226008/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+CCTV9 纪录,央视,http://107.150.60.122/live/cctv9hd.m3u8,guovin,{},ok,1164,1345,200001,h264,1920,1080,pass
+CCTV9 纪录,央视,http://192.151.150.154/live/cctv9hd.m3u8,guovin,{},ok,2433,1287,200001,h264,1280,720,pass
+CCTV9 纪录,央视,http://198.204.228.26/live/cctv9hd.m3u8,guovin,{},ok,1245,1362,200001,h264,1920,1080,pass
+CCTV9 纪录,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv9hd,guovin,{},ok,1681,1383,200001,h264,1920,1080,pass
+CCTV9 纪录,央视,http://74.91.26.218:82/live/cctv9hd.m3u8,freetv,{},ok,3416,1412,200001,h264,1280,720,pass
+CCTV9 纪录,央视,https://xykt-fix.github.io/Y77.m3u8,cn,{},ok,933,134,170704,h264,720,576,pass
+CCTV9 纪录,央视,http://gslbserv.itv.cmvideo.cn/1000000001000014583/1.m3u8?channel-id=ystenlive&Contentid=1000000001000014583&livemode=1&stbId=3,itv,{},http-403,357,0,0,,,,fail
+CCTV9 纪录,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265009/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265009&livemode=1&stbId=3,itv,{},http-403,305,0,0,,,,fail
+CCTV9 纪录,央视,http://gslbserv.itv.cmvideo.cn/6000000001000032162/1.m3u8?channel-id=wasusyt&Contentid=6000000001000032162&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV9 纪录,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225734/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV10 科教,央视,http://204.12.221.218:8181/3m1080p/cctv10.m3u8,guovin,{},ok,1125,1368,200001,h264,1920,1080,pass
+CCTV10 科教,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009,guovin,{},ok,1399,1345,200001,h264,1280,720,pass
+CCTV10 科教,央视,http://69.30.245.50/live/cctv10.m3u8,guovin,{},ok,1147,2375,200001,h264,1920,1080,pass
+CCTV10 科教,央视,http://74.91.26.218:82/live/cctv10hd.m3u8,cn,{},ok,1163,1470,200001,h264,1280,720,pass
+CCTV10 科教,央视,http://bztv.tvbus.cc:8081/cdnlive/cctv10.m3u8,guovin,{},ok,1132,1352,200001,h264,1920,1080,pass
+CCTV10 科教,央视,http://gslbserv.itv.cmvideo.cn/1000000001000023734/1.m3u8?channel-id=ystenlive&Contentid=1000000001000023734&livemode=1&stbId=3,itv,{},http-403,247,0,0,,,,fail
+CCTV10 科教,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265010/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265010&livemode=1&stbId=3,itv,{},http-403,317,0,0,,,,fail
+CCTV10 科教,央视,http://gslbserv.itv.cmvideo.cn/5000000004000012827/1.m3u8?channel-id=bestzb&Contentid=5000000004000012827&livemode=1&stbId=3,itv,{},http-403,288,0,0,,,,fail
+CCTV10 科教,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226473/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV11 戏曲,央视,http://198.204.228.26/live/cctv11hd.m3u8,guovin,{},ok,1195,1291,200001,h264,1920,1080,pass
+CCTV11 戏曲,央视,http://204.12.221.218:8181/3m1080p/cctv11.m3u8,guovin,{},ok,1227,1362,200001,h264,1920,1080,pass
+CCTV11 戏曲,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009,guovin,{},ok,1121,1353,200001,h264,1280,720,pass
+CCTV11 戏曲,央视,http://38.75.136.137:98/gslb/dsdqpub/cctv11hd.m3u8?auth=testpub,guovin,{},ok,1229,2309,200001,h264,1920,1080,pass
+CCTV11 戏曲,央视,http://74.91.26.218:82/live/cctv11hd.m3u8,cn,{},ok,1251,1284,200001,h264,1280,720,pass
+CCTV11 戏曲,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265011/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265011&livemode=1&stbId=3,itv,{},http-403,479,0,0,,,,fail
+CCTV11 戏曲,央视,http://gslbserv.itv.cmvideo.cn/5000000011000031106/1.m3u8?channel-id=bestzb&Contentid=5000000011000031106&livemode=1&stbId=3,itv,{},http-403,272,0,0,,,,fail
+CCTV11 戏曲,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226565/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+CCTV12 社会与法,央视,http://107.150.60.122/live/cctv12hd.m3u8,guovin,{},ok,1141,1780,200001,h264,1280,720,pass
+CCTV12 社会与法,央视,http://204.12.221.218:8181/3m1080p/cctv12.m3u8,guovin,{},ok,1290,1399,200001,h264,1920,1080,pass
+CCTV12 社会与法,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv12hd.m3u8?auth=test20251009,guovin,{},ok,1073,1775,200001,h264,1280,720,pass
+CCTV12 社会与法,央视,http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub,guovin,{},ok,1054,1461,200001,h264,1920,1080,pass
+CCTV12 社会与法,央视,http://74.91.26.218:82/live/cctv12hd.m3u8,cn,{},ok,1189,1352,200001,h264,1280,720,pass
+CCTV12 社会与法,央视,http://gslbserv.itv.cmvideo.cn/1000000001000032494/1.m3u8?channel-id=ystenlive&Contentid=1000000001000032494&livemode=1&stbId=3,itv,{},http-403,258,0,0,,,,fail
+CCTV12 社会与法,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265012/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265012&livemode=1&stbId=3,itv,{},http-403,245,0,0,,,,fail
+CCTV12 社会与法,央视,http://gslbserv.itv.cmvideo.cn/6000000001000022586/1.m3u8?channel-id=wasusyt&Contentid=6000000001000022586&livemode=1&stbId=3,itv,{},http-403,265,0,0,,,,fail
+CCTV12 社会与法,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226568/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV13 新闻,央视,http://120.76.248.139/live/bfgd/4200000067.m3u8,guovin,{},seg-http-0,27,12002,0,,,,fail
+CCTV13 新闻,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv13hd.m3u8?auth=test20251009,guovin,{},ok,2139,1676,200001,h264,1280,720,pass
+CCTV13 新闻,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv13hd,guovin,{},ok,2787,1337,200001,h264,1920,1080,pass
+CCTV13 新闻,央视,http://74.91.26.218:82/live/cctv13hd.m3u8,news,{},ok,1496,1276,200001,h264,1280,720,pass
+CCTV13 新闻,央视,http://bztv.tvbus.cc:8081/cdnlive/cctv13.m3u8,guovin,{},ok,1200,1442,200001,h264,1920,1080,pass
+CCTV13 新闻,央视,http://go.bkpcp.top/mg/cctv13,news,{},http-403,917,0,0,,,,fail
+CCTV13 新闻,央视,http://gslbserv.itv.cmvideo.cn/5000000011000031108/1.m3u8?channel-id=bestzb&Contentid=5000000011000031108&livemode=1&stbId=3,itv,{},http-403,2459,0,0,,,,fail
+CCTV13 新闻,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226571/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+CCTV14 少儿,央视,http://198.204.228.26/live/cctv14hd.m3u8,guovin,{},ok,1197,1328,200001,h264,1280,720,pass
+CCTV14 少儿,央视,http://204.12.221.218:8181/3m1080p/cctv14.m3u8,guovin,{},ok,3391,1315,200001,h264,1280,720,pass
+CCTV14 少儿,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv14hd.m3u8?auth=test20251009,guovin,{},ok,1416,2372,200001,h264,1280,720,pass
+CCTV14 少儿,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv14hd,guovin,{},ok,1722,1385,200001,h264,1280,720,pass
+CCTV14 少儿,央视,http://74.91.26.218:82/live/cctv14hd.m3u8,cn,{},ok,1204,1355,200001,h264,1280,720,pass
+CCTV14 少儿,央视,http://gslbserv.itv.cmvideo.cn/1000000001000008170/1.m3u8?channel-id=ystenlive&Contentid=1000000001000008170&livemode=1&stbId=3,itv,{},http-403,360,0,0,,,,fail
+CCTV14 少儿,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265013/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265013&livemode=1&stbId=3,itv,{},http-403,256,0,0,,,,fail
+CCTV14 少儿,央视,http://gslbserv.itv.cmvideo.cn/5000000004000006673/1.m3u8?channel-id=bestzb&Contentid=5000000004000006673&livemode=1&stbId=3,itv,{},http-403,251,0,0,,,,fail
+CCTV14 少儿,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226591/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV15 音乐,央视,http://198.204.228.26/live/cctv15hd.m3u8,guovin,{},ok,1247,1276,200001,h264,1280,720,pass
+CCTV15 音乐,央视,http://204.12.221.218:8181/3m1080p/cctv15.m3u8,guovin,{},ok,2125,1358,200001,h264,1280,720,pass
+CCTV15 音乐,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv15hd.m3u8?auth=test20251009,guovin,{},ok,1053,2511,200001,h264,1280,720,pass
+CCTV15 音乐,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv15hd,guovin,{},ok,1674,1312,200001,h264,1280,720,pass
+CCTV15 音乐,央视,http://74.91.26.218:82/live/cctv15hd.m3u8,freetv,{},ok,1734,1339,200001,h264,1280,720,pass
+CCTV15 音乐,央视,https://smart.pendy.dpdns.org/Smart.php?id=cctv15,guovin,{},no-response,51,0,0,,,,fail
+CCTV15 音乐,央视,https://www.freetv.top/migu/673168223.m3u8?migutoken=4e8d5766579c6bef231494cabd07e5b49d965804790214280c9791e4c331fd90311cb62ea43d3a1899229bfa57be4afe5a567b32a6b78153fc9a9801e28a39435e078b48c211e71d6083519be4,guovin,{},http-512,329,0,0,,,,fail
+CCTV15 音乐,央视,https://xykt-fix.github.io/play/a02e/index.m3u8,cn,{},ok,5293,3450,200001,h264,1920,1080,pass
+CCTV15 音乐,央视,https://zby.130519.xyz/PLTV/11/224/3221226147/index.m3u8,guovin,{},skipped-cap,,,,,,,skipped
+CCTV15 音乐,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265014/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265014&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV15 音乐,央视,http://gslbserv.itv.cmvideo.cn/5000000011000031109/1.m3u8?channel-id=bestzb&Contentid=5000000011000031109&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+CCTV15 音乐,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226476/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV16 奥林匹克,央视,http://207.56.13.146:81/cdnlive/cctv16.m3u8,guovin,{},ok,1094,1804,200001,h264,1920,1080,pass
+CCTV16 奥林匹克,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009,guovin,{},ok,1109,2505,200001,h264,1280,720,pass
+CCTV16 奥林匹克,央视,http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub,guovin,{},ok,1082,1442,200001,h264,1920,1080,pass
+CCTV16 奥林匹克,央视,http://74.91.26.218:82/live/cctv16hd.m3u8,cn,{},short-body,470,470,60,,,,fail
+CCTV16 奥林匹克,央视,https://hls-gateway.vpstv.net/streams/709089.m3u8,guovin,{},http-403,278,0,0,,,,fail
+CCTV16 奥林匹克,央视,https://zby.130519.xyz/PLTV/11/224/3221226120/index.m3u8,guovin,{},no-response,652,0,0,,,,fail
+CCTV16 奥林匹克,央视,http://gslbserv.itv.cmvideo.cn/1000000006000233002/1.m3u8?channel-id=ystenlive&Contentid=1000000006000233002&livemode=1&stbId=3,itv,{},http-403,425,0,0,,,,fail
+CCTV16 奥林匹克,央视,http://gslbserv.itv.cmvideo.cn/5000000008000023254/1.m3u8?channel-id=bestzb&Contentid=5000000008000023254&livemode=1&stbId=3,itv,{},http-403,242,0,0,,,,fail
+CCTV16 奥林匹克,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226100/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+CCTV17 农业农村,央视,http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009,guovin,{},ok,2045,1432,200001,h264,1280,720,pass
+CCTV17 农业农村,央视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv17hd,guovin,{},ok,1695,1471,200001,h264,1280,720,pass
+CCTV17 农业农村,央视,http://74.91.26.218:82/live/cctv17hd.m3u8,cn,{},ok,1160,2346,200001,h264,1920,1080,pass
+CCTV17 农业农村,央视,https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb4af8ce1&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,8102,8102,200001,h264,1920,1080,pass
+CCTV17 农业农村,央视,https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89583e7c0a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,7280,7280,200001,h264,1920,1080,pass
+CCTV17 农业农村,央视,http://gslbserv.itv.cmvideo.cn/1000000005000265015/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265015&livemode=1&stbId=3,itv,{},http-403,242,0,0,,,,fail
+CCTV17 农业农村,央视,http://gslbserv.itv.cmvideo.cn/1000000006000268004/1.m3u8?channel-id=ystenlive&Contentid=1000000006000268004&livemode=1&stbId=3,itv,{},http-403,570,0,0,,,,fail
+CCTV17 农业农村,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+CGTN,央视,https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8,news,{},ok,2589,2241,200001,h264,640,360,pass
+CGTN,央视,https://news.cgtn.com/resource/live/english/cgtn-news.m3u8,freetv,{},variant-http-0,90,0,0,,,,fail
+CGTN,央视,http://gslbserv.itv.cmvideo.cn/7114647837765104058/1.m3u8?channel-id=hnbblive&Contentid=7114647837765104058&livemode=1&stbId=3,itv,{},http-403,253,0,0,,,,fail
+CGTN,央视,http://gslbserv.itv.cmvideo.cn/7745129417417101820/1.m3u8?channel-id=hnbblive&Contentid=7745129417417101820&livemode=1&stbId=3,itv,{},http-403,241,0,0,,,,fail
+CGTN,央视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225602/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+CGTN 纪录,央视,https://news.cgtn.com/resource/live/document/cgtn-doc.m3u8,freetv,{},variant-http-0,171,0,0,,,,fail
+凤凰资讯台,凤凰,http://43.152.224.209/qctv.fengshows.cn/live/0701pin72.flv,guovin,{},ok,10001,10001,977910,h264,1280,720,pass
+凤凰资讯台,凤凰,http://php.jdshipin.com/TVOD/iptv.php?id=fhzx,guovin,{},ok,2520,1758,200001,h264,1920,1080,pass
+凤凰资讯台,凤凰,http://r.jdshipin.com/0Rp07,guovin,{},ok,1272,899,200001,h264,1920,1080,pass
+凤凰资讯台,凤凰,https://cdn6.163189.xyz/163189/fhzx,guovin,{},short-body,1016,1016,1807,,,,fail
+凤凰资讯台,凤凰,https://hls-gateway.vpstv.net/streams/476958.m3u8,guovin,{},http-403,440,0,0,,,,fail
+凤凰资讯台,凤凰,https://tv.iill.top/jd/fhzx,builtin-json,{},no-response,813,0,0,,,,fail
+凤凰资讯台,凤凰,http://223.110.245.167/ott.js.chinamobile.com/PLTV/3/224/3221226923/index.m3u8,news,{},no-response,5077,0,0,,,,fail
+凤凰香港台,凤凰,http://103.95.24.37:880/fhxgt.m3u8,builtin-json,{},no-response,5132,0,0,,,,fail
+凤凰香港台,凤凰,http://php.jdshipin.com/TVOD/iptv.php?id=fhhk,guovin,{},ok,1946,1093,200001,h264,1920,1080,pass
+凤凰香港台,凤凰,http://r.jdshipin.com/NfC0f,guovin,{},ok,1842,853,200001,h264,1920,1080,pass
+凤凰香港台,凤凰,http://r.jdshipin.com/yDoTN,guovin,{},ok,1503,1085,200001,h264,1920,1080,pass
+凤凰香港台,凤凰,https://cdn6.163189.xyz/163189/fhhk,guovin,{},short-body,1189,1189,1807,,,,fail
+凤凰香港台,凤凰,https://epg.pw/stream/5f16dc7fc8aaaed3205516c63e4a8c24bca9dbba1181684244729cf574505b0e.m3u8,guovin,{},ok,2266,2012,200001,h264,1280,720,pass
+凤凰卫视中文台,凤凰,https://7612-5516-affc-d88b.kylintv.tv/live/pxinhd_iphone.m3u8,guovin,{},ok,1253,2091,200001,h264,1280,720,pass
+凤凰卫视中文台,凤凰,https://tv.iill.top/jd/fhzw,builtin-json,{},no-response,136,0,0,,,,fail
+凤凰卫视中文台,凤凰,http://223.110.245.139/ott.js.chinamobile.com/PLTV/3/224/3221226922/index.m3u8,hk,{},no-response,5084,0,0,,,,fail
+無綫新聞台,港台新闻,http://cdn9.163189.xyz/smt1.1.php?id=inews_twn,guovin,{},http-523,2952,0,0,,,,fail
+無綫新聞台,港台新闻,http://php.jdshipin.com/TVOD/iptv.php?id=wxxw,guovin,{},ok,1845,1289,200001,h264,1920,1080,pass
+無綫新聞台,港台新闻,http://php.jdshipin.com:8880/smt.php?id=inews_twn,guovin,{},http-302,10002,0,0,,,,fail
+無綫新聞台,港台新闻,http://r.jdshipin.com/CkuBd,guovin,{},ok,2714,1773,200001,h264,1920,1080,pass
+無綫新聞台,港台新闻,https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8,guovin,{},ok,1092,1736,200001,h264,1280,720,pass
+無綫新聞台,港台新闻,https://tvp22.sky4k.top/index1.php,freetv,{},no-response,64,0,0,,,,fail
+翡翠台,港台新闻,http://103.172.187.30:12000/stream/mytv/null-1/master.m3u8,hk,{},ok,768,2250,4234512,h264,1920,1080,pass
+翡翠台,港台新闻,http://r.jdshipin.com/62WM7,guovin,{},ok,1636,1018,200001,hevc,1920,1080,pass
+翡翠台,港台新闻,http://r.jdshipin.com/GeWKr,guovin,{},ok,1494,1269,200001,h264,1920,1080,pass
+翡翠台,港台新闻,http://r.jdshipin.com/n90gt,guovin,{},ok,1924,930,200001,hevc,3840,2160,pass
+翡翠台,港台新闻,http://r.jdshipin.com/qClQf,guovin,{},skipped-cap,,,,,,,skipped
+翡翠台,港台新闻,http://r.jdshipin.com/qrfbg,guovin,{},skipped-cap,,,,,,,skipped
+HOY 資訊台,港台新闻,https://hoytv-live-stream.hoy.tv/ch78/index.m3u8,hk,{},http-403,270,0,0,,,,fail
+HOY TV,港台新闻,https://hoytv-live-stream.hoy.tv/ch77/index.m3u8,hk,{},http-403,341,0,0,,,,fail
+HOY TV,港台新闻,https://hoytv-live-stream.hoy.tv/ch78/index-fhd.m3u8,freetv,{},http-403,341,0,0,,,,fail
+ViuTV,港台新闻,http://php.jdshipin.com/TVOD/iptv.php?id=viutv,guovin,{},ok,2815,1279,200001,h264,1920,1080,pass
+ViuTV,港台新闻,http://php.jdshipin.com/TVOD/iptv.php?id=viutv2,guovin,{},ok,2248,652,200001,h264,1920,1080,pass
+ViuTV,港台新闻,http://r.jdshipin.com/TcKr2,guovin,{},ok,1505,794,200001,h264,1920,1080,pass
+ViuTV,港台新闻,http://r.jdshipin.com/vSJvl,guovin,{},ok,4509,966,200001,h264,1920,1080,pass
+ViuTV,港台新闻,http://smt.1678520.xyz/smt3.2.3.php?id=viu1_twn,guovin,{},no-response,10001,0,0,,,,fail
+RTHK 31,港台新闻,https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8,hk,{},ok,2350,1031,200001,unknown,,,pass
+RTHK 32,港台新闻,https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8,hk,{},http-403,418,0,0,,,,fail
+TVBS新聞,港台新闻,http://seb.sason.top/sc/tvbsxw_fhd.m3u8,news,{},no-response,49,0,0,,,,fail
+TVBS,港台新闻,http://38.64.72.148/hls/modn/list/4005/playlist.m3u8,tw,{},ok,1320,1038,200001,h264,1920,1080,pass
+東森財經新聞,港台新闻,http://seb.sason.top/sc/dscjxw_fhd.m3u8,news,{},no-response,64,0,0,,,,fail
+東森新聞,港台新闻,http://seb.sason.top/sc/dsxw_fhd.m3u8,news,{},no-response,109,0,0,,,,fail
+民視新聞,港台新闻,https://www.youtube.com/watch?v=ylYJSBUgaMA,freetv,{},excluded-host,,,,,,,excluded
+三立新聞,港台新闻,http://seb.sason.top/sc/sllive_fhd.m3u8,news,{},no-response,52,0,0,,,,fail
+三立新聞,港台新闻,https://hls-gateway.vpstv.net/streams/492922.m3u8,guovin,{},http-403,342,0,0,,,,fail
+三立新聞,港台新闻,https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8,guovin,{},excluded-host,,,,,,,excluded
+三立新聞,港台新闻,https://stream1.freetv.fun/san-li-xin-wen-3.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+三立新聞,港台新闻,https://stream1.freetv.fun/san-li-xin-wen-4.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+三立新聞,港台新闻,https://stream1.freetv.fun/san-li-xin-wen-5.ctv,guovin,{},no-response,10001,0,0,,,,fail
+華視新聞,港台新闻,http://seb.sason.top/sc/hsxw_fhd.m3u8,news,{},no-response,128,0,0,,,,fail
+公視,港台新闻,https://www.youtube.com/channel/UCXgIO9jJVsX5_2ideiSkfvA/live,freetv,{},excluded-host,,,,,,,excluded
+中視新聞,港台新闻,https://www.youtube.com/watch?v=TCnaIE_SAtM,freetv,{},excluded-host,,,,,,,excluded
+台視新聞,港台新闻,https://www.youtube.com/@TTV_NEWS/live,freetv,{},excluded-host,,,,,,,excluded
+BBC News,国际新闻,http://138.121.15.230:9002/BBC-NEWS/index.m3u8,news,{},ok,1327,5304,200001,h264,544,480,pass
+BBC News,国际新闻,http://23.237.104.106:8080/USA_BBC_NEWS/index.m3u8,news,{},ok,1210,1397,200001,h264,1920,1080,pass
+BBC News,国际新闻,http://45.153.96.44:8001,news,{},no-response,5143,0,0,,,,fail
+BBC News,国际新闻,http://46.32.176.50/bbcworld/index.m3u8,news,{},ok,1679,2178,200001,h264,1024,576,pass
+BBC News,国际新闻,https://thinkkast.dpdns.org/thinkkast/bbcworld_news_sd/versiglia/index.m3u8,news,{},no-response,108,0,0,,,,fail
+BBC News,国际新闻,https://vs-cmaf-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/hevc_iptv_mse_v0.mpd,news,{},short-body,1057,1057,2501,,,,fail
+BBC News,国际新闻,https://vs-cmaf-pushb-ww.live.cf.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:bbc_afghan_tv/pc_hd_abr_v2.mpd,uk,{},short-body,803,803,1088,,,,fail
+BBC News,国际新闻,https://vs-hls-push-uk.live.fastly.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/iptv_hd_abr_v1.m3u8,freetv,{},http-403,1123,0,0,,,,fail
+BBC News,国际新闻,https://vs-hls-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/t=3840/v=pv14/b=5070016/main.m3u8,freetv,{},skipped-cap,,,,,,,skipped
+BBC News,国际新闻,https://xemzi.short.gy/1000015,news,{},skipped-cap,,,,,,,skipped
+CNN International,国际新闻,https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8,freetv,{},excluded-slate,,,,,,,excluded
+CNN,国际新闻,https://raw.githubusercontent.com/Alstruit/adaptive-streams/alstruit-10_23_us/streams/us/CNNUSA.us.m3u8,freetv,{},excluded-host,,,,,,,excluded
+CNN,国际新闻,https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8,freetv,{},excluded-slate,,,,,,,excluded
+Al Jazeera English,国际新闻,http://stream.mcquack.net/131/index.m3u8,news,{},ok,1758,3618,2039424,h264,1920,1080,pass
+Al Jazeera English,国际新闻,https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8,news,{},ok,2091,845,200001,h264,1920,1080,pass
+Al Jazeera English,国际新闻,https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8,news,{},ok,3408,3822,200001,h264,1920,1080,pass
+Sky News,国际新闻,https://jmp2.uk/plu-55b285cd2665de274553d66f.m3u8,news,{},seg-http-0,2051,116,0,,,,fail
+Sky News,国际新闻,https://linear021-gb-hls1-prd-ak.cdn.skycdp.com/Content/HLS_001_hd/Live/channel(skynews)/index_mob.m3u8,freetv,{},http-403,692,0,0,,,,fail
+Sky News,国际新闻,https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ/live,freetv,{},excluded-host,,,,,,,excluded
+Sky News,国际新闻,https://xemzi.short.gy/1000018,news,{},ok,3654,1748,200001,h264,768,432,pass
+France 24 English,国际新闻,http://nmk.ioapk.com:5050/4gtv-live146/index.m3u8,news,{},ok,607,1749,2125716,h264,1920,1080,pass
+France 24 English,国际新闻,https://live.france24.com/hls/live/2037218-b/F24_EN_HI_HLS/master_5000.m3u8,news,{},ok,864,2262,200001,h264,1920,1080,pass
+France 24 English,国际新闻,https://www.youtube.com/c/france24english/live,freetv,{},excluded-host,,,,,,,excluded
+France 24 English,国际新闻,https://www.youtube.com/france24english/live,freetv,{},excluded-host,,,,,,,excluded
+DW English,国际新闻,https://amg01644-amg01644c1-amgplt0343.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg01644-amg01644c1-amgplt0343/playlist.m3u8,news,{},ok,2449,2024,200001,h264,1920,1080,pass
+DW English,国际新闻,https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8,freetv,{},ok,1361,2749,200001,h264,480,270,pass
+NHK World-Japan,国际新闻,http://nmk.ioapk.com:5050/4gtv-live168/index.m3u8,news,{},ok,669,1616,1764944,h264,1920,1080,pass
+NHK World-Japan,国际新闻,https://master.nhkworld.jp/nhkworld-tv/playlist/live.m3u8,freetv,{},variant-http-404,513,0,0,,,,fail
+NHK World-Japan,国际新闻,https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8,news,{},ok,1271,951,200001,h264,1280,720,pass
+NHK World-Japan,国际新闻,https://www.youtube.com/channel/UCSPEjw8F2nQDtmUKPFNF7_A/live,freetv,{},excluded-host,,,,,,,excluded
+Euronews English,国际新闻,https://cdn-euronews.akamaized.net/live/eds/euronews-pl/26382/index.m3u8,news,{},ok,1954,3055,200001,h264,428,240,pass
+Euronews English,国际新闻,https://dash4.antik.sk/live/test_euronews/playlist.m3u8,news,{},ok,1305,3236,825884,h264,1920,1080,pass
+Euronews English,国际新闻,https://euronews-live-spa-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6571/bitok/eyJzdGlkIjoiMDA0YjY0NTMtYjY2MC00ZTZkLTlkNzEtMTk3YTM3ZDZhZWIxIiwibWt0IjoiZXMiLCJjaCI6NjU3MSwicHRmIjoxfQ==/26034/euronews-es.m3u8,freetv,{},seg-http-403,2548,997,0,,,,fail
+Euronews English,国际新闻,https://jmp2.uk/plu-61de96114757070008d33cae.m3u8,news,{},seg-http-0,4444,58,0,,,,fail
+Euronews English,国际新闻,https://www.youtube.com/euronews/live,freetv,{},excluded-host,,,,,,,excluded
+Bloomberg TV,国际新闻,https://bloomberg.com/media-manifest/streams/eu.m3u8,freetv,{},ok,2304,890,200001,h264,1280,720,pass
+Bloomberg TV,国际新闻,https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8,freetv,{},ok,2797,2127,200001,h264,1280,720,pass
+Bloomberg TV,国际新闻,https://bloomberg.com/media-manifest/streams/us.m3u8,freetv,{},ok,2092,2220,200001,h264,1280,720,pass
+CNBC,国际新闻,https://amg01079-nbcuuk-amg01079c2-samsung-gb-1258.playouts.now.amagi.tv/playlist.m3u8,news,{},ok,4125,2077,200001,h264,640,360,pass
+CNBC,国际新闻,https://www.youtube.com/c/CNBC/live,freetv,{},excluded-host,,,,,,,excluded
+CNA,国际新闻,https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8,news,{},ok,1415,763,200001,h264,480,270,pass
+CNA,国际新闻,https://live1.mediadesk.al/cnatvlive.m3u8,news,{},ok,2567,2809,200001,unknown,,,pass
+CNA,国际新闻,https://mumt05.tangotv.in/87NeALx2CNA/index.m3u8,news,{},ok,2697,2136,200001,h264,640,360,pass
+CNA,国际新闻,https://www.youtube.com/channel/UC83jt4dlz1Gjl58fzQrrKZg/live,freetv,{},excluded-host,,,,,,,excluded
+Arirang,国际新闻,http://45.162.64.114/ARIRANG/index.m3u8,news,{},ok,2545,2474,200001,h264,720,540,pass
+Arirang,国际新闻,http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8,news,{},ok,1816,1277,150400,h264,640,360,pass
+Arirang,国际新闻,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b2256000_sleng.m3u8,freetv,{},ok,870,1567,200001,h264,1280,720,pass
+Arirang,国际新闻,http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8,freetv,{},ok,1451,1853,154724,h264,640,360,pass
+Arirang,国际新闻,https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8,news,{},ok,1241,604,157920,h264,640,360,pass
+TRT World,国际新闻,https://dash2.antik.sk/live/test_trt_world_atktv/playlist.m3u8,news,{},ok,1173,3404,2255436,h264,1920,1080,pass
+TRT World,国际新闻,https://tv-trtworld.medya.trt.com.tr/master.m3u8,news,{},ok,3493,2398,200001,h264,1920,1080,pass
+TRT World,国际新闻,https://www.youtube.com/channel/UC7fWeaHhqgM4Ry-RMpM2YYw/live,freetv,{},excluded-host,,,,,,,excluded
+ABC News Australia,国际新闻,https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8,news,{},ok,2352,3300,200001,h264,1280,720,pass
+ABC News Australia,国际新闻,https://c.mjh.nz/abc-news.m3u8,freetv,{},ok,4069,2873,200001,h264,1024,576,pass
+ABC News Australia,国际新闻,https://www.youtube.com/@abcnewsaustralia/live,freetv,{},excluded-host,,,,,,,excluded
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023560/abcnewshudson1/master.m3u8,news,{},variant-http-404,1530,0,0,,,,fail
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023561/abcnewshudson2/master.m3u8,news,{},variant-http-404,559,0,0,,,,fail
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023562/abcnewshudson3/master.m3u8,news,{},variant-http-404,1152,0,0,,,,fail
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023563/abcnewshudson4/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023564/abcnewshudson5/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023565/abcnewshudson6/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023566/abcnewshudson7/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023567/abcnewshudson8/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023568/abcnewshudson9/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://abcnews-streams.akamaized.net/hls/live/2023569/abcnewshudson10/master.m3u8,news,{},skipped-cap,,,,,,,skipped
+ABC News Live,国际新闻,https://jmp2.uk/plu-6508be683a0d700008c534e4.m3u8,news,{},seg-http-0,2846,48,0,,,,fail
+CBS News,国际新闻,https://cbsnews.akamaized.net/hls/live/2020607/cbsnlineup_8/master.m3u8,freetv,{},seg-http-404,3729,921,0,,,,fail
+CBS News,国际新闻,https://dai.google.com/linear/hls/event/Sid4xiTQTkCT1SLu6rjUSQ/master.m3u8,freetv,{},ok,1538,1375,126712,h264,400,224,pass
+CBS News,国际新闻,https://jmp2.uk/plu-6350fdd266e9ea0007bedec5.m3u8,news,{},seg-http-0,3431,120,0,,,,fail
+NBC News Now,国际新闻,https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99984003,freetv,{},ok,1881,1309,200001,h264,768,432,pass
+NBC News Now,国际新闻,https://d1si3n1st4nkgb.cloudfront.net/10502/88896001/hls/master.m3u8?ads.xumo_channelId=88896001,news,{},ok,2260,707,200001,h264,768,432,pass
+Fox News,国际新闻,http://138.121.15.230:9002/FOX-NEWS/index.m3u8,news,{},ok,1386,2526,200001,h264,1280,720,pass
+Reuters TV,国际新闻,https://amg00453-reuters-amg00453c1-rakuten-uk-2110.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-rakutenuk/playlist.m3u8,news,{},ok,4157,2494,200001,h264,1280,720,pass
+Reuters TV,国际新闻,https://reuters-reutersnow-1-eu.rakuten.wurl.tv/playlist.m3u8,freetv,{},no-response,184,0,0,,,,fail
+30A Golf Kingdom,体育,https://30a-tv.com/feeds/vidaa/golf.m3u8,sports,{},ok,4247,2853,200001,h264,1280,720,pass
+ACC Network,体育,http://23.239.31.26:8989/accnetwork/index.m3u8,sports,{},ok,548,3087,3617266,mpeg2video,1280,720,pass
+ACCDN,体育,https://raycom-accdn-firetv.amagi.tv/playlist.m3u8,sports,{},ok,2387,3164,200001,h264,426,240,pass
+BBC Radio 5 Sports Extra,体育,https://lsn.lv/bbcradio.m3u8?station=bbc_radio_five_live_sports_extra&bitrate=320000,freetv,{},http-401,3272,0,0,,,,fail
+BEK TV Sports West,体育,https://cdn3.wowza.com/5/ZWQ1K2NYTmpFbGsr/BEK-WOWZA-1/smil:BEKPRIMEW.smil/playlist.m3u8,sports,{},ok,2993,2074,200001,h264,1280,720,pass
+Bellator MMA,体育,https://jmp2.uk/plu-5ebc8688f3697d00072f7cf8.m3u8,sports,{},seg-http-0,2588,261,0,,,,fail
+Billiard TV,体育,https://pb-wm04vonaerv0k.akamaized.net/billi.m3u8,sports,{},http-403,781,0,0,,,,fail
+CBS Sports Golazo Network,体育,https://dai.google.com/linear/hls/event/7f3Wv6f7QEKfQna22jHqLQ/master.m3u8,sports,{},seg-http-403,2672,1103,425,,,,fail
+CBS Sports HQ,体育,https://jmp2.uk/plu-5e9f2c05172a0f0007db4786.m3u8,sports,{},seg-http-0,2060,129,0,,,,fail
+Cricket Gold,体育,https://streams2.sofast.tv/ptnr-yupptv/title-cricketgold/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/b2048bb8-1686-4432-aa50-647245383e0c/manifest.m3u8,sports,{},ok,4508,4034,200001,h264,1920,1080,pass
+DAZN Combat,体育,https://jmp2.uk/plu-64d626ac9b414d000820e2fc.m3u8,uk,{},seg-http-0,2433,151,0,,,,fail
+DAZN Darts x Pluto TV,体育,https://jmp2.uk/plu-64b67f0424ade50008a3be17.m3u8,sports,{},http-403,2227,0,0,,,,fail
+DD Sports,体育,https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8,sports,{},ok,2136,1317,200001,h264,384,216,pass
+DSports,体育,http://138.121.113.175:8000/play/a0cj/index.m3u8,sports,{},http-403,1215,0,0,,,,fail
+DSports 2,体育,http://138.121.113.175:8000/play/a0ca/index.m3u8,sports,{},http-403,1219,0,0,,,,fail
+DraftKings Network,体育,https://na.linear.zype.com/e0bd0e23-a958-4e43-8164-4f2fef8876a8/fd3614bd-90bf-4530-a277-65ae3a1720c8-zype/live.m3u8,sports,{},ok,4014,1495,200001,h264,0,0,pass
+ESPN,体育,http://181.78.197.59:8000/play/a07z/index.m3u8,sports,{},ok,1477,2502,1048476,h264,1920,1080,pass
+ESPN 3,体育,http://190.83.2.182:8090/ESPN3/index.m3u8,sports,{},no-response,6218,0,0,,,,fail
+ESPN 4,体育,http://181.78.197.59:8000/play/a07n/index.m3u8,sports,{},ok,1488,2504,1047160,h264,1920,1080,pass
+ESPN8 The Ocho,体育,https://d3b6q2ou5kp8ke.cloudfront.net/ESPNTheOcho.m3u8,sports,{},ok,2243,978,200001,hevc,1280,720,pass
+ESPNU,体育,http://23.237.104.106:8080/USA_ESPNU/index.m3u8,sports,{},http-404,1580,0,0,,,,fail
+ESPNU,体育,http://85.237.89.160:9590/usa-s/ESPN-U-HD/index.m3u8,sports,{},ok,1538,2003,200001,h264,1280,720,pass
+ESPNews,体育,http://41.205.93.154/ESPNNEWS/index.m3u8,news,{},ok,1868,2562,200001,h264,1280,720,pass
+ETVN,体育,https://origin2.afxp.telemedia.co.za/abr_kapang/enterepreneur/playlist.m3u8,news,{},no-response,5281,0,0,,,,fail
+F1 Channel,体育,https://amg12058-c15studio-amg12058c1-lg-us-5787.playouts.now.amagi.tv/playlist.m3u8,sports,{},ok,3279,2561,200001,h264,640,360,pass
+FIFA+,体育,https://jmp2.uk/plu-660c29b5aec9680008f5b4a4.m3u8,uk,{},seg-http-0,2033,44,0,,,,fail
+FIFA+ Italy,体育,https://5d95f7d7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWl0X0ZJRkFQbHVzSXRhbGlhbl9ITFM/playlist.m3u8,sports,{},ok,2667,2196,200001,h264,640,360,pass
+FIFA+ Spain,体育,https://d63fabad.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWVzX0ZJRkFQbHVzU3BhbmlzaF9ITFM/playlist.m3u8,sports,{},ok,2952,3601,200001,h264,640,360,pass
+FIFA+ United States,体育,https://d2w9q46ikgrcwx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-of5cbk3sav3w5/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8,sports,{},ok,3079,831,200001,h264,640,360,pass
+FIFA+ Women,体育,https://cffda8ff.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9GSUZBUGx1c3dvbWVuX0hMUw/playlist.m3u8,uk,{},ok,2926,1318,200001,h264,640,360,pass
+FITE 24/7,体育,https://d3d85c7qkywguj.cloudfront.net/scheduler/scheduleMaster/263.m3u8,sports,{},ok,2397,1337,200001,h264,1920,1080,pass
+FTF Sports,体育,https://1593604785.rsc.cdn77.org/FTF/FTF_SCTE.m3u8,sports,{},ok,1906,1481,200001,h264,960,540,pass
+Fight Network,体育,https://d12a2vxqkkh1bo.cloudfront.net/hls/main.m3u8,sports,{},http-504,1033,0,0,,,,fail
+FloHockey 24/7,体育,https://amg02278-amg02278c2-flosports-worldwide-9916.playouts.now.amagi.tv/playlist.m3u8,sports,{},ok,2557,2234,200001,h264,426,240,pass
+FloRacing 24/7,体育,https://amg02278-amg02278c1-flosports-worldwide-7592.playouts.now.amagi.tv/playlist.m3u8,sports,{},ok,2201,1574,200001,h264,426,240,pass
+Fox Sports 1,体育,http://85.237.89.160:9590/usa-s/FOX-SPORTS-1/index.m3u8,sports,{},ok,1535,1888,200001,h264,1920,1080,pass
+Fox Sports 2,体育,https://tvsen7.aynascope.net/foxsports2/index.m3u8,sports,{},http-404,1340,0,0,,,,fail
+GLORY Kickboxing,体育,https://6f972d29.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0dsb3J5S2lja2JveGluZ19ITFM/playlist.m3u8,sports,{},ok,3470,1834,200001,h264,640,360,pass
+Game+,体育,https://a-cdn.klowdtv.com/live2/fntsy_720p/playlist.m3u8,sports,{},ok,1793,2714,200001,h264,1280,720,pass
+Golazo Network,体育,https://jmp2.uk/plu-63a0e33a45264d000850ed7e.m3u8,sports,{},seg-http-0,2751,52,0,,,,fail
+Golf Channel,体育,https://dash4.antik.sk/live/test_golf_channel/playlist.m3u8,sports,{},ok,1511,3799,2689904,h264,1280,720,pass
+Hard Knocks,体育,https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0""}",http-404,1155,0,0,,,,fail
+Kabaddi 24x7,体育,http://180.188.254.253/live/KABADDI24X7.m3u8,sports,{},no-response,5233,0,0,,,,fail
+Lacrosse TV,体育,https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8,sports,{},variant-http-0,604,0,0,,,,fail
+MLB,体育,https://jmp2.uk/plu-5e66968a70f34c0007d050be.m3u8,sports,{},seg-http-0,1903,180,0,,,,fail
+MLB Strike Zone,体育,http://23.237.104.106:8080/USA_MLB_STRIKE_ZONE/index.m3u8,sports,{},ok,2242,1325,200001,h264,1280,720,pass
+MMA-TV,体育,http://31.148.48.15/M1_Global/index.m3u8,sports,{},no-response,5394,0,0,,,,fail
+MSG,体育,http://23.237.104.106:8080/USA_MSG/index.m3u8,sports,{},ok,1353,1227,200001,h264,1920,1080,pass
+MUTV,体育,https://bcovlive-a.akamaihd.net/r2d2c4ca5bf57456fb1d16255c1a535c8/eu-west-1/6058004203001/playlist.m3u8,uk,{},http-503,445,0,0,,,,fail
+Midpen Media Center Youth Education and Sports Channel 28,体育,https://5c2974786200d.streamlock.net/live-chan28/ngrp:ch28_all/playlist.m3u8,us,{},no-response,10001,0,0,,,,fail
+Monster Jam,体育,https://jmp2.uk/plu-65bcc9c8d77d450008b34c6b.m3u8,sports,{},seg-http-0,3670,76,0,,,,fail
+NBA TV,体育,https://cdn1.ayitistream.com/NBATV/index.m3u8,sports,{},ok,2877,2020,200001,h264,1920,1080,pass
+NBC Sports NOW,体育,https://d4whmvwm0rdvi.cloudfront.net/10007/99993008/hls/master.m3u8?ads.xumo_channelId=99993008,sports,{},ok,2120,1380,200001,h264,768,432,pass
+NFL Channel,体育,https://jmp2.uk/plu-5ced7d5df64be98e07ed47b6.m3u8,sports,{},seg-http-0,2003,76,0,,,,fail
+NFL Network,体育,http://23.237.104.106:8080/USA_NFL_NETWORK/index.m3u8,sports,{},http-404,587,0,0,,,,fail
+NHL Network,体育,https://nhl-firetv.amagi.tv/playlist.m3u8,sports,{},ok,2607,2780,200001,h264,1920,1080,pass
+NHRA TV,体育,https://d265y4sk8257lt.cloudfront.net/nh.m3u8,sports,{},seg-http-403,1534,383,0,,,,fail
+NewTV精品体育,体育,http://gslbserv.itv.cmvideo.cn/1000000004000014634/1.m3u8?channel-id=ystenlive&Contentid=1000000004000014634&livemode=1&stbId=3,itv,{},http-403,379,0,0,,,,fail
+NewTV超级体育,体育,http://gslbserv.itv.cmvideo.cn/1000000001000009601/1.m3u8?channel-id=ystenlive&Contentid=1000000001000009601&livemode=1&stbId=3,itv,{},http-403,1380,0,0,,,,fail
+Overtime,体育,https://d1a8aq6t30gkqj.cloudfront.net/v1/amc_overtime_1/samsungheadend_us/latest/main/hls/playlist_hd.m3u8,sports,{},seg-http-403,1740,459,0,,,,fail
+PBR RidePass,体育,https://jmp2.uk/plu-60d39387706fe50007fda8e8.m3u8,sports,{},seg-http-0,2741,52,0,,,,fail
+PFL MMA,体育,https://jmp2.uk/plu-64f6180130ab3300083d896b.m3u8,sports,{},seg-http-0,3012,114,0,,,,fail
+PGA Tour,体育,https://d11k1mnrgfposz.cloudfront.net/playlist.m3u8,sports,{},ok,1827,1024,200001,h264,1920,1080,pass
+Pac 12 Insider,体育,https://pac12-firetv.amagi.tv/playlist.m3u8,sports,{},ok,2944,1969,200001,h264,426,240,pass
+Pluto TV Competition,体育,https://jmp2.uk/plu-603fde9026ecbf0007752c2c.m3u8,sports,{},seg-http-0,2364,123,0,,,,fail
+Pluto TV E-Sports,体育,https://jmp2.uk/plu-5ff3934600d4c7000733ff49.m3u8,sports,{},seg-http-0,2342,52,0,,,,fail
+Pluto TV Esportes,体育,https://jmp2.uk/plu-5f32d2db0af67400077f29c4.m3u8,sports,{},seg-http-0,1874,76,0,,,,fail
+Pluto TV Snooker 900,体育,https://jmp2.uk/plu-639b4f75d3d35c0007d37b30.m3u8,sports,{},seg-http-0,2365,53,0,,,,fail
+Premier Sports,体育,https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c3-amgplt0351/playlist.m3u8,sports,{},http-403,791,0,0,,,,fail
+Premier Sports 1,体育,https://7nyaler.streamhostingcdn.top/stream/47/index.m3u8,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 VLC/3.0.21 LibVLC/3.0.21""}",http-403,2548,0,0,,,,fail
+Premier Sports 2,体育,https://7nyaler.streamhostingcdn.top/stream/5/index.m3u8,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 VLC/3.0.21 LibVLC/3.0.21""}",http-403,1523,0,0,,,,fail
+Premier Sports 2,体育,https://amg19223-amg19223c4-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c4-amgplt0351/playlist.m3u8,sports,{},http-403,871,0,0,,,,fail
+Racer Network,体育,https://amg00378-mavtv-amg00378c2-samsung-au-1790.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-samsungau/playlist.m3u8,sports,{},ok,1938,1952,200001,h264,640,360,pass
+Racer Select,体育,https://amg00378-amg00378c4-freelivesports-emea-5637.playouts.now.amagi.tv/playlist.m3u8,sports,{},ok,2961,1664,200001,h264,848,480,pass
+Racing.com,体育,https://racingvic-i.akamaized.net/hls/live/598695/racingvic/1500.m3u8,freetv,{},http-400,1268,0,0,,,,fail
+Racing.com,体育,https://racingvic-i.akamaized.net/hls/live/598695/racingvic/index1500.m3u8,sports,{},http-400,684,0,0,,,,fail
+Rally TV,体育,https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8,sports,{},ok,3299,2763,200001,unknown,,,pass
+Rev'n Action,体育,https://freecast-lukentvlive.vgcdn.net/out/v1/a4f31f297fc5440f814bd2cffd77e689/index.m3u8,sports,{},http-403,1002,0,0,,,,fail
+RightNow TV,体育,https://a-cdn.klowdtv.com/live2/rightnowtv_720p/playlist.m3u8,sports,{},ok,2933,1812,200001,h264,1280,720,pass
+Rugby Pass TV,体育,https://jmp2.uk/plu-66f137cb483d460008ece053.m3u8,uk,{},seg-http-0,4660,47,0,,,,fail
+Setanta Sports,体育,http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/8P7MBSH7RRPL53/20074/index.m3u8,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36""}",ok,2799,1896,200001,h264,1920,1080,pass
+Setanta Sports,体育,http://stream.mcquack.net/313/index.m3u8,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36""}",http-403,870,0,0,,,,fail
+Setanta Sports 1,体育,http://158.101.222.193:88/georgia_play.php?id=setanta_georgia,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36""}",no-response,6222,0,0,,,,fail
+Setanta Sports 2,体育,http://158.101.222.193:88/georgia_play.php?id=setanta_sports_plus_georgia,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36""}",no-response,5217,0,0,,,,fail
+Setanta Sports 3,体育,http://158.101.222.193:88/georgia_play.php?id=setanta_sports_3,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36""}",no-response,5239,0,0,,,,fail
+Sky Racing 1,体育,https://636ffd31f0e12.streamlock.net/RacingStream1/RacingStream1/playlist.m3u8,sports,{},ok,2930,1358,200001,h264,1280,720,pass
+Sky Racing 2,体育,https://636ffd31f0e12.streamlock.net/RacingStream2/RacingStream2/playlist.m3u8,sports,{},ok,2108,1756,200001,h264,1280,720,pass
+Sky Sports Cricket,体育,https://leaf.highfly.dev/m3u/now-sky-sports-cricket/live.m3u8,sports,{},http-404,1944,0,0,,,,fail
+Sky Sports F1,体育,https://xemzi.short.gy/2000005,sports,{},http-401,2224,0,0,,,,fail
+Sky Sports Football,体育,http://188.138.29.131/skyfootball/index.m3u8,sports,{},no-response,5222,0,0,,,,fail
+Sky Sports Golf,体育,https://leaf.highfly.dev/m3u/now-sky-sports-golf/live.m3u8,sports,{},http-404,841,0,0,,,,fail
+Sky Thoroughbred Central,体育,https://skylivetab-new.akamaized.net/hls/live/2038782/stcsd/index.m3u8,sports,{},http-403,982,0,0,,,,fail
+Slopes TV,体育,https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=2241,sports,{},ok,2483,2820,200001,unknown,,,pass
+Sony Sports Ten 1,体育,https://cloudplay-sonyliv.pages.dev/ten1.m3u8,sports,{},variant-http-403,545,0,0,,,,fail
+Sony Sports Ten 1,体育,https://cloudplay-sonyliv.pages.dev/ten1hd.m3u8,sports,{},variant-http-403,1959,0,0,,,,fail
+Sony Sports Ten 2,体育,https://cloudplay-sonyliv.pages.dev/ten2.m3u8,sports,{},variant-http-403,528,0,0,,,,fail
+Sony Sports Ten 2,体育,https://cloudplay-sonyliv.pages.dev/ten2hd.m3u8,sports,{},variant-http-403,2503,0,0,,,,fail
+Sony Sports Ten 4,体育,https://cloudplay-sonyliv.pages.dev/ten4.m3u8,sports,{},variant-http-403,553,0,0,,,,fail
+Sony Sports Ten 4 Telugu,体育,https://cloudplay-sonyliv.pages.dev/ten4hd.m3u8,sports,{},variant-http-403,343,0,0,,,,fail
+Sony Sports Ten 5,体育,https://cloudplay-sonyliv.pages.dev/ten5.m3u8,sports,{},variant-http-403,404,0,0,,,,fail
+Sony Sports Ten 5,体育,https://cloudplay-sonyliv.pages.dev/ten5hd.m3u8,sports,{},variant-http-0,398,0,0,,,,fail
+Sports Squad Haryana,体育,http://180.188.254.253/live/SPORTSSQUADHARYANA.m3u8,sports,{},no-response,5300,0,0,,,,fail
+SportsGrid,体育,https://sportsgrid-tribal.amagi.tv/playlist.m3u8,sports,{},ok,2412,1837,200001,h264,720,404,pass
+Stadium,体育,https://wurl120sports.global.transmit.live/hls/679a907dce42a042c23ace37/v1/stadium_gracenote/samsung_us/latest/main/hls/playlist.m3u8,sports,{},http-416,1262,0,0,,,,fail
+Star Sports 2,体育,http://tvsen5.aynascope.net/cXPB2LKkErN9/index.m3u8,sports,{},ok,1268,3039,2120640,h264,1280,720,pass
+Star Sports Select 2,体育,http://tvsen7.aynascope.net/ssport2hd/index.m3u8,sports,{},ok,1398,2362,1188160,h264,1280,720,pass
+Strongman,体育,https://rightsboosterltd-scl-1-eu.rakuten.wurl.tv/playlist.m3u8,uk,{},ok,2975,1911,200001,h264,640,360,pass
+Strongman Champions League,体育,https://rightsboosterltd-scl-1-be.samsung.wurl.tv/playlist.m3u8,sports,{},ok,3064,1583,200001,h264,640,360,pass
+Swerve Combat,体育,https://linear-253.frequency.stream/mt/roku/253/hls/master/playlist.m3u8,sports,{},ok,1894,1686,200001,h264,1920,1080,pass
+Swerve Sports,体育,https://a-cdn.klowdtv.com/live3/swervewomenssports_720p/playlist.m3u8,sports,{},variant-http-0,1097,0,0,,,,fail
+TSN The Ocho,体育,https://d3pnbvng3bx2nj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rds8g35qfqrnv/TSN_The_Ocho.m3u8,sports,{},ok,2454,937,200001,h264,640,360,pass
+TVS Bowling Network,体育,https://rpn.bozztv.com/gusa/gusa-tvsbowling/index.m3u8,sports,{},ok,3556,2347,200001,h264,1280,720,pass
+TVS Boxing,体育,https://rpn.bozztv.com/gusa/gusa-tvsboxing/index.m3u8,sports,{},ok,4781,3612,200001,h264,1280,720,pass
+TVS Classic Sports,体育,https://rpn.bozztv.com/gusa/gusa-tvs/index.m3u8,sports,{},ok,4646,2882,200001,h264,720,480,pass
+TVS Pinball Network,体育,https://rpn.bozztv.com/gusa/gusa-TVSCartoonNetwork/index.m3u8,us,{},ok,5360,2233,200001,unknown,,,pass
+TVS Sports,体育,https://rpn.bozztv.com/gusa/gusa-tvssports/index.m3u8,sports,{},ok,3474,2502,200001,h264,1280,720,pass
+TVS Sports Bureau,体育,https://rpn.bozztv.com/gusa/gusa-tvssportsbureau/index.m3u8,sports,{},ok,5759,2209,200001,h264,694,478,pass
+TVS Turbo,体育,https://rpn.bozztv.com/gusa/gusa-tvsturbo/index.m3u8,sports,{},ok,4389,5692,200001,h264,1280,720,pass
+TVS Women Sports,体育,https://rpn.bozztv.com/gusa/gusa-tvswsn/index.m3u8,sports,{},ok,3999,2226,200001,h264,632,480,pass
+Tennis Channel,体育,https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8,sports,{},ok,3350,2133,200001,h264,640,360,pass
+TennisChannel 2,体育,https://jmp2.uk/plu-681109b688b9d85d0938c6ba.m3u8,sports,{},seg-http-0,2203,46,0,,,,fail
+USA Network,体育,http://190.11.225.124:5000/live/usa_hd/playlist.m3u8,sports,{},ok,1112,3491,200001,h264,1920,1080,pass
+Unbeaten,体育,https://lukentvlive.vgcdn.net/v1/master/cef183924f24adfa3d5d7601c3a17769082c0c2b/UnbeatenSports/playlist.m3u8,sports,{},http-403,1291,0,0,,,,fail
+Unite8 Sports 2,体育,http://59.103.38.46:8000/play/a126/index.m3u8,sports,"{""User-Agent"": ""Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36""}",variant-http-0,1096,0,0,,,,fail
+Willow,体育,http://tvsen5.aynascope.net/willowhd/index.m3u8,sports,{},http-404,1697,0,0,,,,fail
+Willow Sports,体育,https://d36r8jifhgsk5j.cloudfront.net/Willow_TV.m3u8,sports,{},seg-http-403,1525,418,0,,,,fail
+Willow Sports,体育,https://d36r8jifhgsk5j.cloudfront.net/Willow_TV1080p.m3u8,sports,{},seg-http-403,597,399,0,,,,fail
+Women's Sports Network,体育,https://d39accvx65hq9o.cloudfront.net/Womens_Sports_Network.m3u8,us,{},ok,2491,1001,200001,h264,640,360,pass
+XFC TV,体育,https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=2247,sports,{},ok,2731,2166,200001,unknown,,,pass
+beIN SPORTS XTRA,体育,https://bein-xtra-bein.amagi.tv/playlist.m3u8,sports,{},ok,4005,1721,200001,h264,1024,576,pass
+fubo Sports Network,体育,https://dnf08l6u6uxnz.cloudfront.net/master.m3u8,sports,{},seg-http-403,1618,600,0,,,,fail
+iHOT爱体育,体育,http://gslbserv.itv.cmvideo.cn/6000000006000290630/1.m3u8?channel-id=wasusyt&Contentid=6000000006000290630&livemode=1&stbId=3,itv,{},http-403,368,0,0,,,,fail
+talkSPORT,体育,https://af7a8b4e.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/TEctZ2JfdGFsa1NQT1JUX0hMUw/playlist.m3u8,uk,{},ok,3263,1702,200001,h264,960,540,pass
+五星体育,体育,https://hls-gateway.vpstv.net/streams/636980.m3u8,guovin,{},http-403,1297,0,0,,,,fail
+五星体育,体育,https://migu.188766.xyz/?migutoken=ed5a02a3b87f3dcc808d4b733daf5cf9&id=%E4%BA%94%E6%98%9F%E4%BD%93%E8%82%B2&pp=1,guovin,{},no-response,354,0,0,,,,fail
+五星体育,体育,https://other.ottiptv.cc/wxty.m3u8,guovin,{},http-502,2144,0,0,,,,fail
+五星体育,体育,https://stream1.freetv.fun/wu-xing-ti-yu-9.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+五星体育,体育,https://zby.130519.xyz/PLTV/11/224/3221225732/index.m3u8,guovin,{},no-response,5438,0,0,,,,fail
+五星体育,体育,http://gslbserv.itv.cmvideo.cn/5000000010000017540/1.m3u8?channel-id=bestzb&Contentid=5000000010000017540&livemode=1&stbId=3,itv,{},http-403,345,0,0,,,,fail
+劲爆体育,体育,http://t.061899.xyz/tl/tl.php?id=jbty,guovin,{},http-403,4168,0,0,,,,fail
+劲爆体育,体育,http://gslbserv.itv.cmvideo.cn/5000000002000029972/1.m3u8?channel-id=bestzb&Contentid=5000000002000029972&livemode=1&stbId=3,itv,{},http-403,409,0,0,,,,fail
+天津体育,体育,http://38.75.136.137:98/gslb/dsdqpub/tjtv5.m3u8?auth=testpub,guovin,{},ok,1373,1425,200001,h264,1280,720,pass
+天津体育,体育,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv5,guovin,{},ok,2070,1396,200001,h264,1280,720,pass
+安徽综艺体育,体育,https://live.lalifeier.eu.org/ahtv/ahzyty.m3u8?t=1745774515&key=27009aec794adc785b22478c5aa2ae16,guovin,{},http-403,1289,0,0,,,,fail
+安徽综艺体育,体育,https://live.lalifeier.eu.org/ahtv/ahzyty.m3u8?t=1746292937&key=940b0f98a121c28884c74971efaac4de,guovin,{},http-403,932,0,0,,,,fail
+安徽综艺体育,体育,https://live.lalifeier.eu.org/ahtv/ahzyty.m3u8?t=1746307365&key=6b104d1fc66c5b34b63d0e19c627e0f9,guovin,{},http-403,1226,0,0,,,,fail
+安徽综艺体育,体育,https://stream1.freetv.fun/an-hui-zong-yi-ti-yu-4.ctv,guovin,{},no-response,10000,0,0,,,,fail
+安徽综艺体育,体育,https://stream1.freetv.fun/an-hui-zong-yi-ti-yu-8.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+山东体育,体育,http://livealone302.iqilu.com/iqilu/typd.m3u8,cn,{},http-403,151,0,0,,,,fail
+山东体育,体育,https://stream1.freetv.fun/shan-dong-ti-yu-19.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+山东体育,体育,https://stream1.freetv.fun/shan-dong-ti-yu-4.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+山东体育,体育,https://stream1.freetv.fun/shan-dong-ti-yu-7.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+山东体育,体育,https://stream1.freetv.fun/shan-dong-ti-yu-8.m3u8,guovin,{},skipped-cap,,,,,,,skipped
+广东体育,体育,http://38.75.136.137:98/gslb/dsdqpub/gdty.m3u8?auth=testpub,guovin,{},ok,1072,1354,200001,h264,1280,720,pass
+广东体育,体育,http://cdn2.163189.xyz/live/gdty/stream.m3u8,guovin,{},short-body,1391,1391,1807,,,,fail
+广东体育,体育,http://php.jdshipin.com/PLTV/iptv.php?id=gdty,guovin,{},ok,1953,689,60348,h264,720,576,pass
+广东体育,体育,http://php.jdshipin.com/TVOD/iptv.php?id=gdty,guovin,{},ok,3012,704,60348,h264,720,576,pass
+广东体育,体育,http://r.jdshipin.com/LiYdg,guovin,{},ok,1701,1604,60348,h264,720,576,pass
+广东体育,体育,https://epg.pw/stream/7b470f9fc5c305db0c8622117b7b25ca00eb35ba3e93e865cf0ff9df5c736681.m3u8,guovin,{},ok,2292,742,200001,h264,1920,1080,pass
+广州竞赛,体育,https://stream1.freetv.fun/yan-zhou-jing-sai-2.m3u8,guovin,{},no-response,10003,0,0,,,,fail
+广州竞赛,体育,https://stream1.freetv.fun/yan-zhou-jing-sai-32.ctv,guovin,{},no-response,10001,0,0,,,,fail
+广州竞赛,体育,https://stream1.freetv.fun/yan-zhou-jing-sai-33.ctv,guovin,{},no-response,10001,0,0,,,,fail
+广州竞赛,体育,https://stream1.freetv.fun/yan-zhou-jing-sai-34.ctv,guovin,{},skipped-cap,,,,,,,skipped
+广州竞赛,体育,https://stream1.freetv.fun/yan-zhou-jing-sai-38.ctv,guovin,{},skipped-cap,,,,,,,skipped
+江苏体育,体育,http://183.207.248.71/gitv/live1/G_JSTY/G_JSTY,cn,{},http-302,5159,0,0,,,,fail
+江苏体育,体育,https://live.chinacert.cftest5.cn/cnmg/live/626064707,guovin,{},ok,1162,222,200001,h264,854,480,pass
+江苏体育,体育,https://stream1.freetv.fun/af1087a1c24fff7af556ac8e6c5c623303d52966f67a998cefb52c17811b09a2.ctv,guovin,{},no-response,10001,0,0,,,,fail
+爱体育,体育,http://php.jdshipin.com:8880/itv6s.php?cid=wasusyt&id=6000000006000290630,guovin,{},http-403,1912,0,0,,,,fail
+爱体育,体育,http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230103/index.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+睛彩篮球,体育,https://zby.130519.xyz/PLTV/11/224/3221226118/index.m3u8,guovin,{},no-response,834,0,0,,,,fail
+睛彩篮球,体育,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226469/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+精品体育,体育,https://epg.pw/stream/866a097a0907c9832440f8df38272dd555abf05200dfbafcc137e214c9b30ca7.m3u8,guovin,{},ok,1849,2021,200001,h264,1280,720,pass
+精品体育,体育,https://epg.pw/stream/94ed0232b61ce8d89883160a4cdfbfc8f3225cae70ef8e17d93eec249a3c8ad6.m3u8,guovin,{},ok,2015,2024,200001,h264,1280,720,pass
+精品体育,体育,https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8,guovin,{},ok,2024,1992,200001,h264,1280,720,pass
+精品体育,体育,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225674/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+纬来体育,体育,https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8,guovin,{},ok,1863,1953,200001,h264,1280,720,pass
+纬来体育,体育,https://epg.pw/stream/8855a9936e37e608a0ec8a014cce1673dee9c5d68d560da376cc92e5edef2b25.m3u8,guovin,{},ok,1618,1993,200001,h264,1280,720,pass
+纬来体育,体育,https://epg.pw/stream/ab6df63b64d0cc44a1f4f029ed847a26fa54a7aebd455578fb05a63f02c22f4b.m3u8,guovin,{},ok,1971,1908,200001,h264,1280,720,pass
+纬来体育,体育,https://hls-gateway.vpstv.net/streams/477026.m3u8,guovin,{},http-403,534,0,0,,,,fail
+纬来体育,体育,https://smart.pendy.dpdns.org/Smart.php?id=videolandsport,guovin,{},no-response,118,0,0,,,,fail
+超级体育,体育,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225715/index.m3u8,builtin-mobile,{},no-response,10001,0,0,,,,fail
+足球频道,体育,https://epg.pw/stream/c7df950876e6a1ceb8be74ee86f9f702cebbbae29f1d15124ef8f86fd43161cf.m3u8,guovin,{},ok,1558,2028,200001,h264,1280,720,pass
+足球频道,体育,http://live-cmvideo.cmread.com:80/migu/lunbo/eufootball/57/20230310/01.m3u8?msisdn=&mtv_session=&HlsSubType=1&HlsProfileId=1&nphaid=0&encrypt=da834f97e3c8832f6fd8f2be9ba16464,guovin,{},http-403,374,0,0,,,,fail
+陕西体育休闲,体育,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20250921080053bb7e3ee981dc4bde95a765fbffef7b9e&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20250921080053&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.88&SecurityKey=20250921080053&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.1-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=43ffb82e5f9372a440dd84479d27b2f6&ddCalcu=64f3e2f2bf67b028d29e754f4983d7d20a44,guovin,{},http-660,125,0,0,,,,fail
+陕西体育休闲,体育,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20251023080139c026415ca4654e0cb51f36f8105eb6a1&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251023080139&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.83&SecurityKey=20251023080139&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=101f9c0a14d24dc78aa97137482db06c&ddCalcu=c160e012bf6d902c804a71341d7294adac87,guovin,{},http-660,187,0,0,,,,fail
+陕西体育休闲,体育,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=20251024080056953be86c14d64c758cd4dbf06a58c942&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251024080056&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.88&SecurityKey=20251024080056&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=d18ceaa4887dd90437843aedd252e8e7&ddCalcu=7de1e882ec62e05a2ad4d8e8a73d4d897034,guovin,{},http-660,141,0,0,,,,fail
+陕西体育休闲,体育,http://gslbmgsplive.miguvideo.com/migu/kailu/sxtyxx/51/20250804/index.m3u8?msisdn=2025102508005957060912be0d47f78a9e823b236e0022&mdspid=&spid=600572&netType=0&sid=5910022189&pid=2028597139&timestamp=20251025080059&Channel_ID=0116_2600000900-99000-201600010010027&ProgramID=956909356&ParentNodeID=-99&assertID=5910022189&client_ip=106.13.250.90&SecurityKey=20251025080059&promotionId=&mvid=5900006712&mcid=500020&playurlVersion=WX-A1-8.9.2-RELEASE&userid=&jmhm=&videocodec=h264&bean=mgspad&tid=android&conFee=0&puData=25d98077b85839680d0db7d4d6a823de&ddCalcu=e2d5e3d2296880a067d74bd875b8d309d608,guovin,{},skipped-cap,,,,,,,skipped
+陕西体育休闲,体育,https://mgtv.ottiptv.cc/migu/956909356.m3u8?migutoken=2cd1b3120e6a6d3cec136ca61cb23c24512860d4956d391b8c7d8a1fce58c3fa549930217eede8887c05f73eb24ac9692be10bdd06557f58130ff6717e37e1b6ba38adfacf8e74298fe1d4f48c,guovin,{},http-404,943,0,0,,,,fail
+风云足球,体育,http://207.56.13.146:81/cdnlive/fyzq.m3u8,guovin,{},short-body,1416,1416,479,,,,fail
+风云足球,体育,http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub,guovin,{},ok,2085,1620,200001,h264,1920,1080,pass
+风云足球,体育,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=fyzq,guovin,{},ok,1712,1360,200001,h264,1920,1080,pass
+风云足球,体育,https://hls-gateway.vpstv.net/streams/708859.m3u8,guovin,{},http-403,520,0,0,,,,fail
+魅力足球,体育,https://hls-gateway.vpstv.net/streams/708839.m3u8,guovin,{},http-403,417,0,0,,,,fail
+魅力足球,体育,https://stream1.freetv.fun/mei-li-zu-qiu-1.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+魅力足球,体育,http://gslbserv.itv.cmvideo.cn/5000000011000031207/1.m3u8?channel-id=bestzb&Contentid=5000000011000031207&livemode=1&stbId=3,itv,{},http-403,328,0,0,,,,fail
+三沙卫视,卫视,http://107.150.60.122/live/ssws.m3u8,guovin,{},ok,959,1167,200001,h264,720,576,pass
+三沙卫视,卫视,http://198.204.228.26/live/ssws.m3u8,guovin,{},ok,853,1284,200001,h264,720,576,pass
+三沙卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/ssws.m3u8?auth=testpub,guovin,{},ok,886,1246,200001,h264,1280,720,pass
+三沙卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ssws,guovin,{},ok,1307,1165,200001,h264,720,576,pass
+东南卫视,卫视,http://107.150.60.122/live/dnwshd.m3u8,guovin,{},ok,1438,1169,200001,h264,1920,1080,pass
+东南卫视,卫视,http://120.76.248.139/live/bfgd/4200000483.m3u8,guovin,{},seg-http-0,149,10010,0,,,,fail
+东南卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub,guovin,{},ok,829,1266,200001,h264,1280,720,pass
+东南卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dnwshd,guovin,{},ok,1240,1145,200001,h264,1920,1080,pass
+东南卫视,卫视,http://iptv.huuc.edu.cn/hls/dnhd.m3u8,guovin,{},no-response,10003,0,0,,,,fail
+东南卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225766/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+东南卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265033/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265033&livemode=1&stbId=3,itv,{},http-403,492,0,0,,,,fail
+东南卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000010584/1.m3u8?channel-id=bestzb&Contentid=5000000004000010584&livemode=1&stbId=3,itv,{},http-403,402,0,0,,,,fail
+东南卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226341/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+东方卫视,卫视,http://107.150.60.122/live/dfwshd.m3u8,guovin,{},ok,943,1193,200001,h264,1920,1080,pass
+东方卫视,卫视,http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009,guovin,{},ok,752,1199,200001,h264,1920,1080,pass
+东方卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/dfwshd.m3u8?auth=testpub,guovin,{},ok,807,1269,200001,h264,1280,720,pass
+东方卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dfwshd,guovin,{},ok,1117,1158,200001,h264,1920,1080,pass
+东方卫视,卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8,guovin,{},ok,244,95,200001,h264,1280,720,pass
+东方卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265018/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265018&livemode=1&stbId=3,itv,{},http-403,239,0,0,,,,fail
+东方卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000014098/1.m3u8?channel-id=bestzb&Contentid=5000000004000014098&livemode=1&stbId=3,itv,{},http-403,245,0,0,,,,fail
+东方卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000003639/1.m3u8?channel-id=wasusyt&Contentid=6000000001000003639&livemode=1&stbId=3,itv,{},http-403,306,0,0,,,,fail
+东方卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226345/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+云南卫视,卫视,http://107.150.60.122/live/ynwshd.m3u8,guovin,{},ok,678,1163,200001,h264,1920,1080,pass
+云南卫视,卫视,http://120.76.248.139/live/bfgd/4200000482.m3u8,guovin,{},seg-http-0,34,10006,0,,,,fail
+云南卫视,卫视,http://192.151.150.154/live/ynwshd.m3u8,guovin,{},ok,829,1160,200001,h264,1920,1080,pass
+云南卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ynwshd,guovin,{},ok,1201,1284,200001,h264,1920,1080,pass
+云南卫视,卫视,https://hwapi.yunshicloud.com/8xughf/e0bx15.m3u8,cn,{},no-response,10006,0,0,,,,fail
+云南卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226109/index.m3u8,guovin,{},no-response,183,0,0,,,,fail
+云南卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000011000031120/1.m3u8?channel-id=bestzb&Contentid=5000000011000031120&livemode=1&stbId=3,itv,{},http-403,143,0,0,,,,fail
+云南卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226444/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+兵团卫视,卫视,http://112.25.48.68/live/program/live/btws/1300000/mnf.m3u8,cn,{},no-response,10005,0,0,,,,fail
+兵团卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226439/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+内蒙古卫视,卫视,http://107.150.60.122/live/nmgws.m3u8,guovin,{},ok,911,1212,200001,h264,1920,1080,pass
+内蒙古卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=nmgws,guovin,{},ok,1107,1335,200001,h264,1920,1080,pass
+内蒙古卫视,卫视,http://play1-qk.nmtv.cn/live/1769652018126032.m3u8,guovin,{},ok,406,880,3565796,h264,1920,1080,pass
+内蒙古卫视,卫视,https://live.264788.xyz/channel/neimengguweishi?streamid=3e7340acf8869ac1c7dad1bb836dcd35&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,7053,7053,200001,h264,1920,1080,pass
+内蒙古卫视,卫视,https://live.264788.xyz/channel/neimengguweishi?streamid=81a015dbecf3031d7d847b7a9b059f67&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,7780,7780,200001,h264,1920,1080,pass
+内蒙古卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226389/index.m3u8,builtin-mobile,{},no-response,10004,0,0,,,,fail
+北京卫视,卫视,http://104.152.209.49:8181/720p/bjws.m3u8,guovin,{},short-body,1220,1220,17,,,,fail
+北京卫视,卫视,http://107.150.60.122/live/bjwshd.m3u8,guovin,{},ok,669,1203,200001,h264,1920,1080,pass
+北京卫视,卫视,http://120.76.248.139/live/bfgd/4200000083.m3u8,guovin,{},seg-http-0,153,10022,0,,,,fail
+北京卫视,卫视,http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009,guovin,{},ok,745,1167,200001,h264,1920,1080,pass
+北京卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=bjwshd,guovin,{},ok,1472,1203,200001,h264,1920,1080,pass
+北京卫视,卫视,http://go.bkpcp.top/mg/bjws,cn,{},http-403,704,0,0,,,,fail
+北京卫视,卫视,http://ivi.bupt.edu.cn/hls/btv1.m3u8,cn,{},no-response,10003,0,0,,,,fail
+北京卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226222/index.m3u8,builtin-json,{},no-response,10005,0,0,,,,fail
+北京卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265027/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265027&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+北京卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000020451/1.m3u8?channel-id=wasusyt&Contentid=6000000001000020451&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+北京卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225728/index.m3u8,builtin-json,{},skipped-cap,,,,,,,skipped
+北京卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226450/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+厦门卫视,卫视,http://107.150.60.122/live/xmws.m3u8,guovin,{},ok,838,1469,200001,h264,720,576,pass
+厦门卫视,卫视,http://192.151.150.154/live/xmws.m3u8,guovin,{},ok,1036,1163,200001,h264,720,576,pass
+厦门卫视,卫视,http://198.204.228.26/live/xmws.m3u8,guovin,{},ok,822,1150,200001,h264,720,576,pass
+厦门卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xmws,guovin,{},ok,1376,1420,200001,h264,720,576,pass
+吉林卫视,卫视,http://107.150.60.122/live/jlwshd.m3u8,guovin,{},ok,945,1196,200001,h264,1920,1080,pass
+吉林卫视,卫视,http://221.7.175.154:8445/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0,guovin,{},ok,99,220,200001,h264,1920,1080,pass
+吉林卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub,guovin,{},ok,964,1329,200001,h264,1920,1080,pass
+吉林卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jlwshd,guovin,{},ok,1094,1482,200001,h264,1920,1080,pass
+吉林卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226149/index.m3u8,guovin,{},no-response,161,0,0,,,,fail
+吉林卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000011000031117/1.m3u8?channel-id=bestzb&Contentid=5000000011000031117&livemode=1&stbId=3,itv,{},http-403,140,0,0,,,,fail
+吉林卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+四川卫视,卫视,http://107.150.60.122/live/scwshd.m3u8,guovin,{},ok,717,1172,200001,h264,1920,1080,pass
+四川卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/scwshd.m3u8?auth=testpub,guovin,{},ok,1426,1288,200001,h264,1920,1080,pass
+四川卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=scwshd,guovin,{},ok,1093,1221,200001,h264,1920,1080,pass
+四川卫视,卫视,https://live.264788.xyz/channel/sichuanweishi4k?streamid=21be5901ee81559c827dc84e46f26452&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6604,6604,200001,h264,1920,1080,pass
+四川卫视,卫视,https://live.264788.xyz/channel/sichuanweishi4k?streamid=401bf692a1a8b91298f26077d53316d6&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6628,6628,200001,h264,1920,1080,pass
+四川卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225733/index.m3u8,cn,{},no-response,10006,0,0,,,,fail
+四川卫视,卫视,http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225768/index.m3u8,builtin-json,{},no-response,10001,0,0,,,,fail
+四川卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000006119/1.m3u8?channel-id=bestzb&Contentid=5000000004000006119&livemode=1&stbId=3,itv,{},http-403,136,0,0,,,,fail
+四川卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226338/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+大湾区卫视,卫视,http://107.150.60.122/live/nfws.m3u8,guovin,{},ok,671,1146,200001,h264,1920,1080,pass
+大湾区卫视,卫视,http://198.204.228.26/live/nfws.m3u8,guovin,{},ok,672,1242,200001,h264,1920,1080,pass
+大湾区卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/nfws.m3u8?auth=testpub,guovin,{},ok,764,1262,200001,h264,1920,1080,pass
+大湾区卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=nfws,guovin,{},ok,1164,1212,200001,h264,1280,720,pass
+天津卫视,卫视,http://107.150.60.122/live/tjwshd.m3u8,guovin,{},ok,737,1321,200001,h264,1920,1080,pass
+天津卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub,guovin,{},ok,797,1279,200001,h264,1920,1080,pass
+天津卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjwshd,guovin,{},ok,1079,1155,200001,h264,1280,720,pass
+天津卫视,卫视,http://iptv.huuc.edu.cn/hls/tjhd.m3u8,guovin,{},no-response,10006,0,0,,,,fail
+天津卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221225742/index.m3u8,guovin,{},no-response,225,0,0,,,,fail
+天津卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225698/index.m3u8,cn,{},no-response,10004,0,0,,,,fail
+天津卫视,卫视,http://39.134.18.193:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226204/index.m3u8,builtin-json,{},no-response,10005,0,0,,,,fail
+天津卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265026/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265026&livemode=1&stbId=3,itv,{},http-403,219,0,0,,,,fail
+天津卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000006827/1.m3u8?channel-id=bestzb&Contentid=5000000004000006827&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+天津卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000009186/1.m3u8?channel-id=wasusyt&Contentid=6000000001000009186&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+天津卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226459/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+宁夏卫视,卫视,http://107.150.60.122/live/nxws.m3u8,guovin,{},ok,925,1228,200001,h264,1920,1080,pass
+宁夏卫视,卫视,http://198.204.228.26/live/nxws.m3u8,guovin,{},ok,665,1390,200001,h264,1920,1080,pass
+宁夏卫视,卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=1b2952717a920173e66d4a348f9dcb5c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6945,6945,200001,h264,1920,1080,pass
+宁夏卫视,卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=551474d02bee1c160e1692e22c45ddba&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6402,6402,200001,h264,1920,1080,pass
+宁夏卫视,卫视,https://live.264788.xyz/channel/ningxiaweishi?streamid=e1236348f815c36a0429357e5b5c5f10&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6352,6352,200001,h264,1920,1080,pass
+宁夏卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225726/index.m3u8,cn,{},no-response,10004,0,0,,,,fail
+宁夏卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225632/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+安徽卫视,卫视,http://104.152.209.49:8181/720p/ahws.m3u8,guovin,{},short-body,1012,1012,17,,,,fail
+安徽卫视,卫视,http://107.150.60.122/live/ahwshd.m3u8,guovin,{},ok,666,1178,200001,h264,1920,1080,pass
+安徽卫视,卫视,http://198.204.228.26/live/ahwshd.m3u8,guovin,{},ok,665,1259,200001,h264,1920,1080,pass
+安徽卫视,卫视,http://204.12.221.218:8181/3m1080p/ahws.m3u8,guovin,{},ok,954,1141,200001,h264,1920,1080,pass
+安徽卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ahwshd,guovin,{},ok,1071,1122,200001,h264,1920,1080,pass
+安徽卫视,卫视,http://39.134.18.194:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226203/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+安徽卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000030159/1.m3u8?channel-id=ystenlive&Contentid=1000000001000030159&livemode=1&stbId=3,itv,{},http-403,125,0,0,,,,fail
+安徽卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265025/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265025&livemode=1&stbId=3,itv,{},http-403,131,0,0,,,,fail
+安徽卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000009954/1.m3u8?channel-id=wasusyt&Contentid=6000000001000009954&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+安徽卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226391/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+山东卫视,卫视,http://107.150.60.122/live/sdwshd.m3u8,guovin,{},ok,645,1157,200001,h264,1920,1080,pass
+山东卫视,卫视,http://120.76.248.139/live/bfgd/4200000099.m3u8,guovin,{},seg-http-0,39,10016,0,,,,fail
+山东卫视,卫视,http://125.210.152.18:9090/live/SDWSHD_H265.m3u8,cn,{},no-response,10006,0,0,,,,fail
+山东卫视,卫视,http://198.204.228.26/live/sdwshd.m3u8,guovin,{},ok,725,1238,200001,h264,1920,1080,pass
+山东卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/sdwshd.m3u8?auth=testpub,guovin,{},ok,761,1260,200001,h264,1920,1080,pass
+山东卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sdwshd,guovin,{},ok,1045,1093,200001,h264,1920,1080,pass
+山东卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225697/index.m3u8,cn,{},no-response,10005,0,0,,,,fail
+山东卫视,卫视,http://39.134.18.194:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225771/index.m3u8,builtin-json,{},no-response,10004,0,0,,,,fail
+山东卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000016568/1.m3u8?channel-id=ystenlive&Contentid=1000000001000016568&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+山东卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265019/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265019&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+山东卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000004134/1.m3u8?channel-id=wasusyt&Contentid=6000000001000004134&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+山东卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226456/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+山西卫视,卫视,http://107.150.60.122/live/sxwshd.m3u8,guovin,{},ok,734,1149,200001,h264,1920,1080,pass
+山西卫视,卫视,http://204.12.221.218:8181/3m1080p/sxws.m3u8,guovin,{},ok,836,1250,200001,h264,1920,1080,pass
+山西卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sxwshd,guovin,{},ok,1064,1163,200001,h264,1920,1080,pass
+山西卫视,卫视,https://live.264788.xyz/channel/shanxiweishi?streamid=69e002ac7467d661ff7ad0671ed43f16&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6348,6348,200001,h264,1920,1080,pass
+山西卫视,卫视,https://live.264788.xyz/channel/shanxiweishi?streamid=eeb7d60ca6e0db131ea7a092a3cd28d2&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6835,6835,200001,h264,1920,1080,pass
+山西卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225624/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+广东卫视,卫视,http://107.150.60.122/live/gdwshd.m3u8,guovin,{},ok,828,1191,200001,h264,1920,1080,pass
+广东卫视,卫视,http://120.76.248.139/live/bfgd/4200000092.m3u8,guovin,{},seg-http-0,44,10016,0,,,,fail
+广东卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/gdwshd.m3u8?auth=testpub,guovin,{},ok,1080,1351,200001,h264,1920,1080,pass
+广东卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdwshd,guovin,{},ok,1067,1188,200001,h264,1920,1080,pass
+广东卫视,卫视,https://hls-gateway.vpstv.net/streams/476943.m3u8,guovin,{},http-403,242,0,0,,,,fail
+广东卫视,卫视,https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4,guovin,{},ok,162,162,200001,h264,1280,720,pass
+广东卫视,卫视,http://39.134.18.193/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225757/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+广东卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000014176/1.m3u8?channel-id=ystenlive&Contentid=1000000001000014176&livemode=1&stbId=3,itv,{},http-403,131,0,0,,,,fail
+广东卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265034/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265034&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+广东卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000031076/1.m3u8?channel-id=wasusyt&Contentid=6000000001000031076&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+广东卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226248/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+广西卫视,卫视,http://107.150.60.122/live/gxwshd.m3u8,guovin,{},ok,660,1402,200001,h264,1920,1080,pass
+广西卫视,卫视,http://120.76.248.139/live/bfgd/4200000116.m3u8,guovin,{},seg-http-0,156,10010,0,,,,fail
+广西卫视,卫视,http://198.204.228.26/live/gxwshd.m3u8,guovin,{},ok,764,1353,200001,h264,1920,1080,pass
+广西卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub,guovin,{},ok,767,1155,200001,h264,1920,1080,pass
+广西卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gxwshd,guovin,{},ok,1101,1146,200001,h264,1920,1080,pass
+广西卫视,卫视,http://live.gxrb.com.cn/tv/gxtvlive03/index.m3u8,builtin-json,{},http-204,239,0,0,,,,fail
+广西卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225770/index.m3u8,builtin-json,{},no-response,10005,0,0,,,,fail
+广西卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000011000031118/1.m3u8?channel-id=bestzb&Contentid=5000000011000031118&livemode=1&stbId=3,itv,{},http-403,138,0,0,,,,fail
+广西卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226549/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+康巴卫视,卫视,http://223.110.245.139/PLTV/4/224/3221227008/index.m3u8,cn,{},no-response,10004,0,0,,,,fail
+康巴卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225660/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+延边卫视,卫视,https://srs.iyb983.cn/video/CYS/index.m3u8,guovin,{},ok,391,152,200001,h264,1920,1080,pass
+延边卫视,卫视,https://srs.iyb983.cn:443/video/CYS/index.m3u8,guovin,{},ok,157,160,200001,h264,1920,1080,pass
+延边卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226516/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+新疆卫视,卫视,http://107.150.60.122/live/xjws.m3u8,guovin,{},ok,719,1327,200001,h264,1920,1080,pass
+新疆卫视,卫视,http://198.204.228.26/live/xjws.m3u8,guovin,{},ok,679,1261,200001,h264,1920,1080,pass
+新疆卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub,guovin,{},ok,752,1149,200001,h264,1920,1080,pass
+新疆卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xjws,guovin,{},ok,1377,1129,200001,h264,1920,1080,pass
+新疆卫视,卫视,http://goo.bkpcp.top/mg/xjws,guovin,{},no-response,10003,0,0,,,,fail
+新疆卫视,卫视,https://live.264788.xyz/channel/xinjiangweishi?streamid=4f481f56ae39ce5d24203471de9df635&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6437,6437,200001,h264,1920,1080,pass
+新疆卫视,卫视,http://39.134.24.165:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225747/index.m3u8,builtin-json,{},no-response,10003,0,0,,,,fail
+新疆卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225635/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+江苏卫视,卫视,http://104.152.209.49:8181/720p/jsws.m3u8,guovin,{},short-body,1258,1258,17,,,,fail
+江苏卫视,卫视,http://107.150.60.122/live/jswshd.m3u8,guovin,{},ok,735,1244,200001,h264,1920,1080,pass
+江苏卫视,卫视,http://38.75.136.137:98/gslb/dsdqbv/jswshd.m3u8?auth=test20251009,guovin,{},ok,820,1170,200001,h264,1920,1080,pass
+江苏卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub,guovin,{},ok,764,1190,200001,h264,1920,1080,pass
+江苏卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jswshd,guovin,{},ok,1083,1189,200001,h264,1920,1080,pass
+江苏卫视,卫视,http://39.134.18.195/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+江苏卫视,卫视,http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226200/index.m3u8,cn,{},no-response,10002,0,0,,,,fail
+江苏卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000001828/1.m3u8?channel-id=ystenlive&Contentid=1000000001000001828&livemode=1&stbId=3,itv,{},http-403,128,0,0,,,,fail
+江苏卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265030/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265030&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+江苏卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000014861/1.m3u8?channel-id=wasusyt&Contentid=6000000001000014861&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+江苏卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226310/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+江西卫视,卫视,http://107.150.60.122/live/jxwshd.m3u8,guovin,{},ok,733,1208,200001,h264,1920,1080,pass
+江西卫视,卫视,http://112.27.5.218:9901/tsfile/live/faacts/0138_1.m3u8?key=txiptv&playlive=1&authid=0,guovin,{},ok,92,237,200001,h264,1920,1080,pass
+江西卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub,guovin,{},ok,761,1310,200001,h264,1920,1080,pass
+江西卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jxwshd,guovin,{},ok,1307,1461,200001,h264,1920,1080,pass
+江西卫视,卫视,https://live.264788.xyz/channel/jiangxiweishi?streamid=555198f31caa33506ac6abb70d788959&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6463,6463,200001,h264,1920,1080,pass
+江西卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225705/index.m3u8,cn,{},no-response,10006,0,0,,,,fail
+江西卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225764/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+江西卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265032/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265032&livemode=1&stbId=3,itv,{},http-403,159,0,0,,,,fail
+江西卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000006000268001/1.m3u8?channel-id=ystenlive&Contentid=1000000006000268001&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+江西卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226344/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+河北卫视,卫视,http://120.76.248.139/live/bfgd/4200000108.m3u8,guovin,{},seg-http-0,154,10018,0,,,,fail
+河北卫视,卫视,http://204.12.221.218:8181/3m1080p/hews.m3u8,guovin,{},ok,852,1424,200001,h264,1920,1080,pass
+河北卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/hewshd.m3u8?auth=testpub,guovin,{},ok,754,1383,200001,h264,1920,1080,pass
+河北卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hewshd,guovin,{},ok,1205,1166,200001,h264,1920,1080,pass
+河北卫视,卫视,https://event.pull.hebtv.com/live/live101.m3u8,guovin,{},ok,319,155,200001,h264,3840,2160,pass
+河北卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225750/index.m3u8,builtin-json,{},no-response,10004,0,0,,,,fail
+河北卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000006000040016/1.m3u8?channel-id=bestzb&Contentid=5000000006000040016&livemode=1&stbId=3,itv,{},http-403,144,0,0,,,,fail
+河北卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226406/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+河南卫视,卫视,http://107.150.60.122/live/hawshd.m3u8,guovin,{},ok,679,1165,200001,h264,1920,1080,pass
+河南卫视,卫视,http://111.59.139.82:11888/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0,guovin,{},ok,70,186,200001,h264,720,576,pass
+河南卫视,卫视,http://173.208.212.130:8181/720p/haws.m3u8,guovin,{},ok,885,1371,200001,h264,1920,1080,pass
+河南卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub,guovin,{},ok,785,1222,200001,h264,1920,1080,pass
+河南卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hawshd,guovin,{},ok,1216,1434,200001,h264,1920,1080,pass
+河南卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225767/index.m3u8,builtin-json,{},no-response,10005,0,0,,,,fail
+河南卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000011000031119/1.m3u8?channel-id=bestzb&Contentid=5000000011000031119&livemode=1&stbId=3,itv,{},http-403,132,0,0,,,,fail
+河南卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226480/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+浙江卫视,卫视,http://107.150.60.122/live/zjwshd.m3u8,guovin,{},ok,688,1183,200001,h264,1920,1080,pass
+浙江卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub,guovin,{},ok,984,1354,200001,h264,1920,1080,pass
+浙江卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=zjwshd,guovin,{},ok,1128,1267,200001,h264,1280,720,pass
+浙江卫视,卫视,http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8,guovin,{},ok,173,66,200001,h264,1920,1080,pass
+浙江卫视,卫视,https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8,guovin,{},ok,74,96,200001,h264,1920,1080,pass
+浙江卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225703/index.m3u8,cn,{},no-response,10001,0,0,,,,fail
+浙江卫视,卫视,http://39.134.18.194:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226199/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+浙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000014260/1.m3u8?channel-id=ystenlive&Contentid=1000000001000014260&livemode=1&stbId=3,itv,{},http-403,137,0,0,,,,fail
+浙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265031/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265031&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+浙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000007275/1.m3u8?channel-id=bestzb&Contentid=5000000004000007275&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+浙江卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226339/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+海南卫视,卫视,http://120.76.248.139/live/bfgd/4200000473.m3u8,guovin,{},seg-http-0,149,10012,0,,,,fail
+海南卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226154/index.m3u8,guovin,{},no-response,84,0,0,,,,fail
+海南卫视,卫视,http://39.134.24.161:80/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225769/index.m3u8,builtin-json,{},no-response,10001,0,0,,,,fail
+海南卫视,卫视,http://39.135.133.149:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8,builtin-json,{},no-response,10002,0,0,,,,fail
+海南卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000006211/1.m3u8?channel-id=bestzb&Contentid=5000000004000006211&livemode=1&stbId=3,itv,{},http-403,149,0,0,,,,fail
+海南卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+深圳卫视,卫视,http://107.150.60.122/live/szwshd.m3u8,guovin,{},ok,665,1310,200001,h264,1920,1080,pass
+深圳卫视,卫视,http://120.76.248.139/live/bfgd/4200000100.m3u8,guovin,{},seg-http-0,34,10009,0,,,,fail
+深圳卫视,卫视,http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8,guovin,{},ok,596,793,200001,h264,1920,1080,pass
+深圳卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub,guovin,{},ok,895,1283,200001,h264,1920,1080,pass
+深圳卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=szwshd,guovin,{},ok,1190,1354,200001,h264,1920,1080,pass
+深圳卫视,卫视,http://iptv.huuc.edu.cn/hls/szhd.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+深圳卫视,卫视,http://php.jdshipin.com/TVOD/hnyd.php?id=200000001898/460000089800010068,guovin,{},http-302,10380,0,0,,,,fail
+深圳卫视,卫视,http://z.b.bkpcp.top/m.php?id=szws,guovin,{},no-response,10005,0,0,,,,fail
+深圳卫视,卫视,https://smart.pendy.dpdns.org/Smart.php?id=shenzhen,guovin,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221225728/index.m3u8,guovin,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,http://39.134.24.166/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226205/index.m3u8,builtin-json,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265028/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265028&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000007410/1.m3u8?channel-id=bestzb&Contentid=5000000004000007410&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000002116/1.m3u8?channel-id=wasusyt&Contentid=6000000001000002116&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+深圳卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226313/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+湖北卫视,卫视,http://107.150.60.122/live/hbwshd.m3u8,guovin,{},ok,654,1188,200001,h264,1920,1080,pass
+湖北卫视,卫视,http://120.76.248.139/live/bfgd/4200000102.m3u8,guovin,{},seg-http-0,25,10008,0,,,,fail
+湖北卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbwshd,guovin,{},ok,1086,1267,200001,h264,1920,1080,pass
+湖北卫视,卫视,http://iptv.huuc.edu.cn/hls/hbhd.m3u8,guovin,{},no-response,10004,0,0,,,,fail
+湖北卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221225729/index.m3u8,guovin,{},no-response,149,0,0,,,,fail
+湖北卫视,卫视,http://39.134.18.195/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226194/index.m3u8,builtin-json,{},no-response,10005,0,0,,,,fail
+湖北卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000024621/1.m3u8?channel-id=ystenlive&Contentid=1000000001000024621&livemode=1&stbId=3,itv,{},http-403,144,0,0,,,,fail
+湖北卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265023/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265023&livemode=1&stbId=3,itv,{},http-403,124,0,0,,,,fail
+湖北卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000015436/1.m3u8?channel-id=wasusyt&Contentid=6000000001000015436&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+湖北卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226477/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+湖南卫视,卫视,http://107.150.60.122/live/hnwshd.m3u8,guovin,{},ok,663,1320,200001,h264,1920,1080,pass
+湖南卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hnwshd,guovin,{},ok,1164,1165,200001,h264,1920,1080,pass
+湖南卫视,卫视,http://74.91.26.218:82/live/hnwshd.m3u8,guovin,{},ok,1142,1227,200001,h264,1280,720,pass
+湖南卫视,卫视,http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8,guovin,{},ok,205,87,200001,hevc,3840,2160,pass
+湖南卫视,卫视,https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8,guovin,{},ok,103,88,200001,h264,1280,720,pass
+湖南卫视,卫视,http://39.134.18.195/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226211/index.m3u8,builtin-json,{},no-response,10003,0,0,,,,fail
+湖南卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265024/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265024&livemode=1&stbId=3,itv,{},http-403,124,0,0,,,,fail
+湖南卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000006692/1.m3u8?channel-id=bestzb&Contentid=5000000004000006692&livemode=1&stbId=3,itv,{},http-403,132,0,0,,,,fail
+湖南卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000018044/1.m3u8?channel-id=wasusyt&Contentid=6000000001000018044&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+湖南卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226307/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+甘肃卫视,卫视,http://120.76.248.139/live/bfgd/4200000119.m3u8,guovin,{},seg-http-0,39,10012,0,,,,fail
+甘肃卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub,guovin,{},ok,770,1196,200001,h264,1920,1080,pass
+甘肃卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gswshd,guovin,{},ok,1092,1204,200001,h264,1920,1080,pass
+甘肃卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226090/index.m3u8,guovin,{},no-response,82,0,0,,,,fail
+甘肃卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000011000031121/1.m3u8?channel-id=bestzb&Contentid=5000000011000031121&livemode=1&stbId=3,itv,{},http-403,139,0,0,,,,fail
+甘肃卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225635/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+西藏卫视,卫视,http://107.150.60.122/live/xzws.m3u8,guovin,{},ok,668,1291,200001,h264,1920,1080,pass
+西藏卫视,卫视,http://112.27.5.218:9901/tsfile/live/0111_1.m3u8?key=txiptv&playlive=1&authid=0,guovin,{},ok,96,244,200001,mpeg2video,720,576,pass
+西藏卫视,卫视,http://120.76.248.139/live/bfgd/4200000121.m3u8,guovin,{},seg-http-0,153,10011,0,,,,fail
+西藏卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xzws,guovin,{},ok,1126,1294,200001,h264,1280,720,pass
+西藏卫视,卫视,https://live.264788.xyz/channel/xizangweishi?streamid=4b4e8ea919f1cfd5e43deed1d1675251&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6320,6320,200001,h264,1920,1080,pass
+西藏卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226433/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+贵州卫视,卫视,http://107.150.60.122/live/gzwshd.m3u8,guovin,{},ok,690,1279,200001,h264,1920,1080,pass
+贵州卫视,卫视,http://183.207.248.71/gitv/live1/G_GUIZHOU/G_GUIZHOU,cn,{},http-302,10102,0,0,,,,fail
+贵州卫视,卫视,http://204.12.221.218:8181/3m1080p/gzws.m3u8,guovin,{},ok,846,1157,200001,h264,1920,1080,pass
+贵州卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub,guovin,{},ok,775,1406,200001,h264,1920,1080,pass
+贵州卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gzwshd,guovin,{},ok,1107,1411,200001,h264,1920,1080,pass
+贵州卫视,卫视,https://live.264788.xyz/channel/guizhouweishi?streamid=091bd59ea031989839c23459bb8cc9d4&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6463,6463,200001,h264,1920,1080,pass
+贵州卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225793/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+贵州卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000025843/1.m3u8?channel-id=bestzb&Contentid=5000000004000025843&livemode=1&stbId=3,itv,{},http-403,143,0,0,,,,fail
+贵州卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226474/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+辽宁卫视,卫视,http://107.150.60.122/live/lnwshd.m3u8,guovin,{},ok,665,1311,200001,h264,1920,1080,pass
+辽宁卫视,卫视,http://198.204.228.26/live/lnwshd.m3u8,guovin,{},ok,661,1219,200001,h264,1920,1080,pass
+辽宁卫视,卫视,http://204.12.221.218:8181/3m1080p/lnws.m3u8,guovin,{},ok,844,1163,200001,h264,1920,1080,pass
+辽宁卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub,guovin,{},ok,781,1239,200001,h264,1920,1080,pass
+辽宁卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnwshd,guovin,{},ok,1399,1256,200001,h264,1920,1080,pass
+辽宁卫视,卫视,http://39.134.18.195/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226201/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+辽宁卫视,卫视,http://39.134.39.37/PLTV/88888888/224/3221226209/index.m3u8,cn,{},no-response,10006,0,0,,,,fail
+辽宁卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265022/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265022&livemode=1&stbId=3,itv,{},http-403,142,0,0,,,,fail
+辽宁卫视,卫视,http://gslbserv.itv.cmvideo.cn/5000000004000011671/1.m3u8?channel-id=bestzb&Contentid=5000000004000011671&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+辽宁卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226546/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+重庆卫视,卫视,http://107.150.60.122/live/cqwshd.m3u8,guovin,{},ok,730,1213,200001,h264,1920,1080,pass
+重庆卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cqwshd,guovin,{},ok,1198,1204,200001,h264,1920,1080,pass
+重庆卫视,卫视,http://iptv.huuc.edu.cn/hls/cqhd.m3u8,guovin,{},no-response,10005,0,0,,,,fail
+重庆卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226171/index.m3u8,guovin,{},no-response,167,0,0,,,,fail
+重庆卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226202/index.m3u8,builtin-json,{},no-response,10006,0,0,,,,fail
+重庆卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000001096/1.m3u8?channel-id=ystenlive&Contentid=1000000001000001096&livemode=1&stbId=3,itv,{},http-403,137,0,0,,,,fail
+重庆卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265017/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265017&livemode=1&stbId=3,itv,{},http-403,173,0,0,,,,fail
+重庆卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226409/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+陕西卫视,卫视,http://107.150.60.122/live/snwshd.m3u8,guovin,{},ok,696,1317,200001,h264,1920,1080,pass
+陕西卫视,卫视,http://192.151.150.154/live/snwshd.m3u8,guovin,{},ok,660,1169,200001,h264,1920,1080,pass
+陕西卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=snwshd,guovin,{},ok,1096,1247,200001,h264,1920,1080,pass
+陕西卫视,卫视,https://live.264788.xyz/channel/shaanxiweishi?streamid=9dc887dba8ecb4e4143baf4f2373800c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk,guovin,{},ok,6438,6438,200001,h264,1920,1080,pass
+陕西卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225625/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+青海卫视,卫视,http://107.150.60.122/live/qhws.m3u8,guovin,{},ok,740,1231,200001,h264,1920,1080,pass
+青海卫视,卫视,http://120.76.248.139/live/bfgd/4200000111.m3u8,guovin,{},seg-http-0,148,10016,0,,,,fail
+青海卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=qhws,guovin,{},ok,1071,1239,200001,h264,1920,1080,pass
+青海卫视,卫视,https://hls-qhmh.lanzhousobey.cn/qhmh/mhds.m3u8,guovin,{},ok,344,143,1757800,h264,1920,1080,pass
+青海卫视,卫视,https://zby.130519.xyz/PLTV/11/224/3221226105/index.m3u8,guovin,{},no-response,87,0,0,,,,fail
+青海卫视,卫视,http://39.134.115.163:8080/PLTV/88888910/224/3221225727/index.m3u8,cn,{},no-response,10005,0,0,,,,fail
+青海卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000002000013359/1.m3u8?channel-id=ystenlive&Contentid=1000000002000013359&livemode=1&stbId=3,itv,{},http-403,200,0,0,,,,fail
+青海卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225628/index.m3u8,builtin-mobile,{},no-response,10002,0,0,,,,fail
+黑龙江卫视,卫视,http://107.150.60.122/live/hljwshd.m3u8,guovin,{},ok,947,1251,200001,h264,1920,1080,pass
+黑龙江卫视,卫视,http://120.76.248.139/live/bfgd/4200000095.m3u8,guovin,{},seg-http-0,36,10011,0,,,,fail
+黑龙江卫视,卫视,http://198.204.228.26/live/hljwshd.m3u8,guovin,{},ok,734,1290,200001,h264,1920,1080,pass
+黑龙江卫视,卫视,http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub,guovin,{},ok,882,1265,200001,h264,1920,1080,pass
+黑龙江卫视,卫视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hljwshd,guovin,{},ok,1271,1228,200001,h264,1920,1080,pass
+黑龙江卫视,卫视,http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226215/index.m3u8,builtin-json,{},no-response,10001,0,0,,,,fail
+黑龙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000001000001925/1.m3u8?channel-id=ystenlive&Contentid=1000000001000001925&livemode=1&stbId=3,itv,{},http-403,137,0,0,,,,fail
+黑龙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/1000000005000265029/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265029&livemode=1&stbId=3,itv,{},http-403,131,0,0,,,,fail
+黑龙江卫视,卫视,http://gslbserv.itv.cmvideo.cn/6000000001000016510/1.m3u8?channel-id=wasusyt&Contentid=6000000001000016510&livemode=1&stbId=3,itv,{},skipped-cap,,,,,,,skipped
+黑龙江卫视,卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226327/index.m3u8,builtin-mobile,{},skipped-cap,,,,,,,skipped
+BBC Earth,纪录片,https://amg00793-amg00793c6-xumo-us-2669.playouts.now.amagi.tv/BBCStudios-BBCEarthA-hls/playlist.m3u8,us,{},ok,2098,1785,200001,h264,1920,1080,pass
+Curiosity Now,纪录片,https://amg00170-amg00170c4-samsung-gb-4232.playouts.now.amagi.tv/playlist.m3u8,us,{},http-403,1084,0,0,,,,fail
+DocuBay TV,纪录片,https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8,documentary,{},ok,1905,3000,200001,h264,1920,1080,pass
+Documentary+,纪录片,https://ef79b15c8c7c46c7a9de9d33001dbd07.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-859-DOCUMENTARYPLUS-DOCUMENTARYPLUS/mt/documentaryplus/859/hls/master/playlist.m3u8,us,{},ok,1868,1293,200001,h264,1920,1080,pass
+Documentary+ International,纪录片,https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8,documentary,{},ok,3123,1583,200001,h264,1920,1080,pass
+Docurama,纪录片,https://cinedigm.vo.llnwd.net/conssui/amagi_hls_data_xumo1234A-docuramaA/CDN/master.m3u8,freetv,{},no-response,85,0,0,,,,fail
+Docurama,纪录片,https://docurama-plex-ingest.cinedigm.com/playlist.m3u8,us,{},http-403,1151,0,0,,,,fail
+History,纪录片,http://212.5.144.156:8080/history/index.m3u8,us,{},http-403,617,0,0,,,,fail
+History Asia,纪录片,https://freem3u.xyz/api/live/play.m3u8?vid=9856,documentary,{},ok,2691,851,200001,h264,854,480,pass
+History Hit,纪录片,https://lds-timeline-rakuten.amagi.tv/playlist.m3u8,us,{},ok,1874,1391,200001,h264,426,240,pass
+History TV18,纪录片,http://103.154.3.101:5001/live/577.m3u8,documentary,{},no-response,1305,0,0,,,,fail
+National Geographic,纪录片,http://212.5.144.156:8080/natgeo/index.m3u8,us,{},http-403,622,0,0,,,,fail
+National Geographic,纪录片,http://main.light-ott.net:80/play/live.php?mac=00:1A:79:17:28:41&stream=373017&extension=ts&play_token=zCaGy5dtla,documentary,{},http-461,946,0,0,,,,fail
+National Geographic HD East,纪录片,http://198.58.104.90:8989/natgeo/index.m3u8,us,{},ok,412,2729,4152768,mpeg2video,1280,720,pass
+National Geographic Wild HD East,纪录片,http://198.58.104.90:8989/natgeowild/index.m3u8,us,{},ok,400,1846,3077686,mpeg2video,1280,720,pass
+NewTV精品纪录,纪录片,http://gslbserv.itv.cmvideo.cn/1000000004000013730/1.m3u8?channel-id=ystenlive&Contentid=1000000004000013730&livemode=1&stbId=3,itv,{},http-403,131,0,0,,,,fail
+Pluto TV History,纪录片,https://jmp2.uk/plu-5a4d35dfa5c02e717a234f86.m3u8,us,{},ok,1139,1716,200001,h264,854,480,pass
+Smithsonian Channel Pluto TV,纪录片,https://jmp2.uk/plu-6298bd10d88ef000073f16b7.m3u8,documentary,{},ok,1832,1651,200001,h264,854,480,pass
+Smithsonian Channel Pluto TV,纪录片,https://jmp2.uk/plu-63a084934734f30007457b2c.m3u8,documentary,{},ok,2071,1797,200001,h264,854,480,pass
+Smithsonian Channel Selects,纪录片,https://jmp2.uk/plu-5f21ea08007a49000762d349.m3u8,us,{},ok,2057,1988,200001,h264,854,480,pass
+Sony BBC Earth,纪录片,https://cloudplay-sonyliv.pages.dev/bbcearthhd.m3u8,documentary,{},variant-http-403,443,0,0,,,,fail
+TVS Hollywood History,纪录片,https://rpn.bozztv.com/gusa/gusa-tvshollywoohistory/index.m3u8,us,{},ok,3032,1919,200001,h264,640,480,pass
+True History,纪录片,https://linear-188.frequency.stream/dist/glewedtv/188/hls/master/playlist.m3u8,us,{},ok,1608,766,200001,h264,1280,720,pass
+上海纪实,纪录片,http://iptv.huuc.edu.cn/hls/docuchina.m3u8,guovin,{},no-response,10006,0,0,,,,fail
+上海纪实,纪录片,https://stream1.freetv.fun/shang-hai-ji-shi-ren-wen-1.m3u8,guovin,{},no-response,10001,0,0,,,,fail
+上海纪实,纪录片,https://stream1.freetv.fun/ipv6-shang-hai-ji-shi-ren-wen-2.m3u8,guovin,{},no-response,10002,0,0,,,,fail
+上海纪实,纪录片,https://stream1.freetv.fun/ipv6-shang-hai-ji-shi-ren-wen-3.m3u8,guovin,{},no-response,10006,0,0,,,,fail
+上海纪实,纪录片,https://stream1.freetv.fun/ipv6-shang-hai-ji-shi-ren-wen-5.m3u8,guovin,{},skipped-cap,,,,,,,skipped
+上海纪实人文,纪录片,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225738/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+之江纪录,纪录片,http://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8,guovin,{},ok,47,56,200001,h264,1920,1080,pass
+之江纪录,纪录片,https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8,builtin-json,{},ok,73,84,200001,h264,1920,1080,pass
+之江纪录,纪录片,https://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8,guovin,{},ok,99,85,200001,h264,1280,720,pass
+北京纪实科教,纪录片,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225729/index.m3u8,builtin-mobile,{},no-response,10005,0,0,,,,fail
+求索动物,纪录片,http://gslbserv.itv.cmvideo.cn/6000000002000010046/1.m3u8?channel-id=wasusyt&Contentid=6000000002000010046&livemode=1&stbId=3,itv,{},http-403,219,0,0,,,,fail
+求索生活,纪录片,http://gslbserv.itv.cmvideo.cn/6000000002000003382/1.m3u8?channel-id=wasusyt&Contentid=6000000002000003382&livemode=1&stbId=3,itv,{},http-403,217,0,0,,,,fail
+求索科学,纪录片,http://gslbserv.itv.cmvideo.cn/6000000002000032344/1.m3u8?channel-id=wasusyt&Contentid=6000000002000032344&livemode=1&stbId=3,itv,{},http-403,216,0,0,,,,fail
+求索纪录,纪录片,http://gslbserv.itv.cmvideo.cn/6000000002000032052/1.m3u8?channel-id=wasusyt&Contentid=6000000002000032052&livemode=1&stbId=3,itv,{},http-403,154,0,0,,,,fail
+精品纪录,纪录片,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225672/index.m3u8,builtin-mobile,{},no-response,10006,0,0,,,,fail
+纪实人文,纪录片,http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8,cn,{},no-response,10005,0,0,,,,fail
+纪实人文,纪录片,http://gslbserv.itv.cmvideo.cn/1000000005000265021/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265021&livemode=1&stbId=3,itv,{},http-403,125,0,0,,,,fail
+纪实人文,纪录片,http://gslbserv.itv.cmvideo.cn/5000000004000010282/1.m3u8?channel-id=bestzb&Contentid=5000000004000010282&livemode=1&stbId=3,itv,{},http-403,122,0,0,,,,fail
+纪实人文,纪录片,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225738/index.m3u8,guovin,{},no-response,10005,0,0,,,,fail
+纪实人文,纪录片,https://stream1.freetv.fun/ipv6-ji-shi-ren-wen-12.m3u8,guovin,{},no-response,10003,0,0,,,,fail
+纪实科教,纪录片,http://gslbserv.itv.cmvideo.cn/1000000001000001910/1.m3u8?channel-id=ystenlive&Contentid=1000000001000001910&livemode=1&stbId=3,itv,{},http-403,109,0,0,,,,fail
+纪实科教,纪录片,http://gslbserv.itv.cmvideo.cn/1000000005000265020/1.m3u8?channel-id=ystenlive&Contentid=1000000005000265020&livemode=1&stbId=3,itv,{},http-403,113,0,0,,,,fail
+金鹰纪实,纪录片,http://iptv.huuc.edu.cn/hls/gedocu.m3u8,guovin,{},no-response,10006,0,0,,,,fail
+金鹰纪实,纪录片,http://rrs01.hw.gmcc.net:8088/PLTV/81/224/3221226667/1.m3u8,guovin,{},no-response,10002,0,0,,,,fail
+金鹰纪实,纪录片,https://hls-gateway.vpstv.net/streams/708834.m3u8,guovin,{},http-403,180,0,0,,,,fail
+金鹰纪实,纪录片,https://stream1.freetv.fun/jin-ying-ji-shi-22.ctv,guovin,{},no-response,10004,0,0,,,,fail
+金鹰纪实,纪录片,https://stream1.freetv.fun/jin-ying-ji-shi-35.m3u8,guovin,{},no-response,10006,0,0,,,,fail
+金鹰纪实,纪录片,http://gslbserv.itv.cmvideo.cn/5000000011000031203/1.m3u8?channel-id=bestzb&Contentid=5000000011000031203&livemode=1&stbId=3,itv,{},http-403,119,0,0,,,,fail
+J2,港台综艺,https://hls-gateway.vpstv.net/streams/476932.m3u8,guovin,{},http-403,364,0,0,,,,fail
+三立台灣台,港台综艺,https://hls-gateway.vpstv.net/streams/477050.m3u8,guovin,{},http-403,338,0,0,,,,fail
+中天綜合台,港台综艺,http://23.237.10.66:16372,tw,{},no-response,5076,0,0,,,,fail
+明珠台,港台综艺,https://hls-gateway.vpstv.net/streams/476936.m3u8,guovin,{},http-403,154,0,0,,,,fail
+星河頻道,港台综艺,http://php.jdshipin.com/TVOD/iptv.php?id=xinghe,guovin,{},ok,2028,672,200001,h264,1280,720,pass
+星河頻道,港台综艺,http://php.jdshipin.com:8880/smt.php?id=Xinhe,guovin,{},http-302,10284,0,0,,,,fail
+星河頻道,港台综艺,http://r.jdshipin.com/Voac4,guovin,{},ok,1323,551,200001,h264,1920,1080,pass
+星河頻道,港台综艺,http://r.jdshipin.com/sXuuD,guovin,{},ok,721,297,200001,h264,1280,720,pass
+星河頻道,港台综艺,https://iptv.707626.xyz/ch/35a8b1635c056f83fcb56fe163a0b487/master.m3u8,guovin,{},no-response,88,0,0,,,,fail
+東森洋片台,港台综艺,http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34904,guovin,{},ok,5499,5499,627732,h264,1280,720,pass
+東森洋片台,港台综艺,https://hls-gateway.vpstv.net/streams/476997.m3u8,guovin,{},http-403,274,0,0,,,,fail
+東森綜合台,港台综艺,https://hls-gateway.vpstv.net/streams/476987.m3u8,guovin,{},http-403,446,0,0,,,,fail
+東森電影台,港台综艺,https://hls-gateway.vpstv.net/streams/476995.m3u8,guovin,{},http-403,187,0,0,,,,fail
+東森電影台,港台综艺,https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv,guovin,{},no-response,10006,0,0,,,,fail
+民視台灣台,港台综艺,http://seb.sason.top/ptv/ftv.php?id=tw,news,{},no-response,21,0,0,,,,fail
+民視第一台,港台综艺,http://seb.sason.top/ptv/ftv.php?id=dy,tw,{},no-response,17,0,0,,,,fail
+澳視澳門,港台综艺,http://61.244.22.4/ch1/ch1.live/playlist.m3u8,freetv,{},no-response,10005,0,0,,,,fail
+澳視澳門,港台综艺,https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8,freetv,{},no-response,5279,0,0,,,,fail
+澳視澳門,港台综艺,https://live3.tdm.com.mo/ch5/info_ch5.live/playlist.m3u8,news,{},no-response,10003,0,0,,,,fail
+澳視澳門,港台综艺,https://live3.tdm.com.mo/ch6/hd_ch6.live/playlist.m3u8,freetv,{},no-response,10005,0,0,,,,fail
+緯來電影台,港台综艺,https://hls-gateway.vpstv.net/streams/477063.m3u8,guovin,{},http-403,471,0,0,,,,fail
+華視,港台综艺,rtmp://59.124.75.138:1935/sat/tv111,tw,{},untested-protocol,0,0,0,,,,fail
+龍祥時代電影台,港台综艺,http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34825,guovin,{},ok,4624,4624,3386968,h264,1280,720,pass

@@ -133,6 +133,8 @@ class TVModel(var tv: TV) : ViewModel() {
                 listOf(SourceType.HLS)
             } else if (path.lowercase().endsWith(".mpd")) {
                 listOf(SourceType.DASH)
+            } else if (path.lowercase().endsWith(".flv")) {
+                listOf(SourceType.PROGRESSIVE)
             } else if (scheme.lowercase() == "rtsp") {
                 listOf(SourceType.RTSP)
             } else if (scheme.lowercase() == "rtmp") {

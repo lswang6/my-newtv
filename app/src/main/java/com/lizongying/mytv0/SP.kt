@@ -62,7 +62,7 @@ object SP {
 
     const val DEFAULT_CHANNEL_REVERSAL = false
     const val DEFAULT_CHANNEL_NUM = false
-    const val DEFAULT_TIME = true
+    const val DEFAULT_TIME = false
     const val DEFAULT_BOOT_STARTUP = false
     const val DEFAULT_CONFIG_URL = ""
     const val DEFAULT_PROXY = ""

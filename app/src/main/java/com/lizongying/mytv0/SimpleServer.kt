@@ -23,6 +23,7 @@ import io.github.lizongying.Gua
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 import java.io.File
 import java.nio.charset.StandardCharsets
 
@@ -40,6 +41,7 @@ class SimpleServer(private val context: Context, private val viewModel: MainView
     }
 
     override fun serve(session: IHTTPSession): Response {
+        if (session.uri.startsWith("/fh/")) return handleFengshows(session.uri)
         return when (session.uri) {
             "/api/settings" -> handleSettings()
             "/api/sources" -> handleSources()
@@ -289,6 +291,33 @@ class SimpleServer(private val context: Context, private val viewModel: MainView
             )
         }
         return newFixedLengthResponse(Response.Status.OK, "text/plain", response)
+    }
+
+    private fun handleFengshows(uri: String): Response {
+        return try {
+            val id = uri.removePrefix("/fh/").removeSuffix(".flv")
+            val request = okhttp3.Request.Builder()
+                .url("https://m.fengshows.com/api/v3/hub/live/auth-url?live_id=$id&live_qa=HD")
+                .header("token", "")
+                .build()
+            val body = HttpClient.okHttpClient.newCall(request).execute().use {
+                if (!it.isSuccessful) throw Exception("fengshows status ${it.codeAlias()}")
+                it.bodyAlias()?.string() ?: ""
+            }
+            val liveUrl = JSONObject(body).getJSONObject("data").getString("live_url")
+            Log.i(TAG, "fh $id -> $liveUrl")
+            newFixedLengthResponse(Response.Status.FOUND, MIME_PLAINTEXT, "").apply {
+                addHeader("Location", liveUrl)
+            }
+        } catch (e: Exception) {
+            Log.e(TAG, "handleFengshows", e)
+            newFixedLengthResponse(
+                object : NanoHTTPD.Response.IStatus {
+                    override fun getRequestStatus() = 502
+                    override fun getDescription() = "502 Bad Gateway"
+                }, MIME_PLAINTEXT, e.message ?: "error"
+            )
+        }
     }
 
     private fun readBody(session: IHTTPSession): String? {

@@ -1,0 +1,1114 @@
+[
+ {
+  "group": "央视",
+  "title": "CCTV1 综合",
+  "logo": "https://i.imgur.com/TpA3cUl.png",
+  "uris": [
+   "http://74.91.26.218:82/live/cctv1hd.m3u8",
+   "http://198.204.228.26/live/cctv1hd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV2 财经",
+  "logo": "https://i.imgur.com/ILamhwU.png",
+  "uris": [
+   "http://74.91.26.218:82/live/cctv2hd.m3u8",
+   "http://198.204.228.26/live/cctv2hd.m3u8",
+   "http://204.12.221.218:8181/3m1080p/cctv2.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV3 综艺",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-3.png",
+  "uris": [
+   "http://112.30.73.119:229/tsfile/live/0003_2.m3u8?key=txiptv&playlive=0&authid=0",
+   "http://74.91.26.218:82/live/cctv3hd.m3u8",
+   "http://107.150.60.122/live/cctv3hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV4 中文国际",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-4.png",
+  "uris": [
+   "http://107.150.60.122/live/cctv4hd.m3u8",
+   "http://74.91.26.218:82/live/cctv4hd.m3u8",
+   "http://173.208.212.130:8181/1080p/cctv4.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV4 欧洲",
+  "logo": "https://i.imgur.com/kx8metk.png",
+  "uris": [
+   "https://dash2.antik.sk/live/test_cctv_tizen/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV5 体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-5.png",
+  "uris": [
+   "http://112.30.73.119:9901/tsfile/live/0005_2.m3u8?key=txiptv&playlive=0&authid=0",
+   "http://107.150.60.122/live/cctv5hd.m3u8",
+   "http://173.208.212.130:8181/720p/cctv5.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV5+ 体育赛事",
+  "logo": "https://i.imgur.com/OK8mdJV.png",
+  "uris": [
+   "https://myip.pdtvhd.com/Sports/streams/CCTV5pul.m3u8",
+   "http://223.78.65.165:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv5p.m3u8?auth=test20251009"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV6 电影",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-6.png",
+  "uris": [
+   "http://198.204.240.250:82/live/cctv6.m3u8",
+   "http://69.30.245.50/live/cctv6.m3u8",
+   "http://74.91.26.218:82/live/cctv6hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV7 国防军事",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-7.png",
+  "uris": [
+   "http://107.150.60.122/live/cctv7hd.m3u8",
+   "http://74.91.26.218:82/live/cctv7hd.m3u8",
+   "http://207.56.13.146:81/cdnlive/cctv7.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV8 电视剧",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-8.png",
+  "uris": [
+   "http://69.30.245.50/live/cctv8.m3u8",
+   "http://bztv.tvbus.cc:8081/cdnlive/cctv8.m3u8",
+   "http://207.56.13.146:81/cdnlive/cctv8.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV9 纪录",
+  "logo": "https://i.imgur.com/3tivvMm.png",
+  "uris": [
+   "https://xykt-fix.github.io/Y77.m3u8",
+   "http://192.151.150.154/live/cctv9hd.m3u8",
+   "http://107.150.60.122/live/cctv9hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV10 科教",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-10.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv10hd.m3u8?auth=test20251009",
+   "http://bztv.tvbus.cc:8081/cdnlive/cctv10.m3u8",
+   "http://204.12.221.218:8181/3m1080p/cctv10.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV11 戏曲",
+  "logo": "https://i.imgur.com/CjOWx7L.png",
+  "uris": [
+   "http://74.91.26.218:82/live/cctv11hd.m3u8",
+   "http://198.204.228.26/live/cctv11hd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv11hd.m3u8?auth=test20251009"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV12 社会与法",
+  "logo": "https://i.imgur.com/3yTuiOM.png",
+  "uris": [
+   "http://74.91.26.218:82/live/cctv12hd.m3u8",
+   "http://204.12.221.218:8181/3m1080p/cctv12.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/cctv12hd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV13 新闻",
+  "logo": "https://i.imgur.com/6MTar6J.png",
+  "uris": [
+   "http://74.91.26.218:82/live/cctv13hd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv13hd",
+   "http://bztv.tvbus.cc:8081/cdnlive/cctv13.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV14 少儿",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-14.png",
+  "uris": [
+   "http://204.12.221.218:8181/3m1080p/cctv14.m3u8",
+   "http://198.204.228.26/live/cctv14hd.m3u8",
+   "http://74.91.26.218:82/live/cctv14hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV15 音乐",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-15.png",
+  "uris": [
+   "http://198.204.228.26/live/cctv15hd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv15hd",
+   "http://74.91.26.218:82/live/cctv15hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV16 奥林匹克",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-16.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqpub/cctv16hd.m3u8?auth=testpub",
+   "http://207.56.13.146:81/cdnlive/cctv16.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv16hd.m3u8?auth=test20251009"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CCTV17 农业农村",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/CCTV-17.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqbv/cctv17hd.m3u8?auth=test20251009",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv17hd",
+   "http://74.91.26.218:82/live/cctv17hd.m3u8"
+  ]
+ },
+ {
+  "group": "央视",
+  "title": "CGTN",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/960px-CGTN.svg.png",
+  "uris": [
+   "https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8"
+  ]
+ },
+ {
+  "group": "凤凰",
+  "title": "凤凰资讯台",
+  "logo": "https://gitee.com/suxuang/logo/raw/master/mylogo/凤凰资讯台.png",
+  "uris": [
+   "http://r.jdshipin.com/0Rp07",
+   "http://php.jdshipin.com/TVOD/iptv.php?id=fhzx",
+   "http://43.152.224.209/qctv.fengshows.cn/live/0701pin72.flv"
+  ]
+ },
+ {
+  "group": "凤凰",
+  "title": "凤凰香港台",
+  "logo": "https://gitee.com/suxuang/logo/raw/master/mylogo/凤凰香港台.png",
+  "uris": [
+   "http://r.jdshipin.com/NfC0f",
+   "http://r.jdshipin.com/yDoTN",
+   "http://php.jdshipin.com/TVOD/iptv.php?id=fhhk"
+  ]
+ },
+ {
+  "group": "凤凰",
+  "title": "凤凰卫视中文台",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/凤凰中文.png",
+  "uris": [
+   "https://7612-5516-affc-d88b.kylintv.tv/live/pxinhd_iphone.m3u8"
+  ]
+ },
+ {
+  "group": "港台新闻",
+  "title": "無綫新聞台",
+  "logo": "https://live.fanmingming.cn/tv/无线新闻台.png",
+  "uris": [
+   "http://php.jdshipin.com/TVOD/iptv.php?id=wxxw",
+   "https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8",
+   "http://r.jdshipin.com/CkuBd"
+  ]
+ },
+ {
+  "group": "港台新闻",
+  "title": "翡翠台",
+  "logo": "https://gitee.com/suxuang/logo/raw/master/mylogo/翡翠台.png",
+  "uris": [
+   "http://r.jdshipin.com/GeWKr",
+   "http://103.172.187.30:12000/stream/mytv/null-1/master.m3u8",
+   "http://r.jdshipin.com/n90gt"
+  ]
+ },
+ {
+  "group": "港台新闻",
+  "title": "ViuTV",
+  "logo": "https://live.fanmingming.cn/tv/VIUTV.png",
+  "uris": [
+   "http://php.jdshipin.com/TVOD/iptv.php?id=viutv2",
+   "http://r.jdshipin.com/TcKr2",
+   "http://r.jdshipin.com/vSJvl"
+  ]
+ },
+ {
+  "group": "港台新闻",
+  "title": "RTHK 31",
+  "logo": "https://i.imgur.com/kf818kM.png",
+  "uris": [
+   "https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8"
+  ]
+ },
+ {
+  "group": "港台新闻",
+  "title": "TVBS",
+  "logo": "https://i.imgur.com/4S1rkhm.png",
+  "uris": [
+   "http://38.64.72.148/hls/modn/list/4005/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "BBC News",
+  "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BBC_NEWS/images/LOGO_HD/image.png",
+  "uris": [
+   "http://23.237.104.106:8080/USA_BBC_NEWS/index.m3u8",
+   "http://46.32.176.50/bbcworld/index.m3u8",
+   "http://138.121.15.230:9002/BBC-NEWS/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Al Jazeera English",
+  "logo": "https://i.imgur.com/7bRVpnu.png",
+  "uris": [
+   "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+   "http://stream.mcquack.net/131/index.m3u8",
+   "https://live-hls-web-aja2-gcp.thehlive.com/AJA2/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Sky News",
+  "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1404.png",
+  "uris": [
+   "https://xemzi.short.gy/1000018"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "France 24 English",
+  "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_FRANCE_24/images/LOGO_HD/image.png",
+  "uris": [
+   "http://nmk.ioapk.com:5050/4gtv-live146/index.m3u8",
+   "https://live.france24.com/hls/live/2037218-b/F24_EN_HI_HLS/master_5000.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "DW English",
+  "logo": "https://i.imgur.com/8MRNFb9.png",
+  "uris": [
+   "https://amg01644-amg01644c1-amgplt0343.playout.now3.amagi.tv/ts-eu-w1-n2/playlist/amg01644-amg01644c1-amgplt0343/playlist.m3u8",
+   "https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "NHK World-Japan",
+  "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/NHK_World_Japan.png",
+  "uris": [
+   "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8",
+   "http://nmk.ioapk.com:5050/4gtv-live168/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Euronews English",
+  "logo": "https://images-2.rakuten.tv/storage/global-live-channel/translation/artwork/bc84c3b7-6008-4ee3-8f6a-e4bb4365f082-width200-quality90.jpeg",
+  "uris": [
+   "https://cdn-euronews.akamaized.net/live/eds/euronews-pl/26382/index.m3u8",
+   "https://dash4.antik.sk/live/test_euronews/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Bloomberg TV",
+  "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1074.png",
+  "uris": [
+   "https://bloomberg.com/media-manifest/streams/eu.m3u8",
+   "https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8",
+   "https://bloomberg.com/media-manifest/streams/us.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "CNBC",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/CNBC_2025.svg/960px-CNBC_2025.svg.png",
+  "uris": [
+   "https://amg01079-nbcuuk-amg01079c2-samsung-gb-1258.playouts.now.amagi.tv/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "CNA",
+  "logo": "https://i.imgur.com/awIDugE.png",
+  "uris": [
+   "https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8",
+   "https://mumt05.tangotv.in/87NeALx2CNA/index.m3u8",
+   "https://live1.mediadesk.al/cnatvlive.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Arirang",
+  "logo": "https://i.imgur.com/Jdy3WNm.png",
+  "uris": [
+   "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8",
+   "http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8",
+   "http://amdlive.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/chunklist_b2256000_sleng.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "TRT World",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/TRT_World.svg/960px-TRT_World.svg.png",
+  "uris": [
+   "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
+   "https://dash2.antik.sk/live/test_trt_world_atktv/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "ABC News Australia",
+  "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/ABC_News_Channel.svg/500px-ABC_News_Channel.svg.png",
+  "uris": [
+   "https://c.mjh.nz/abc-news.m3u8",
+   "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "CBS News",
+  "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/united-states/cbs-news-us.png",
+  "uris": [
+   "https://dai.google.com/linear/hls/event/Sid4xiTQTkCT1SLu6rjUSQ/master.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "NBC News Now",
+  "logo": "https://i.imgur.com/JZt2qh5.png",
+  "uris": [
+   "https://d1si3n1st4nkgb.cloudfront.net/10502/88896001/hls/master.m3u8?ads.xumo_channelId=88896001",
+   "https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99984003"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Fox News",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/960px-Fox_News_Channel_logo.svg.png",
+  "uris": [
+   "http://138.121.15.230:9002/FOX-NEWS/index.m3u8"
+  ]
+ },
+ {
+  "group": "国际新闻",
+  "title": "Reuters TV",
+  "logo": "https://i.imgur.com/6eQ2nCJ.png",
+  "uris": [
+   "https://amg00453-reuters-amg00453c1-rakuten-uk-2110.playouts.now.amagi.tv/playlist/amg00453-reuters-reuters-rakutenuk/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "广东体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/广东体育.png",
+  "uris": [
+   "http://php.jdshipin.com/PLTV/iptv.php?id=gdty",
+   "http://php.jdshipin.com/TVOD/iptv.php?id=gdty",
+   "https://epg.pw/stream/7b470f9fc5c305db0c8622117b7b25ca00eb35ba3e93e865cf0ff9df5c736681.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "纬来体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/纬来体育.png",
+  "uris": [
+   "https://epg.pw/stream/ab6df63b64d0cc44a1f4f029ed847a26fa54a7aebd455578fb05a63f02c22f4b.m3u8",
+   "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8",
+   "https://epg.pw/stream/8855a9936e37e608a0ec8a014cce1673dee9c5d68d560da376cc92e5edef2b25.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "风云足球",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/风云足球.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=fyzq",
+   "http://38.75.136.137:98/gslb/dsdqpub/fyzq.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "足球频道",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/足球频道.png",
+  "uris": [
+   "https://epg.pw/stream/c7df950876e6a1ceb8be74ee86f9f702cebbbae29f1d15124ef8f86fd43161cf.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "江苏体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/江苏体育.png",
+  "uris": [
+   "https://live.chinacert.cftest5.cn/cnmg/live/626064707"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "天津体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/天津体育.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv5",
+   "http://38.75.136.137:98/gslb/dsdqpub/tjtv5.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "精品体育",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/精品体育.png",
+  "uris": [
+   "https://epg.pw/stream/f7556eccd4ae06b0c2991fdc7a4f8388496559f728cc82459a8e50346040e226.m3u8",
+   "https://epg.pw/stream/866a097a0907c9832440f8df38272dd555abf05200dfbafcc137e214c9b30ca7.m3u8",
+   "https://epg.pw/stream/94ed0232b61ce8d89883160a4cdfbfc8f3225cae70ef8e17d93eec249a3c8ad6.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "ESPN",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
+  "uris": [
+   "http://181.78.197.59:8000/play/a07z/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "ESPN 4",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/ESPN_4_logo.svg/960px-ESPN_4_logo.svg.png",
+  "uris": [
+   "http://181.78.197.59:8000/play/a07n/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "beIN SPORTS XTRA",
+  "logo": "https://i.ibb.co/HT49GPmB/XTRA-2.png",
+  "uris": [
+   "https://bein-xtra-bein.amagi.tv/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "NBA TV",
+  "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/NBA_TV.svg/960px-NBA_TV.svg.png",
+  "uris": [
+   "https://cdn1.ayitistream.com/NBATV/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Tennis Channel",
+  "logo": "https://i.imgur.com/tsljAnY.png",
+  "uris": [
+   "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Golf Channel",
+  "logo": "https://www.sms.cz/kategorie/televize/bmp/loga/velka/golfchannel.png",
+  "uris": [
+   "https://dash4.antik.sk/live/test_golf_channel/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Fox Sports 1",
+  "logo": "https://i.imgur.com/O9BapV9.png",
+  "uris": [
+   "http://85.237.89.160:9590/usa-s/FOX-SPORTS-1/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Setanta Sports",
+  "logo": "https://scontent.flwo7-1.fna.fbcdn.net/v/t39.30808-6/364716463_853281776306116_3365262792418742642_n.jpg?stp=dst-webp_p843x403_q70&_nc_cat=109&ccb=1-7&_nc_sid=cc3e7e&_nc_ohc=cdryMbRE2MwQ7kNvwFeyihF&_nc_oc=Adqncj9xKrtg2aNKgZmuX6LGZlSfpAmh_HQEEkBciEg1tXwQqFuMtohNjM8-Z8hU_Ho&_nc_zt=23&_nc_ht=scontent.flwo7-1.fna&_nc_gid=nGCZSHk6GKFYzjwKY-aGWw&_nc_ss=7b289&oh=00_AQFswjCYfEBKcXRO2DpTL1Dz7arAN-82K47gi8qtwljzrw&oe=6A862750",
+  "uris": [
+   "http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/8P7MBSH7RRPL53/20074/index.m3u8"
+  ],
+  "headers": {
+   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+  }
+ },
+ {
+  "group": "体育",
+  "title": "MLB Strike Zone",
+  "logo": "https://i.imgur.com/uMI1ySO.png",
+  "uris": [
+   "http://23.237.104.106:8080/USA_MLB_STRIKE_ZONE/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "NHL Network",
+  "logo": "https://i.imgur.com/UNZ8bef.png",
+  "uris": [
+   "https://nhl-firetv.amagi.tv/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Star Sports Select 2",
+  "logo": "https://i.imgur.com/FtRT73R.png",
+  "uris": [
+   "http://tvsen7.aynascope.net/ssport2hd/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Star Sports 2",
+  "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_STAR_SPORTS_2/images/LOGO_HD/image.png",
+  "uris": [
+   "http://tvsen5.aynascope.net/cXPB2LKkErN9/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "FIFA+ United States",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/FIFA%2B_(2025).svg/960px-FIFA%2B_(2025).svg.png",
+  "uris": [
+   "https://d2w9q46ikgrcwx.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-of5cbk3sav3w5/v1/sysdata_s_p_a_fifa_7/samsungheadend_us/latest/main/hls/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "TSN The Ocho",
+  "logo": "https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CA1400003R3_20240709T002034SQUARE.png",
+  "uris": [
+   "https://d3pnbvng3bx2nj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rds8g35qfqrnv/TSN_The_Ocho.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "ESPN8 The Ocho",
+  "logo": "https://images.fubo.tv/channel-config-ui/station-logos/on-dark/espn_8_the_ocho_bw.png",
+  "uris": [
+   "https://d3b6q2ou5kp8ke.cloudfront.net/ESPNTheOcho.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Women's Sports Network",
+  "logo": "https://i.imgur.com/rhIwUcQ.png",
+  "uris": [
+   "https://d39accvx65hq9o.cloudfront.net/Womens_Sports_Network.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "PGA Tour",
+  "logo": "https://i.imgur.com/J0TY9dG.png",
+  "uris": [
+   "https://d11k1mnrgfposz.cloudfront.net/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "MSG",
+  "logo": "https://i.imgur.com/SEQFh0P.png",
+  "uris": [
+   "http://23.237.104.106:8080/USA_MSG/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "DD Sports",
+  "logo": "https://dtil.tmsimg.com/assets/s158255_ld_h15_aa.png?lock=720x540",
+  "uris": [
+   "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "FIFA+ Women",
+  "logo": "https://i.imgur.com/xy9ZxVO.png",
+  "uris": [
+   "https://cffda8ff.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9GSUZBUGx1c3dvbWVuX0hMUw/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "FITE 24/7",
+  "logo": "https://i.imgur.com/ESV6qgH.png",
+  "uris": [
+   "https://d3d85c7qkywguj.cloudfront.net/scheduler/scheduleMaster/263.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "Sky Racing 1",
+  "logo": "https://i.imgur.com/Hf0EiaW.png",
+  "uris": [
+   "https://636ffd31f0e12.streamlock.net/RacingStream1/RacingStream1/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "体育",
+  "title": "NBC Sports NOW",
+  "logo": "https://i.imgur.com/EzNf2Yx.png",
+  "uris": [
+   "https://d4whmvwm0rdvi.cloudfront.net/10007/99993008/hls/master.m3u8?ads.xumo_channelId=99993008"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "湖南卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/湖南卫视.png",
+  "uris": [
+   "https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hnwshd",
+   "http://74.91.26.218:82/live/hnwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "浙江卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/浙江卫视.png",
+  "uris": [
+   "http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8",
+   "https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8",
+   "http://107.150.60.122/live/zjwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "江苏卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/江苏卫视.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqbv/jswshd.m3u8?auth=test20251009",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jswshd",
+   "http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "东方卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/东方卫视.png",
+  "uris": [
+   "https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dfwshd",
+   "http://107.150.60.122/live/dfwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "北京卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/北京卫视.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqbv/bjwshd.m3u8?auth=test20251009",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=bjwshd",
+   "http://107.150.60.122/live/bjwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "安徽卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/安徽卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ahwshd",
+   "http://204.12.221.218:8181/3m1080p/ahws.m3u8",
+   "http://107.150.60.122/live/ahwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "山东卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/山东卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sdwshd",
+   "http://107.150.60.122/live/sdwshd.m3u8",
+   "http://198.204.228.26/live/sdwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "天津卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/天津卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjwshd",
+   "http://38.75.136.137:98/gslb/dsdqpub/tjwshd.m3u8?auth=testpub",
+   "http://107.150.60.122/live/tjwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "深圳卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/深圳卫视.png",
+  "uris": [
+   "http://38.64.72.148:80/hls/modn/list/4007/playlist.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/szwshd.m3u8?auth=testpub",
+   "http://107.150.60.122/live/szwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "广东卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/广东卫视.png",
+  "uris": [
+   "https://txmov2.a.kwimgs.com/upic/2023/01/26/09/BMjAyMzAxMjYwOTE3NDVfNzM5MzQzNzIyXzk0NjI1OTUwNTA3XzBfMw==_b_B81ddda927d33445d544befd008e60109.mp4",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdwshd",
+   "http://107.150.60.122/live/gdwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "湖北卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/湖北卫视.png",
+  "uris": [
+   "http://107.150.60.122/live/hbwshd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbwshd"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "四川卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/四川卫视.png",
+  "uris": [
+   "http://107.150.60.122/live/scwshd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=scwshd",
+   "http://38.75.136.137:98/gslb/dsdqpub/scwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "重庆卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/重庆卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cqwshd",
+   "http://107.150.60.122/live/cqwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "江西卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/江西卫视.png",
+  "uris": [
+   "http://112.27.5.218:9901/tsfile/live/faacts/0138_1.m3u8?key=txiptv&playlive=1&authid=0",
+   "http://107.150.60.122/live/jxwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/jxwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "河南卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/河南卫视.png",
+  "uris": [
+   "http://111.59.139.82:11888/tsfile/live/0139_1.m3u8?key=txiptv&playlive=1&authid=0",
+   "http://107.150.60.122/live/hawshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/hawshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "河北卫视",
+  "logo": "https://i.imgur.com/Z5Ppzbi.png",
+  "uris": [
+   "https://event.pull.hebtv.com/live/live101.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hewshd",
+   "http://38.75.136.137:98/gslb/dsdqpub/hewshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "辽宁卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/辽宁卫视.png",
+  "uris": [
+   "http://204.12.221.218:8181/3m1080p/lnws.m3u8",
+   "http://198.204.228.26/live/lnwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/lnwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "黑龙江卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/黑龙江卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hljwshd",
+   "http://107.150.60.122/live/hljwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/hljwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "吉林卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/吉林卫视.png",
+  "uris": [
+   "http://221.7.175.154:8445/tsfile/live/1014_1.m3u8?key=txiptv&playlive=1&authid=0",
+   "http://107.150.60.122/live/jlwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/jlwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "东南卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/东南卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dnwshd",
+   "http://107.150.60.122/live/dnwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/dnwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "贵州卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/贵州卫视.png",
+  "uris": [
+   "http://204.12.221.218:8181/3m1080p/gzws.m3u8",
+   "http://107.150.60.122/live/gzwshd.m3u8",
+   "http://38.75.136.137:98/gslb/dsdqpub/gzwshd.m3u8?auth=testpub"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "云南卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/云南卫视.png",
+  "uris": [
+   "http://192.151.150.154/live/ynwshd.m3u8",
+   "http://107.150.60.122/live/ynwshd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=ynwshd"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "广西卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/广西卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gxwshd",
+   "http://38.75.136.137:98/gslb/dsdqpub/gxwshd.m3u8?auth=testpub",
+   "http://198.204.228.26/live/gxwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "陕西卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/陕西卫视.png",
+  "uris": [
+   "http://192.151.150.154/live/snwshd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=snwshd",
+   "http://107.150.60.122/live/snwshd.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "山西卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/山西卫视.png",
+  "uris": [
+   "http://107.150.60.122/live/sxwshd.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sxwshd",
+   "http://204.12.221.218:8181/3m1080p/sxws.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "甘肃卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/甘肃卫视.png",
+  "uris": [
+   "http://38.75.136.137:98/gslb/dsdqpub/gswshd.m3u8?auth=testpub",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gswshd"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "宁夏卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/宁夏卫视.png",
+  "uris": [
+   "http://107.150.60.122/live/nxws.m3u8",
+   "http://198.204.228.26/live/nxws.m3u8",
+   "https://live.264788.xyz/channel/ningxiaweishi?streamid=e1236348f815c36a0429357e5b5c5f10&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "青海卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/青海卫视.png",
+  "uris": [
+   "https://hls-qhmh.lanzhousobey.cn/qhmh/mhds.m3u8",
+   "http://107.150.60.122/live/qhws.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=qhws"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "新疆卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/新疆卫视.png",
+  "uris": [
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xjws",
+   "http://38.75.136.137:98/gslb/dsdqpub/xjws.m3u8?auth=testpub",
+   "http://198.204.228.26/live/xjws.m3u8"
+  ]
+ },
+ {
+  "group": "卫视",
+  "title": "西藏卫视",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/西藏卫视.png",
+  "uris": [
+   "http://107.150.60.122/live/xzws.m3u8",
+   "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=xzws",
+   "https://live.264788.xyz/channel/xizangweishi?streamid=4b4e8ea919f1cfd5e43deed1d1675251&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "之江纪录",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/之江纪录.png",
+  "uris": [
+   "http://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8",
+   "https://ali-m-l.cztv.com/channels/lantian/channel012/1080p.m3u8",
+   "https://ali-m-l.cztv.com/channels/lantian/channel12/720p.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "National Geographic Wild HD East",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/National_Geographic_Wild_logo.svg/960px-National_Geographic_Wild_logo.svg.png",
+  "uris": [
+   "http://198.58.104.90:8989/natgeowild/index.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "National Geographic HD East",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Natgeologo.svg/960px-Natgeologo.svg.png",
+  "uris": [
+   "http://198.58.104.90:8989/natgeo/index.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "BBC Earth",
+  "logo": "https://i.imgur.com/nGSsUd4.png",
+  "uris": [
+   "https://amg00793-amg00793c6-xumo-us-2669.playouts.now.amagi.tv/BBCStudios-BBCEarthA-hls/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "True History",
+  "logo": "https://i.imgur.com/1BHDGXx.png",
+  "uris": [
+   "https://linear-188.frequency.stream/dist/glewedtv/188/hls/master/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "History Asia",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/History_%282021%29.svg/500px-History_%282021%29.svg.png",
+  "uris": [
+   "https://freem3u.xyz/api/live/play.m3u8?vid=9856"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "History Hit",
+  "logo": "https://i.imgur.com/ulHoqlP.png",
+  "uris": [
+   "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "Pluto TV History",
+  "logo": "https://i.imgur.com/XkQD5kM.png",
+  "uris": [
+   "https://jmp2.uk/plu-5a4d35dfa5c02e717a234f86.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "TVS Hollywood History",
+  "logo": "https://i.imgur.com/QtQGyMS.png",
+  "uris": [
+   "https://rpn.bozztv.com/gusa/gusa-tvshollywoohistory/index.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "Smithsonian Channel Pluto TV",
+  "logo": "https://images.pluto.tv/channels/6298bd10d88ef000073f16b7/colorLogoPNG.png",
+  "uris": [
+   "https://jmp2.uk/plu-6298bd10d88ef000073f16b7.m3u8",
+   "https://jmp2.uk/plu-63a084934734f30007457b2c.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "Smithsonian Channel Selects",
+  "logo": "https://i.imgur.com/Kt5j8Vr.png",
+  "uris": [
+   "https://jmp2.uk/plu-5f21ea08007a49000762d349.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "Documentary+",
+  "logo": "https://i.imgur.com/x57klfS.png",
+  "uris": [
+   "https://ef79b15c8c7c46c7a9de9d33001dbd07.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-859-DOCUMENTARYPLUS-DOCUMENTARYPLUS/mt/documentaryplus/859/hls/master/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "Documentary+ International",
+  "logo": "https://i.imgur.com/x57klfS.png",
+  "uris": [
+   "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "纪录片",
+  "title": "DocuBay TV",
+  "logo": "https://i.imgur.com/OGyeLLR.png",
+  "uris": [
+   "https://cc-mgr91yrk4pehy.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-mgr91yrk4pehy/playlist.m3u8"
+  ]
+ },
+ {
+  "group": "港台综艺",
+  "title": "星河頻道",
+  "logo": "https://gitee.com/suxuang/logo/raw/master/mylogo/TVB星河.png",
+  "uris": [
+   "http://r.jdshipin.com/sXuuD",
+   "http://r.jdshipin.com/Voac4",
+   "http://php.jdshipin.com/TVOD/iptv.php?id=xinghe"
+  ]
+ },
+ {
+  "group": "港台综艺",
+  "title": "東森洋片台",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/东森洋片.png",
+  "uris": [
+   "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34904"
+  ]
+ },
+ {
+  "group": "港台综艺",
+  "title": "龍祥時代電影台",
+  "logo": "https://www.xn--rgv465a.top/tvlogo/龙祥电影.png",
+  "uris": [
+   "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34825"
+  ]
+ }
+]

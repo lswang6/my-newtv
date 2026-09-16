@@ -3,7 +3,9 @@ package com.lizongying.mytv0
 import MainViewModel
 import MainViewModel.Companion.CACHE_FILE_NAME
 import android.Manifest
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
@@ -34,8 +36,6 @@ class SettingFragment : Fragment() {
 
     private lateinit var uri: Uri
 
-    private lateinit var updateManager: UpdateManager
-
     private var server = "http://${PortUtil.lan()}:$PORT"
 
     private lateinit var viewModel: MainViewModel
@@ -52,7 +52,7 @@ class SettingFragment : Fragment() {
         _binding = SettingBinding.inflate(inflater, container, false)
 
         binding.versionName.text = "v${context.appVersionName}"
-        binding.version.text = "https://github.com/lizongying/my-tv-0"
+        binding.version.text = REPO_URL
 
         val switchChannelReversal = _binding?.switchChannelReversal
         switchChannelReversal?.isChecked = SP.channelReversal
@@ -128,7 +128,7 @@ class SettingFragment : Fragment() {
         binding.remoteSettings.setOnClickListener {
             val imageModalFragment = ModalFragment()
             val args = Bundle()
-            args.putString(KEY_URL, server)
+            args.putString(KEY_URL, "$server?${Utils.getDateTimestamp().toString().reversed()}")
             imageModalFragment.arguments = args
 
             imageModalFragment.show(requireFragmentManager(), ModalFragment.TAG)
@@ -136,7 +136,17 @@ class SettingFragment : Fragment() {
         }
 
         binding.checkVersion.setOnClickListener {
-            requestInstallPermissions()
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(RELEASES_URL)))
+            } catch (e: ActivityNotFoundException) {
+                Log.w(TAG, "no browser, show qrcode", e)
+                val imageModalFragment = ModalFragment()
+                val args = Bundle()
+                args.putString(KEY_URL, RELEASES_URL)
+                imageModalFragment.arguments = args
+
+                imageModalFragment.show(requireFragmentManager(), ModalFragment.TAG)
+            }
             mainActivity.settingActive()
         }
 
@@ -147,11 +157,11 @@ class SettingFragment : Fragment() {
             mainActivity.settingActive()
         }
 
-        binding.appreciate.setOnClickListener {
+        binding.star.setOnClickListener {
             val imageModalFragment = ModalFragment()
 
             val args = Bundle()
-            args.putInt(ModalFragment.KEY_DRAWABLE_ID, R.drawable.appreciate)
+            args.putString(KEY_URL, REPO_URL)
             imageModalFragment.arguments = args
 
             imageModalFragment.show(requireFragmentManager(), ModalFragment.TAG)
@@ -200,7 +210,7 @@ class SettingFragment : Fragment() {
             binding.clear,
             binding.checkVersion,
             binding.exit,
-            binding.appreciate,
+            binding.star,
         )) {
             i.layoutParams.width = btnWidth
             i.textSize = txtTextSize
@@ -276,8 +286,6 @@ class SettingFragment : Fragment() {
                 }
             }
         }
-
-        updateManager = UpdateManager(context, context.appVersionCode)
 
         return binding.root
     }
@@ -416,29 +424,6 @@ class SettingFragment : Fragment() {
         }
     }
 
-    private fun requestInstallPermissions() {
-        val context = requireContext()
-        val permissionsList = mutableListOf<String>()
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !context.packageManager.canRequestPackageInstalls()) {
-            permissionsList.add(Manifest.permission.REQUEST_INSTALL_PACKAGES)
-        }
-
-        checkAndAddPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE, permissionsList)
-        checkAndAddPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE, permissionsList)
-
-        if (permissionsList.isNotEmpty()) {
-            Log.i(TAG, "ask $permissionsList")
-            ActivityCompat.requestPermissions(
-                requireActivity(),
-                permissionsList.toTypedArray(),
-                PERMISSIONS_REQUEST_CODE
-            )
-        } else {
-            updateManager.checkAndUpdate()
-        }
-    }
-
     private fun requestReadPermissions() {
         val context = requireContext()
         val permissionsList = mutableListOf<String>()
@@ -449,7 +434,7 @@ class SettingFragment : Fragment() {
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 permissionsList.toTypedArray(),
-                PERMISSIONS_REQUEST_CODE
+                PERMISSION_READ_EXTERNAL_STORAGE_REQUEST_CODE
             )
         } else {
             viewModel.importFromUri(uri)
@@ -469,21 +454,6 @@ class SettingFragment : Fragment() {
                 R.string.authorization_failed.showToast()
             }
         }
-        if (requestCode == PERMISSIONS_REQUEST_CODE) {
-            var allPermissionsGranted = true
-            for (result in grantResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    allPermissionsGranted = false
-                    break
-                }
-            }
-            if (allPermissionsGranted) {
-                updateManager.checkAndUpdate()
-            } else {
-                Log.w(TAG, "ask permissions failed")
-                R.string.authorization_failed.showToast()
-            }
-        }
     }
 
     override fun onDestroyView() {
@@ -493,7 +463,8 @@ class SettingFragment : Fragment() {
 
     companion object {
         const val TAG = "SettingFragment"
-        const val PERMISSIONS_REQUEST_CODE = 1
+        const val REPO_URL = "https://github.com/lswang6/my-newtv"
+        const val RELEASES_URL = "$REPO_URL/releases"
         const val PERMISSION_READ_EXTERNAL_STORAGE_REQUEST_CODE = 2
     }
 }
