@@ -8,7 +8,7 @@
 
 - 应用名：我的电视，applicationId `com.lizongying.newmytv`
 - minSdk 21，compileSdk 35
-- 与上游的代码差异很小（详见[与上游的差异](#与上游的差异)），主要是内置频道、凤凰路由和设置页
+- 与上游的代码差异很小（详见[与上游的差异](#与上游的差异)），主要是内置频道、凤凰路由和设置页、去上游联网/上报、简体化
 
 ## 功能与分组
 
@@ -220,10 +220,11 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 5. 新的图标和 banner。
 6. `applicationId` 改为 `com.lizongying.newmytv`，`app_name` 改为"我的电视"。
 7. **设置页** —— 顶部链接指向本仓库、界面文字统一简体中文、"更新应用"打开 Releases、"赞赏作者"改为"Star 项目"（显示仓库二维码），并移除了上游的应用内更新逻辑。
+8. **去联网与简体化** —— 移除上游的崩溃日志上报（lyrics.run），`/api/sources` 改为读取内置列表不再联网，强制简体中文（原为繁体），远程配置网页改为简体。
 
 另外：设置页的"更新应用"现在直接打开本仓库的 [Releases](https://github.com/lswang6/my-newtv/releases) 页面。
 
-代码改动集中在 SimpleServer/TVModel/SP/SettingFragment，上游的应用内更新逻辑已删除，其余是资源文件。
+代码改动集中在 SimpleServer/TVModel/SP/SettingFragment，上游的应用内更新逻辑已删除、去上游联网/上报、简体化，其余是资源文件。
 
 ## 免责声明
 

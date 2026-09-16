@@ -52,10 +52,6 @@ object SP {
 
     private const val KEY_EPG = "epg"
 
-    private const val KEY_VERSION = "version"
-
-    private const val KEY_LOG_TIMES = "log_times"
-
     private const val KEY_SOURCES = "sources"
 
     private const val KEY_SOFT_DECODE = "soft_decode"
@@ -72,7 +68,6 @@ object SP {
     const val DEFAULT_SHOW_ALL_CHANNELS = false
     const val DEFAULT_COMPACT_MENU = true
     const val DEFAULT_DISPLAY_SECONDS = true
-    const val DEFAULT_LOG_TIMES = 10
     const val DEFAULT_SOFT_DECODE = false
 
     // 0 favorite; 1 all
@@ -204,14 +199,6 @@ object SP {
     var epg: String?
         get() = sp.getString(KEY_EPG, DEFAULT_EPG)
         set(value) = sp.edit().putString(KEY_EPG, value).apply()
-
-    var version: String?
-        get() = sp.getString(KEY_VERSION, "")
-        set(value) = sp.edit().putString(KEY_VERSION, value).apply()
-
-    var logTimes: Int
-        get() = sp.getInt(KEY_LOG_TIMES, DEFAULT_LOG_TIMES)
-        set(value) = sp.edit().putInt(KEY_LOG_TIMES, value).apply()
 
     var sources: String?
         get() = sp.getString(KEY_SOURCES, DEFAULT_SOURCES)

@@ -9,7 +9,6 @@ import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import com.lizongying.mytv0.Utils.getUrls
 import com.lizongying.mytv0.data.Global.gson
 import com.lizongying.mytv0.data.Global.typeSourceList
 import com.lizongying.mytv0.data.ReqSettings
@@ -20,9 +19,6 @@ import com.lizongying.mytv0.data.Source
 import com.lizongying.mytv0.requests.HttpClient
 import fi.iki.elonen.NanoHTTPD
 import io.github.lizongying.Gua
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.io.File
 import java.nio.charset.StandardCharsets
@@ -101,44 +97,14 @@ class SimpleServer(private val context: Context, private val viewModel: MainView
         return newFixedLengthResponse(Response.Status.OK, "application/json", response)
     }
 
-    private suspend fun fetchSources(url: String): String {
-        val urls = getUrls(url)
-
-        var sources = ""
-        var success = false
-        for (u in urls) {
-            Log.i(TAG, "request $u")
-            withContext(Dispatchers.IO) {
-                try {
-                    val request = okhttp3.Request.Builder().url(u).build()
-                    val response = HttpClient.okHttpClient.newCall(request).execute()
-
-                    if (response.isSuccessful) {
-                        sources = response.bodyAlias()?.string() ?: ""
-                        success = true
-                    } else {
-                        Log.e(TAG, "Request status ${response.codeAlias()}")
-                    }
-                } catch (e: Exception) {
-                    Log.e(TAG, "fetchSources", e)
-                }
-            }
-
-            if (success) break
-        }
-
-        return sources
-    }
-
     private fun handleSources(): Response {
-        val response = runBlocking(Dispatchers.IO) {
-            fetchSources("https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/sources.txt")
-        }
+        val sources = context.resources.openRawResource(R.raw.sources).bufferedReader()
+            .use { it.readText() }
 
         return newFixedLengthResponse(
             Response.Status.OK,
-            "application/json",
-            Gua().decode(response)
+            MIME_PLAINTEXT,
+            Gua().decode(sources)
         )
     }
 

@@ -68,8 +68,6 @@ class MyTVApplication : Application() {
             shouldWidth = (height * 16.0 / 9.0).toInt()
         }
 
-        Thread.setDefaultUncaughtExceptionHandler(MyTVExceptionHandler(this))
-
         imageHelper = ImageHelper(this)
     }
 
@@ -109,7 +107,7 @@ class MyTVApplication : Application() {
 
     override fun attachBaseContext(base: Context) {
         try {
-            val locale = Locale.TRADITIONAL_CHINESE
+            val locale = Locale.SIMPLIFIED_CHINESE
             val config = Configuration()
             config.setLocale(locale)
             super.attachBaseContext(

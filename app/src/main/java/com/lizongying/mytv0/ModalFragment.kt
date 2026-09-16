@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.lizongying.mytv0.databinding.ModalBinding
 
 
@@ -20,7 +19,7 @@ class ModalFragment : DialogFragment() {
     private val binding get() = _binding!!
 
     private val handler = Handler(Looper.myLooper()!!)
-    private val delayHideAppreciateModal = 10000L
+    private val delayHideAppreciateModal = 30000L
 
     override fun onStart() {
         super.onStart()
@@ -47,9 +46,7 @@ class ModalFragment : DialogFragment() {
             val size = Utils.dpToPx(200)
             val img = QrCodeUtil().createQRCodeBitmap(url, size, size)
 
-            Glide.with(requireContext())
-                .load(img)
-                .into(binding.modalImage)
+            binding.modalImage.setImageBitmap(img)
             binding.modalText.text = url.removePrefix("http://")
             binding.modalText.visibility = View.VISIBLE
             if (!isTV()) {

@@ -147,7 +147,7 @@ class TVGroupModel : ViewModel() {
         if (tvListModel.positionPlayingValue == 0) {
             var p = (tvGroupValue.size + positionPlayingValue - 1) % tvGroupValue.size
             if (p == 1 || p == 0) {
-                // 最後一組
+                // 最后一组
                 p = (tvGroupValue.size - 1) % tvGroupValue.size
             }
             setPositionPlaying(p)
@@ -178,7 +178,7 @@ class TVGroupModel : ViewModel() {
         if (tvListModel.positionPlayingValue == tvListModel.size() - 1) {
             var p = (positionPlayingValue + 1) % tvGroupValue.size
             if (p == 0) {
-                // 第一組
+                // 第一组
                 p = 2
             }
             setPositionPlaying(p)
@@ -194,7 +194,7 @@ class TVGroupModel : ViewModel() {
 
     fun defaultPosition(): Int {
         // 1 全部
-        // 2 第一組
+        // 2 第一组
         return if (tvGroupValue.size > 2) 2 else 1
     }
 

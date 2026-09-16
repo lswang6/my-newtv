@@ -155,7 +155,7 @@ class MainActivity : AppCompatActivity() {
                             SP.channel = 0
                             0
                         }
-                        Log.i(TAG, "播放默認頻道")
+                        Log.i(TAG, "播放默认频道")
                         viewModel.groupModel.getPosition(position)
                     } else {
 //                if (SP.position < 0 || SP.position >= TVList.groupModel.getAllList()!!
@@ -167,13 +167,13 @@ class MainActivity : AppCompatActivity() {
 //                    // R.string.play_last_channel.showToast()
 //                    SP.position
 //                }
-                        Log.i(TAG, "播放上次頻道")
+                        Log.i(TAG, "播放上次频道")
                         viewModel.groupModel.getCurrent()
                     }
                     viewModel.groupModel.setPositionPlaying()
                     viewModel.groupModel.getCurrentList()
                         ?.let {
-                            Log.i(TAG, "當前組 ${it.getName()}")
+                            Log.i(TAG, "当前组 ${it.getName()}")
                             it.setPositionPlaying()
                         }
                     tvModel?.setReady()
@@ -195,28 +195,6 @@ class MainActivity : AppCompatActivity() {
                     // TODO group position
                     viewModel.updateEPG()
                 }
-            }
-
-            Utils.isp.observe(this) {
-                val id = when (it) {
-//                    ISP.CHINA_MOBILE -> R.raw.mobile
-//                    ISP.IPV6->R.raw.ipv6
-                    else -> 0
-                }
-
-                if (id == 0) {
-                    return@observe
-                }
-
-                resources.openRawResource(id).bufferedReader()
-                    .use { i ->
-                        val channels = i.readText()
-                        if (channels.isNotEmpty()) {
-                            viewModel.tryStr2Channels(channels, null, "")
-                        } else {
-                            Log.w(TAG, "$it is empty")
-                        }
-                    }
             }
 
             server = SimpleServer(this, viewModel)
@@ -252,7 +230,7 @@ class MainActivity : AppCompatActivity() {
                 if (tvModel.ready.value != null
 //                    && tvModel.tv.id == TVList.positionValue
                 ) {
-                    Log.i(TAG, "${tvModel.tv.title} 嘗試播放")
+                    Log.i(TAG, "${tvModel.tv.title} 尝试播放")
                     hideFragment(errorFragment)
                     showFragment(loadingFragment)
                     playerFragment.play(tvModel)
@@ -780,6 +758,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 showFragment(menuFragment)
+                return true
             }
 
             KeyEvent.KEYCODE_DPAD_CENTER -> {
@@ -789,30 +768,37 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 showFragment(menuFragment)
+                return true
             }
 
             KeyEvent.KEYCODE_DPAD_UP -> {
                 channelUp()
+                return true
             }
 
             KeyEvent.KEYCODE_CHANNEL_UP -> {
                 channelUp()
+                return true
             }
 
             KeyEvent.KEYCODE_DPAD_DOWN -> {
                 channelDown()
+                return true
             }
 
             KeyEvent.KEYCODE_CHANNEL_DOWN -> {
                 channelDown()
+                return true
             }
 
             KeyEvent.KEYCODE_DPAD_LEFT -> {
                 showProgram()
+                return true
             }
 
             KeyEvent.KEYCODE_DPAD_RIGHT -> {
                 showSetting()
+                return true
             }
         }
         return false
@@ -837,6 +823,10 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
 
+        hideFragment(settingFragment)
+        hideFragment(menuFragment)
+        hideFragment(programFragment)
+
         isSafeToPerformFragmentTransactions = false
     }
 
@@ -847,7 +837,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun attachBaseContext(base: Context) {
         try {
-            val locale = Locale.TRADITIONAL_CHINESE
+            val locale = Locale.SIMPLIFIED_CHINESE
             val config = Configuration()
             config.setLocale(locale)
             super.attachBaseContext(

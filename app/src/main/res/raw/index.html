@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0">
-    <title>我的電視·〇</title>
+    <title>我的电视</title>
     <style>
         body {
             height: 100vh;
@@ -110,13 +110,13 @@
     </style>
 </head>
 <body>
-<h1 class="title">我的電視·〇</h1>
-<h4>視頻源可以设置為地址/文本/文件其中之一</h4>
-<h4>視頻源文本轉換：<a target="_blank" href="https://lizongying.github.io/js-gua64/">六十四卦編碼</a></h4>
+<h1 class="title">我的电视</h1>
+<h4>视频源可以设置为地址/文本/文件其中之一</h4>
+<h4>视频源文本转换：<a target="_blank" href="https://lizongying.github.io/js-gua64/">六十四卦编码</a></h4>
 <hr/>
 
 <div class="item">
-    <label for="uri" id="uri-label">視頻源地址</label>
+    <label for="uri" id="uri-label">视频源地址</label>
     <div class="container">
         <input type="text" id="uri"/>
         <input type="button" id="confirm-uri" value="新增" class="add"/>
@@ -128,17 +128,17 @@
 <hr/>
 
 <div class="item">
-    <label for="plain-text" id="plain-text-label">視頻源文本</label>
+    <label for="plain-text" id="plain-text-label">视频源文本</label>
     <div class="container">
         <textarea id="plain-text" rows="4"/></textarea>
-        <input type="button" id="confirm-plain-text" value="確認" class="confirm"/>
+        <input type="button" id="confirm-plain-text" value="确认" class="confirm"/>
     </div>
 </div>
 
 <hr/>
 
 <div class="item">
-    <label for="upload-file" id="upload-file-label">視頻源文件，選擇後會自動上傳保存</label>
+    <label for="upload-file" id="upload-file-label">视频源文件，选择后会自动上传保存</label>
     <div class="container">
         <input type="file" id="upload-file" multiple/>
     </div>
@@ -147,10 +147,10 @@
 <hr/>
 
 <div class="item">
-    <label for="channel" id="channel-label">默認播放頻道號，從1開始。0代表默認設置</label>
+    <label for="channel" id="channel-label">默认播放频道号，从1开始。0代表默认设置</label>
     <div class="container">
         <input type="number" id="channel" min="0" max="99"/>
-        <input type="button" id="confirm-channel" value="確認" class="confirm"/>
+        <input type="button" id="confirm-channel" value="确认" class="confirm"/>
     </div>
 </div>
 
@@ -160,7 +160,7 @@
     <label for="epg" id="epg-label">EPG</label>
     <div class="container">
         <input type="text" id="epg"/>
-        <input type="button" id="confirm-epg" value="確認" class="confirm"/>
+        <input type="button" id="confirm-epg" value="确认" class="confirm"/>
     </div>
 </div>
 
@@ -170,7 +170,7 @@
     <label for="proxy" id="proxy-label">代理地址</label>
     <div class="container">
         <input type="text" id="proxy"/>
-        <input type="button" id="confirm-proxy" value="確認" placeholder="http://0.0.0.0:0" class="confirm"/>
+        <input type="button" id="confirm-proxy" value="确认" placeholder="http://0.0.0.0:0" class="confirm"/>
     </div>
 </div>
 
@@ -182,34 +182,19 @@
 </body>
 <script>
     const lang = {
-        TRADITIONAL_CHINESE: {
-            appName: '我的電視·〇',
-            description: '視頻源可以设置為地址/文本/文件其中之一',
-            uriLabel: '視頻源地址',
-            plainTextLabel: '視頻源文本',
-            uploadFileLabel: '視頻源文件，選擇後會自動上傳保存',
-            channelLabel: '默認播放頻道，從1開始。0代表默认設置',
-            epgLabel: 'EPG',
-            proxyLabel: '代理地址',
-            confirm: '確認',
-            remove: '刪除',
-            add: '新增',
-        },
-        SIMPLIFIED_CHINESE: {
-            appName: '我的电视·〇',
-            description: '视频源可以设置为地址/文本/文件其中之一',
-            uriLabel: '视频源地址',
-            plainTextLabel: '视频源文本',
-            uploadFileLabel: '视频源文件，选择后会自动上传保存',
-            channelLabel: '默认播放频道，从1开始。0代表默認设置',
-            epgLabel: 'EPG',
-            proxyLabel: '代理地址',
-            confirm: '确认',
-            remove: '删除',
-            add: '新增',
-        }
+        appName: '我的电视',
+        description: '视频源可以设置为地址/文本/文件其中之一',
+        uriLabel: '视频源地址',
+        plainTextLabel: '视频源文本',
+        uploadFileLabel: '视频源文件，选择后会自动上传保存',
+        channelLabel: '默认播放频道，从1开始。0代表默认设置',
+        epgLabel: 'EPG',
+        proxyLabel: '代理地址',
+        confirm: '确认',
+        remove: '删除',
+        add: '新增',
     };
-    const t = (key) => lang['TRADITIONAL_CHINESE'][key];
+    const t = (key) => lang[key];
     document.querySelector('h1').innerText = t('appName');
     document.querySelector('h4').innerText = t('description');
     document.querySelector('#uri-label').innerText = t('uriLabel');
@@ -260,18 +245,18 @@
     document.querySelector('#confirm-uri').onclick = () => {
         let uri = document.querySelector('#uri').value.trim();
         if (!uri) {
-            alert(`無效的地址${uri}`);
+            alert(`无效的地址${uri}`);
             return;
         }
         if (!uri.startsWith('http')) {
             uri = 'http://' + uri;
         }
         if (!uri.startsWith('http')) {
-            alert(`無效的地址${uri}`);
+            alert(`无效的地址${uri}`);
             return;
         }
         if (!isValidUrl(uri)) {
-            alert(`無效的地址${uri}`);
+            alert(`无效的地址${uri}`);
             return;
         }
         document.querySelector('#uri').value = uri;
@@ -282,7 +267,7 @@
                 id: uuid,
                 uri: uri,
             }))
-            showMessage('已確認', 3000);
+            showMessage('已确认', 3000);
 
             let htmlString = `<div class="container history"><input type="text" readonly value="${uri}" class="source-grey"/><input type="button" value="删除" class="remove" data-source-id="${uuid}"/></div>`;
             let doc = new DOMParser().parseFromString(htmlString, 'text/html');
@@ -301,9 +286,9 @@
         const content = document.querySelector('#plain-text').value.trim();
         if (content.length > 0) {
             save('/api/import-text', content)
-            showMessage('已確認', 3000);
+            showMessage('已确认', 3000);
         } else {
-            alert(`內容為空`);
+            alert(`内容为空`);
         }
     }
 
@@ -313,9 +298,9 @@
             save('/api/default-channel', JSON.stringify({
                 channel: channel
             }))
-            showMessage('已確認', 3000);
+            showMessage('已确认', 3000);
         } else {
-            alert(`內容為空`);
+            alert(`内容为空`);
         }
     }
 
@@ -325,7 +310,7 @@
             epg: epg
         }))
 
-        showMessage('已確認', 3000);
+        showMessage('已确认', 3000);
     }
 
     document.querySelector('#confirm-proxy').onclick = () => {
@@ -334,11 +319,11 @@
             proxy = 'http://' + proxy;
         }
         if (proxy && (!proxy.startsWith('http') && !proxy.startsWith('socks'))) {
-            alert(`無效的地址${proxy}`);
+            alert(`无效的地址${proxy}`);
             return;
         }
         if (proxy && !isValidUrl(proxy)) {
-            alert(`無效的地址${proxy}`);
+            alert(`无效的地址${proxy}`);
             return;
         }
         document.querySelector('#proxy').value = proxy;
@@ -346,7 +331,7 @@
             proxy: proxy
         }))
 
-        showMessage('已確認', 3000);
+        showMessage('已确认', 3000);
     }
 
     const save = async (url, body) => {

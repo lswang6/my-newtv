@@ -23,7 +23,12 @@ class ImageHelper(private val context: Context) {
             dir.mkdir()
         }
         dir.listFiles()?.forEach { file ->
-            files[file.name] = file
+            // ponytail: mirrors used to return 200 + HTML landing pages that got cached as logos
+            if (file.length() == 0L || file.inputStream().use { it.read() } == '<'.code) {
+                file.delete()
+            } else {
+                files[file.name] = file
+            }
         }
     }
 
@@ -36,12 +41,19 @@ class ImageHelper(private val context: Context) {
 
                 HttpClient.okHttpClient.newCall(request).execute().use { response ->
                     if (!response.isSuccessful) return@withContext false
-                    response.bodyAlias()?.byteStream()?.copyTo(file.outputStream())
+                    if (response.header("Content-Type")?.startsWith("image/") != true) return@withContext false
+                    file.outputStream().use { out ->
+                        response.bodyAlias()!!.byteStream().copyTo(out)
+                    }
+                    if (file.length() == 0L) {
+                        file.delete()
+                        return@withContext false
+                    }
                     true
                 }
             } catch (e: Exception) {
-//                Log.e(TAG, "downloadImage error $url", e)
-                Log.e(TAG, "downloadImage error $url")
+                Log.e(TAG, "downloadImage error $url", e)
+                file.delete()
                 false
             }
         }

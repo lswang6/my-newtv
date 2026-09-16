@@ -68,6 +68,7 @@ class GroupAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val listTVModel = tvGroupModel.getTVListModel(position)!!
         val view = viewHolder.itemView
+        view.isSelected = listTVModel.getGroupIndex() == tvGroupModel.positionValue
 
         if (!defaultFocused && position == defaultFocus) {
             view.requestFocus()

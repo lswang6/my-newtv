@@ -40,6 +40,7 @@ class ProgramAdapter(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val epg = epgList[position]
         val view = viewHolder.itemView
+        view.isSelected = position == index
 
         view.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             listener?.onItemFocusChange(epg, hasFocus)

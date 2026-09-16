@@ -84,6 +84,7 @@ class ListAdapter(
 
             view.isFocusable = true
             view.isFocusableInTouchMode = true
+            view.isSelected = position == it.positionValue
 
             viewHolder.like(tvModel.like.value as Boolean)
 
