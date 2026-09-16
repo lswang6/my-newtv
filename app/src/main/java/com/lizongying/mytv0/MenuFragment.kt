@@ -174,16 +174,11 @@ class MenuFragment : Fragment(), GroupAdapter.ItemListener, ListAdapter.ItemList
             return
         }
 
-        val playing = viewModel.groupModel.getCurrent()
         viewModel.groupModel.setPositionPlaying()
         viewModel.groupModel.getCurrentList()?.let {
             it.setPosition(position)
             it.setPositionPlaying()
-            val target = it.getCurrent()
-            // re-selecting the channel that is already playing fine: just close the menu
-            if (target !== playing || target?.errInfo?.value != "") {
-                target?.setReady()
-            }
+            it.getCurrent()?.setReady()
         }
 
         requireActivity().supportFragmentManager.beginTransaction()

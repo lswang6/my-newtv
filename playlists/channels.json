@@ -434,16 +434,6 @@
  },
  {
   "group": "体育",
-  "title": "纬来体育",
-  "logo": "https://www.xn--rgv465a.top/tvlogo/纬来体育.png",
-  "uris": [
-   "https://epg.pw/stream/ab6df63b64d0cc44a1f4f029ed847a26fa54a7aebd455578fb05a63f02c22f4b.m3u8",
-   "https://epg.pw/stream/4f18dfe0593db5c686eb64ae8edaf2a9202d4d46bdc9bbde2cee27708e12ea01.m3u8",
-   "https://epg.pw/stream/8855a9936e37e608a0ec8a014cce1673dee9c5d68d560da376cc92e5edef2b25.m3u8"
-  ]
- },
- {
-  "group": "体育",
   "title": "风云足球",
   "logo": "https://www.xn--rgv465a.top/tvlogo/风云足球.png",
   "uris": [

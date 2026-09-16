@@ -758,7 +758,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 showFragment(menuFragment)
-                return true
             }
 
             KeyEvent.KEYCODE_DPAD_CENTER -> {
@@ -768,37 +767,30 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 showFragment(menuFragment)
-                return true
             }
 
             KeyEvent.KEYCODE_DPAD_UP -> {
                 channelUp()
-                return true
             }
 
             KeyEvent.KEYCODE_CHANNEL_UP -> {
                 channelUp()
-                return true
             }
 
             KeyEvent.KEYCODE_DPAD_DOWN -> {
                 channelDown()
-                return true
             }
 
             KeyEvent.KEYCODE_CHANNEL_DOWN -> {
                 channelDown()
-                return true
             }
 
             KeyEvent.KEYCODE_DPAD_LEFT -> {
                 showProgram()
-                return true
             }
 
             KeyEvent.KEYCODE_DPAD_RIGHT -> {
                 showSetting()
-                return true
             }
         }
         return false
