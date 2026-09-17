@@ -66,8 +66,9 @@ class ListAdapter(
     }
 
     fun update(listTVModel: TVListModel) {
-        this.listTVModel = listTVModel
+        // swap + notify in one post: a queued GapWorker prefetch must never see the new size before notify
         recyclerView.post {
+            this.listTVModel = listTVModel
             notifyDataSetChanged()
         }
     }

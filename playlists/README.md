@@ -4,7 +4,7 @@ apk 内置频道列表，以及生成它的那次测试留下的全部原始记�
 
 ## 文件
 
-- `channels.json` — 测试通过的频道列表，122 个频道。这是 apk 内置源的真身：`tools/merge.py`
+- `channels.json` — 测试通过的频道列表，119 个频道。这是 apk 内置源的真身：`tools/merge.py`
   把它编码成 `app/src/main/res/raw/channels.txt`。每个频道最多保留 3 个 uri，排序是
   ffprobe 认出 h264 的优先，其次按分片延迟从小到大。
 - `current.m3u` — 上面这份列表的标准 m3u 形式，方便丢进 VLC、PotPlayer 之类的播放器里看。
@@ -15,6 +15,16 @@ apk 内置频道列表，以及生成它的那次测试留下的全部原始记�
   哪些源列表里根本没有，以及过程中踩到的坑。
 - `upstream/` — 上游 my-tv-0 内置列表的解码副本，`extract_test.py` 会把它们和网上下载的
   playlist 一起当作候选来源。
+- `scan/` — `tools/scan_sources.py` 批量扫描 26 个公开列表的输出，只作参考，不影响 apk 内置列表。
+  2026-09-17 在 Mac 上测的，走的也是下面那个韩国出口，没有在电视上测。
+  - `merged.m3u` — 能播的频道全部列出，8822 个频道、10029 条 uri，同名条目连在一起；排序规则见 `tools/README.md`。
+  - `merged-lite.m3u` — 同上的精简版，349 个频道、836 条 uri。apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留
+    `tools/scan_sources.py` 里 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台，不要广播、景区直播和点播；其余小分组
+    去掉重复、宗教和购物频道；不要 4K/8K 副本。
+  - `available.m3u` — 和 `merged.m3u` 同样的频道，每个最多 3 条 uri，共 9750 条。
+  - `channels.csv` — 每个频道一行：分组、国家、uri 数、合并进来的原名、来源等。
+  - `results.csv` — 每条 url 一行，带判定结果，列和 `candidates.csv` 类似，多一列 `sources`。
+  - `report.md` — 扫描报告：各源通过率、状态分布、合并统计，以及和 apk 内置列表逐频道的对比。
 
 ## 免责声明
 

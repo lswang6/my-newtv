@@ -46,7 +46,7 @@ adb install <下载的 apk 文件>
 ## 使用
 
 - 遥控器上/下键：切换上一个/下一个频道
-- 数字键：直接输入频道号（最多 3 位）
+- 数字键：直接输入频道号（最多 4 位；没有更长的频道号可输时立即换台，否则等约 5 秒）
 - OK 键 / 菜单键：打开频道列表
 - 设置：通过屏幕上的菜单进入（时钟浮层默认关闭，可在设置里打开）
 - 自定义源：浏览器打开 `http://<电视IP>:34567`，粘贴或上传自己的 m3u/txt
@@ -124,9 +124,23 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 python3 tools/verify_playback.py --serial <tv-ip>:5555 --only 1,21,29   # 频道序号，逗号分隔；--count N 则顺序测前 N 台
 ```
 
-这个脚本通过 adb 驱动遥控器切台，再从 logcat 里读 app 打的 `<title> playing` / `播放错误` / `retry`。注意 app 在切台的瞬间就会乐观地打一条 `playing`，所以脚本是以 `嘗試播放` 这一对日志为锚点判定的。
+这个脚本通过 adb 驱动遥控器切台，再从 logcat 里读 app 打的 `<title> playing` / `播放错误` / `retry`。注意 app 在切台的瞬间就会乐观地打一条 `playing`，所以脚本是以 `playing` + `尝试播放` 这一对日志为锚点判定的（v2.1.0 以前的版本打繁体 `嘗試播放`，两种都认）。
 
 抽测结果：前 45 个频道里抽了 13 个，13/13 播放成功（CCTV1/4/13、凤凰 ×3（走本地路由）、無綫新聞、翡翠台、BBC、Al Jazeera、France 24、Bloomberg、CNA）。此外用户另行确认了 HEVC 条目（ESPN8 The Ocho）和 MPEG-2 条目（NatGeo ×2）在这台电视上能播。
+
+### 批量扫描公开直播源
+
+`tools/scan_sources.py` 不按频道名单筛，把 26 个公开列表里的 url 全部测一遍（测法和 `extract_test.py --mac` 相同），能播的按名字合并成频道并自动分组。它只产出参考列表，不改 apk 内置列表。
+
+```shell
+python3 tools/scan_sources.py --selftest      # 解析、分类、合并的自检，不联网
+python3 tools/scan_sources.py                 # 全量跑，要好几个小时；中断后重跑会跳过已测的
+python3 tools/scan_sources.py --report-only   # 不下载不测试，用缓存重新生成输出
+```
+
+输出在 [`playlists/scan/`](playlists/scan/)，各文件的说明见 [`playlists/README.md`](playlists/README.md)。2026-09-17 那次测了 17965 条 url，通过 10029 条（55.8%），合并成 8822 个频道，详细数字见 [`report.md`](playlists/scan/report.md)。
+
+注意：这些结果**只在 Mac 上测过**，走的是同一个韩国出口，没有在电视上测。
 
 ## 测试结果与平台情况
 
@@ -179,11 +193,13 @@ tools/       extract_test.py  抓取并测试候选源
              merge.py         channels.json + 凤凰路由 → 编码写入 res/raw/channels.txt
              export_m3u.py    导出 current.m3u
              verify_playback.py  通过 adb + logcat 验证真实播放
+             scan_sources.py  批量扫描公开直播源（在 Mac 上测）
              README.md
 playlists/   channels.json    打进 apk 的那份实测列表
              current.m3u      同一份列表导出成 m3u（凤凰是 app 内部路由）
              candidates.csv   每个测过的 URL 及其判定结果
              report.md        测试报告
+             scan/            scan_sources.py 的输出（merged.m3u、available.m3u 等）
              README.md
 README.md
 LICENSE
@@ -208,6 +224,32 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
 ## 更新记录
+
+### v2.2.0
+
+（app 部分的改动已于 2026-09-17 在电视上验证，导入的是 8822 个频道的 `merged.m3u`。）
+
+- 修复：导入的 m3u 里同名条目合并成一个频道后，整个频道只用第一条的 `#EXTVLCOPT` 请求头。现在每个 uri 带它自己那条的请求头；`http-referrer` 也改为按 `Referer` 发出，之前发出去的是一个不起作用的 `referrer` 头。实测：一个第 2 条 uri 要 `User-Agent: AptvPlayer-UA` 的测试频道，之前播不了，现在第一次尝试就带对 UA 播起来。
+- 修复：txt 格式的列表把分组名当成了每个频道的第一个播放地址。
+- 修复：频道菜单里快速翻分组时崩溃（RecyclerView 数据不一致）。这是老问题，导入时 app 不再卡死后更容易碰到；现在换列表和通知 adapter 在同一步完成。电视上用大列表快速翻分组 25 轮，没有再崩溃。
+- 导入大列表：解码、解析和节目单匹配移出主线程，合并同名条目不再是 O(n²)，超过 500 个频道时跳过全部台标的预加载。电视上导入这份列表：
+
+  | | 之前 | 之后 |
+  | --- | --- | --- |
+  | 导入耗时 | 20.0 秒 | 8.4 秒 |
+  | 导入期间主线程阻塞 | 19687 ms | 2123 ms |
+  | 主线程上的节目单匹配 | 4721 ms | 0 |
+  | 第一次打开菜单的卡顿 | 约 1 秒 | 0 |
+  | 台标下载 | 1266 个 | 176 个 |
+
+- 数字键最多输入 4 位（原为 3 位）；没有更长的频道号可输时立即换台：输「1050」立即换，输「105」还可能是更长的号，等约 5 秒。
+- 冷启动时频道列表加载完之前忽略按键，加载完后接着播上次的频道。
+- `tools/verify_playback.py` 认简体的「尝试播放」日志：之前只认繁体，v2.1.0 及以后的版本全部报 UNKNOWN。
+- `tools/extract_test.py` 排除 epg.pw 源站离线时的「无信号」二维码广告垫片（`excluded-slate`）。
+- 重新导出 `playlists/current.m3u`：之前仍带着 v2.1.2、v2.1.3 已移除的 7 条 epg.pw 地址。
+- 新增 `tools/scan_sources.py` 和 `playlists/scan/`，见[批量扫描公开直播源](#批量扫描公开直播源)。
+
+已知问题（老问题，未修）：在「收藏」里取消收藏，或显示「全部」时重新导入，列表变了却没通知菜单，和上面的菜单崩溃同类，只是更难碰到。列表这么大时，台标只在显示出来时才加载。
 
 ### v2.1.3
 

@@ -32,6 +32,9 @@ import com.lizongying.mytv0.showToast
 import io.github.lizongying.Gua
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.InputStream
@@ -46,6 +49,7 @@ class MainViewModel : ViewModel() {
     private var cacheFile: File? = null
     private var cacheChannels = ""
     private var initialized = false
+    private val channelsMutex = Mutex()
 
     private lateinit var cacheEPG: File
     private var epgUrl = SP.epg
@@ -123,38 +127,48 @@ class MainViewModel : ViewModel() {
                     .use { it.readText() }
         }
 
-        Log.i(TAG, "cacheChannels $cacheFile $cacheChannels")
+        Log.i(TAG, "cacheChannels $cacheFile ${cacheChannels.length}")
 
-        try {
-            str2Channels(cacheChannels)
-        } catch (e: Exception) {
-            Log.e(TAG, "init", e)
-            cacheFile!!.deleteOnExit()
-            R.string.channel_read_error.showToast()
-        }
+        cacheEPG = File(appDirectory, CACHE_EPG)
 
         viewModelScope.launch {
-            cacheEPG = File(appDirectory, CACHE_EPG)
+            channelsMutex.withLock {
+                try {
+                    str2Channels(cacheChannels)
+                } catch (e: Exception) {
+                    Log.e(TAG, "init", e)
+                    cacheFile!!.deleteOnExit()
+                    R.string.channel_read_error.showToast()
+                }
+
+                initialized = true
+
+                _channelsOk.value = true
+            }
+
             if (!cacheEPG.exists()) {
                 cacheEPG.createNewFile()
             } else {
                 Log.i(TAG, "cacheEPG exists")
-                if (readEPG(cacheEPG.readText())) {
+                if (readEPG(withContext(Dispatchers.IO) { cacheEPG.readText() })) {
                     Log.i(TAG, "cacheEPG success")
                 } else {
                     Log.i(TAG, "cacheEPG failure")
                 }
             }
         }
-
-        initialized = true
-
-        _channelsOk.value = true
     }
 
     suspend fun preloadLogo() {
         if (!this::imageHelper.isInitialized) {
             Log.w(TAG, "imageHelper is not initialized")
+            return
+        }
+
+        // ponytail: big lists skip the sequential preload (up to 3 requests per channel)
+        // and rely on bind-time loading of tv.logo; bound/parallelise it if logos matter there
+        if (listModel.size > PRELOAD_LOGO_MAX) {
+            Log.i(TAG, "skip preloadLogo ${listModel.size}")
             return
         }
 
@@ -183,24 +197,30 @@ class MainViewModel : ViewModel() {
         try {
             val res = EPGXmlParser().parse(input)
 
-            withContext(Dispatchers.Main) {
-                val e1 = mutableMapOf<String, List<EPG>>()
-                for (m in listModel) {
-                    val name = m.tv.name.ifEmpty { m.tv.title }.lowercase()
-                    if (name.isEmpty()) {
-                        continue
-                    }
+            // match off the main thread (channels x EPG names), then set all EPGs in one main pass
+            val models = withContext(Dispatchers.Main) { listModel }
+            val matched = mutableListOf<Pair<TVModel, List<EPG>>>()
+            val e1 = mutableMapOf<String, List<EPG>>()
+            for (m in models) {
+                val name = m.tv.name.ifEmpty { m.tv.title }.lowercase()
+                if (name.isEmpty()) {
+                    continue
+                }
 
-                    for ((n, epg) in res) {
-                        if (name.contains(n, ignoreCase = true)) {
-                            m.setEpg(epg)
-                            e1[name] = epg
-                            break
-                        }
+                for ((n, epg) in res) {
+                    if (name.contains(n, ignoreCase = true)) {
+                        matched.add(m to epg)
+                        e1[name] = epg
+                        break
                     }
                 }
-                cacheEPG.writeText(gson.toJson(e1))
             }
+            withContext(Dispatchers.Main) {
+                for ((m, epg) in matched) {
+                    m.setEpg(epg)
+                }
+            }
+            cacheEPG.writeText(gson.toJson(e1))
             Log.i(TAG, "readEPG success")
             true
         } catch (e: Exception) {
@@ -213,17 +233,22 @@ class MainViewModel : ViewModel() {
         try {
             val res: Map<String, List<EPG>> = gson.fromJson(str, typeEPGMap)
 
-            withContext(Dispatchers.Main) {
-                for (m in listModel) {
-                    val name = m.tv.name.ifEmpty { m.tv.title }.lowercase()
-                    if (name.isEmpty()) {
-                        continue
-                    }
+            val models = withContext(Dispatchers.Main) { listModel }
+            val matched = mutableListOf<Pair<TVModel, List<EPG>>>()
+            for (m in models) {
+                val name = m.tv.name.ifEmpty { m.tv.title }.lowercase()
+                if (name.isEmpty()) {
+                    continue
+                }
 
-                    val epg = res[name]
-                    if (epg != null) {
-                        m.setEpg(epg)
-                    }
+                val epg = res[name]
+                if (epg != null) {
+                    matched.add(m to epg)
+                }
+            }
+            withContext(Dispatchers.Main) {
+                for ((m, epg) in matched) {
+                    m.setEpg(epg)
                 }
             }
             Log.i(TAG, "readEPG success")
@@ -318,7 +343,8 @@ class MainViewModel : ViewModel() {
             .use { it.readText() }
 
         try {
-            str2Channels(str)
+            // built-in list is small, and SettingFragment uses the new list right after reset()
+            runBlocking { str2Channels(str) }
         } catch (e: Exception) {
             e.printStackTrace()
             R.string.channel_read_error.showToast()
@@ -345,46 +371,50 @@ class MainViewModel : ViewModel() {
     }
 
     fun tryStr2Channels(str: String, file: File?, url: String, id: String = "") {
-        try {
-            if (str2Channels(str)) {
-                Log.i(TAG, "write to cacheFile $cacheFile $str")
-                cacheFile!!.writeText(str)
-                Log.i(TAG, "cacheFile ${getCache()}")
-                cacheChannels = str
-                if (url.isNotEmpty()) {
-                    SP.configUrl = url
-                    val source = Source(
-                        id = id,
-                        uri = url
-                    )
-                    sources.addSource(
-                        source
-                    )
+        viewModelScope.launch {
+            channelsMutex.withLock {
+                try {
+                    if (str2Channels(str)) {
+                        Log.i(TAG, "write to cacheFile $cacheFile ${str.length}")
+                        withContext(Dispatchers.IO) { cacheFile!!.writeText(str) }
+                        cacheChannels = str
+                        if (url.isNotEmpty()) {
+                            SP.configUrl = url
+                            val source = Source(
+                                id = id,
+                                uri = url
+                            )
+                            sources.addSource(
+                                source
+                            )
+                        }
+                        _channelsOk.value = true
+                        R.string.channel_import_success.showToast()
+                        Log.i(TAG, "channel import success")
+                    } else {
+                        R.string.channel_import_error.showToast()
+                        Log.w(TAG, "channel import error")
+                    }
+                } catch (e: Exception) {
+                    Log.e(TAG, "tryStr2Channels", e)
+                    file?.deleteOnExit()
+                    R.string.channel_read_error.showToast()
                 }
-                _channelsOk.value = true
-                R.string.channel_import_success.showToast()
-                Log.i(TAG, "channel import success")
-            } else {
-                R.string.channel_import_error.showToast()
-                Log.w(TAG, "channel import error")
             }
-        } catch (e: Exception) {
-            Log.e(TAG, "tryStr2Channels", e)
-            file?.deleteOnExit()
-            R.string.channel_read_error.showToast()
         }
     }
 
-    private fun str2Channels(str: String): Boolean {
-        var string = str
-        if (initialized && string == cacheChannels) {
+    // Decoding and parsing run on Dispatchers.Default; the models (LiveData) are built back on the
+    // calling main thread
+    private suspend fun str2Channels(str: String): Boolean {
+        if (initialized && str == cacheChannels) {
             Log.w(TAG, "same channels")
             return true
         }
 
         val g = Gua()
-        if (g.verify(str)) {
-            string = g.decode(str)
+        val string = withContext(Dispatchers.Default) {
+            if (g.verify(str)) g.decode(str) else str
         }
 
         if (string.isEmpty()) {
@@ -397,16 +427,27 @@ class MainViewModel : ViewModel() {
             return true
         }
 
+        var isNew = false
+        val list = withContext(Dispatchers.Default) {
+            isNew = string != cacheChannels && g.encode(string) != cacheChannels
+            parseChannels(string)
+        } ?: return false
+
+        applyChannels(list, isNew)
+        return true
+    }
+
+    private fun parseChannels(string: String): List<TV>? {
         val list: List<TV>
 
         when (string[0]) {
             '[' -> {
                 try {
                     list = gson.fromJson(string, typeTvList)
-                    Log.i(TAG, "导入频道 ${list.size} $list")
+                    Log.i(TAG, "导入频道 ${list.size}")
                 } catch (e: Exception) {
                     Log.e(TAG, "str2Channels", e)
-                    return false
+                    return null
                 }
             }
 
@@ -419,9 +460,10 @@ class MainViewModel : ViewModel() {
                 val groupRegex = Regex("""group-title="([^"]+)"""")
 
                 val l = mutableListOf<TV>()
-                val tvMap = mutableMapOf<String, List<TV>>()
+                val tvMap = mutableMapOf<String, MutableList<TV>>()
 
                 var tv = TV()
+                var tvUris = mutableListOf<String>()
                 for (line in lines) {
                     val trimmedLine = line.trim()
                     if (trimmedLine.isEmpty()) {
@@ -432,10 +474,10 @@ class MainViewModel : ViewModel() {
                     } else if (trimmedLine.startsWith("#EXTINF")) {
                         val key = tv.group + tv.name
                         if (key.isNotEmpty()) {
-                            tvMap[key] =
-                                if (!tvMap.containsKey(key)) listOf(tv) else tvMap[key]!! + tv
+                            tvMap.getOrPut(key) { mutableListOf() }.add(tv)
                         }
                         tv = TV()
+                        tvUris = mutableListOf()
                         val info = trimmedLine.split(",")
                         tv.title = info.last().trim()
                         var name = nameRegex.find(info.first())?.groupValues?.get(1)?.trim()
@@ -448,30 +490,29 @@ class MainViewModel : ViewModel() {
                         val keyValue =
                             trimmedLine.substringAfter("#EXTVLCOPT:http-").split("=", limit = 2)
                         if (keyValue.size == 2) {
+                            // VLC sends http-referrer as the Referer header
+                            val header = if (keyValue[0] == "referrer") "Referer" else keyValue[0]
                             tv.headers = if (tv.headers == null) {
-                                mapOf<String, String>(keyValue[0] to keyValue[1])
+                                mapOf<String, String>(header to keyValue[1])
                             } else {
                                 tv.headers!!.toMutableMap().apply {
-                                    this[keyValue[0]] = keyValue[1]
+                                    this[header] = keyValue[1]
                                 }
                             }
                         }
                     } else if (!trimmedLine.startsWith("#")) {
-                        tv.uris = if (tv.uris.isEmpty()) {
-                            listOf(trimmedLine)
-                        } else {
-                            tv.uris.toMutableList().apply {
-                                this.add(trimmedLine)
-                            }
-                        }
+                        tvUris.add(trimmedLine)
+                        tv.uris = tvUris
                     }
                 }
                 val key = tv.group + tv.name
                 if (key.isNotEmpty()) {
-                    tvMap[key] = if (!tvMap.containsKey(key)) listOf(tv) else tvMap[key]!! + tv
+                    tvMap.getOrPut(key) { mutableListOf() }.add(tv)
                 }
                 for ((_, tv) in tvMap) {
                     val uris = tv.map { t -> t.uris }.flatten()
+                    // one entry per uri, from the entry it came from (not t0)
+                    val uriHeaders = tv.flatMap { t -> t.uris.map { t.headers } }
                     val t0 = tv[0]
                     val t1 = TV(
                         -1,
@@ -487,18 +528,19 @@ class MainViewModel : ViewModel() {
                         SourceType.UNKNOWN,
                         t0.number,
                         emptyList(),
+                        uriHeaders,
                     )
                     l.add(t1)
                 }
                 list = l
-                Log.i(TAG, "导入频道 ${list.size} $list")
+                Log.i(TAG, "导入频道 ${list.size}")
             }
 
             else -> {
                 val lines = string.lines()
                 var group = ""
                 val l = mutableListOf<TV>()
-                val tvMap = mutableMapOf<String, List<String>>()
+                val tvMap = mutableMapOf<String, MutableList<String>>()
                 for (line in lines) {
                     val trimmedLine = line.trim()
                     if (trimmedLine.isNotEmpty()) {
@@ -513,16 +555,12 @@ class MainViewModel : ViewModel() {
                             val uris = arr.drop(1)
 
                             val key = group + title
-                            if (!tvMap.containsKey(key)) {
-                                tvMap[key] = listOf(group)
-                            }
-                            tvMap[key] = tvMap[key]!! + uris
+                            tvMap.getOrPut(key) { mutableListOf(group) }.addAll(uris)
                         }
                     }
                 }
                 for ((title, uris) in tvMap) {
                     val channelGroup = uris.first();
-                    uris.drop(1);
                     val tv = TV(
                         -1,
                         "",
@@ -530,7 +568,7 @@ class MainViewModel : ViewModel() {
                         "",
                         "",
                         "",
-                        uris,
+                        uris.drop(1),
                         0,
                         emptyMap(),
                         channelGroup,
@@ -542,11 +580,14 @@ class MainViewModel : ViewModel() {
                     l.add(tv)
                 }
                 list = l
-                Log.d(TAG, "导入频道 $list")
                 Log.i(TAG, "导入频道 ${list.size}")
             }
         }
 
+        return list
+    }
+
+    private fun applyChannels(list: List<TV>, isNew: Boolean) {
         groupModel.initTVGroup()
 
         val map: MutableMap<String, MutableList<TVModel>> = mutableMapOf()
@@ -567,10 +608,10 @@ class MainViewModel : ViewModel() {
                 v1.setLike(SP.getLike(id))
                 v1.setGroupIndex(groupIndex)
                 v1.listIndex = listIndex
-                listTVModel.addTVModel(v1)
                 listModelNew.add(v1)
                 id++
             }
+            listTVModel.setTVListModel(v)
             groupModel.addTVListModel(listTVModel)
             groupIndex++
         }
@@ -580,7 +621,7 @@ class MainViewModel : ViewModel() {
         // 全部频道
         groupModel.tvGroupValue[1].setTVListModel(listModel)
 
-        if (string != cacheChannels && g.encode(string) != cacheChannels) {
+        if (isNew) {
             groupModel.initPosition()
         }
 
@@ -589,14 +630,13 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             preloadLogo()
         }
-
-        return true
     }
 
     companion object {
         private const val TAG = "MainViewModel"
         const val CACHE_FILE_NAME = "channels.txt"
         const val CACHE_EPG = "epg.xml"
+        private const val PRELOAD_LOGO_MAX = 500
         val DEFAULT_CHANNELS_FILE = R.raw.channels
     }
 }

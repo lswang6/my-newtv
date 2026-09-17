@@ -23,6 +23,8 @@ class ChannelFragment : Fragment() {
     private val delay: Long = 5000
     private var channel = 0
     private var channelCount = 0
+    private var numberedList: List<TVModel>? = null
+    private var maxNumber = 0
 
     private lateinit var viewModel: MainViewModel
 
@@ -75,12 +77,12 @@ class ChannelFragment : Fragment() {
 
     fun show(channel: Int) {
         Log.i(TAG, "input $channel ${this.channel}")
-        val tv = viewModel.groupModel.getCurrent()!!.tv
+        val tv = viewModel.groupModel.getCurrent()?.tv ?: return
         if (tv.id > 10 && tv.id == this.channel - 1) {
             this.channel = 0
             channelCount = 0
         }
-        if (channelCount > 2) {
+        if (channelCount > 3) {
             return
         }
         channelCount++
@@ -90,7 +92,13 @@ class ChannelFragment : Fragment() {
         Log.d(TAG, "channelCount $channelCount")
         binding.content.text = "${this.channel}"
         view?.visibility = View.VISIBLE
-        if (channelCount < 3) {
+        val list = viewModel.listModel
+        if (list !== numberedList) {
+            numberedList = list
+            // same numbering as playRunnable: tv.number, else id + 1
+            maxNumber = maxOf(list.size, list.maxOfOrNull { it.tv.number } ?: 0)
+        }
+        if (channelCount < 4 && this.channel * 10 <= maxNumber) {
             handler.postDelayed(playRunnable, delay)
         } else {
             playNow()

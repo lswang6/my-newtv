@@ -16,6 +16,8 @@ data class TV(
     var sourceType: SourceType = SourceType.UNKNOWN,
     var number: Int = -1,
     var child: List<TV> = emptyList(),
+    // headers per entry of uris (m3u #EXTVLCOPT); null for old formats, which use headers
+    var uriHeaders: List<Map<String, String>?>? = null,
 ) : Serializable {
 
     override fun toString(): String {

@@ -477,6 +477,11 @@ def test_url(url, headers):
     if not body.lstrip().startswith("#EXTM3U"):
         return ("ok" if size >= 50000 else "short-body"), ms, ms, size, False
     pl, ptime = eff or url, ms
+    # epg.pw keeps answering 200 for an offline channel, with a master whose only variant is
+    # files4.3y1.xyz/media/video/nosignal_h264: a real 1080p loop of a no-signal card and a
+    # QR-code ad, so the segment check alone passes it.
+    if "nosignal" in (pl + body).lower():
+        return "excluded-slate", ms, 0, 0, True
     if "#EXT-X-STREAM-INF" in body:
         v = first_uri(body, "EXT-X-STREAM-INF")
         if not v:
@@ -921,6 +926,11 @@ def selftest():
     assert canon("翡翠台", source="hk") == "翡翠台", "翡翠台 stays in 港台新闻"
     assert clean_title("Fox Sports 1 (1080p) [Not 24/7] HD") == "Fox Sports 1"
     assert first_uri("#EXTM3U\n#EXTINF:9,\nseg1.ts\n", "EXTINF") == "seg1.ts"
+    global fetch
+    real, fetch = fetch, lambda u, h, t: (200, 127, 5, u, "#EXTM3U\n#EXT-X-STREAM-INF:BANDWIDTH=4000000\n"
+                                          "http://files4.3y1.xyz/media/video/nosignal_h264/playlist.m3u8\n")
+    assert test_url("https://epg.pw/stream/ab.m3u8", {})[0] == "excluded-slate"
+    fetch = real
     print("selftest ok")
 
 

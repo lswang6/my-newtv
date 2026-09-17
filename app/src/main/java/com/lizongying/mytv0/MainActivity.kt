@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        if (event != null) {
+        if (event != null && viewModel.channelsOk.value == true) {
             gestureDetector.onTouchEvent(event)
         }
         return super.onTouchEvent(event)
@@ -649,11 +649,11 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        viewModel.groupModel.getCurrent()?.let {
-            if (it.epgValue.isEmpty()) {
-                R.string.epg_is_empty.showToast()
-                return
-            }
+        // no current channel: ProgramFragment would stay up blank (no adapter, no auto-hide)
+        val tvModel = viewModel.groupModel.getCurrent() ?: return
+        if (tvModel.epgValue.isEmpty()) {
+            R.string.epg_is_empty.showToast()
+            return
         }
 
         showFragment(programFragment)
@@ -700,6 +700,13 @@ class MainActivity : AppCompatActivity() {
 
     fun onKey(keyCode: Int): Boolean {
         Log.d(TAG, "keyCode $keyCode")
+        // Channels load async on cold start. Until then only back works: the menu would fall back
+        // to (and persist) group 0, and settings' reset would race the cache load
+        if (viewModel.channelsOk.value != true
+            && keyCode != KeyEvent.KEYCODE_BACK && keyCode != KeyEvent.KEYCODE_ESCAPE
+        ) {
+            return false
+        }
         when (keyCode) {
             KeyEvent.KEYCODE_0,
             KeyEvent.KEYCODE_1,

@@ -5,15 +5,16 @@ Switches to each channel by its 1-based index using the digit keys, then reads
 the app's own logcat to decide whether it actually plays.
 
 Log signals (source: my-tv-0 app/src/main/java/com/lizongying/mytv0/):
-  MainActivity:237  I/MainActivity: "<title> playing"    errInfo == ""
-  MainActivity:241  I/MainActivity: "<title> <errInfo>"  errInfo == R.string.play_error
-  MainActivity:255  I/MainActivity: "<title> 嘗試播放"    ready -> play(tvModel)
+  MainActivity:215  I/MainActivity: "<title> playing"    errInfo == ""
+  MainActivity:219  I/MainActivity: "<title> <errInfo>"  errInfo == R.string.play_error
+  MainActivity:233  I/MainActivity: "<title> 尝试播放"    ready -> play(tvModel)
+                    (builds before v2.1.0 log the traditional 嘗試播放 / 播放錯誤; both are matched)
   PlayerFragment:147 I/PlayerFragment: "retry <i> <type> <n>/<max>"  onPlayerError
   PlayerFragment:113 I/PlayerFragment: "<title> 播放停止"  onIsPlayingChanged(false)
 
 Trap: TVModel.setReady(retry=false) calls setErrInfo("") (TVModel.kt:97), so every
 channel *switch* emits a bogus "<title> playing" immediately followed (same ms) by
-"<title> 嘗試播放". Only a "playing" NOT followed by that attempt line is real.
+"<title> 尝试播放". Only a "playing" NOT followed by that attempt line is real.
 
     python3 verify_playback.py --serial <tv-ip>:5555 --count 10
     python3 verify_playback.py --selftest    # pure log-classifier checks, no TV needed
@@ -26,7 +27,7 @@ PKG = "com.lizongying.newmytv"
 # lives under com.lizongying.mytv0.
 CLS = "/com.lizongying.mytv0.MainActivity"
 
-R_ATTEMPT = re.compile(r"I/MainActivity\(\s*\d+\): (.+) 嘗試播放\s*$")
+R_ATTEMPT = re.compile(r"I/MainActivity\(\s*\d+\): (.+) (?:尝试|嘗試)播放\s*$")
 R_OK = re.compile(r"I/MainActivity\(\s*\d+\): (.+) playing\s*$")
 R_ERR = re.compile(r"I/MainActivity\(\s*\d+\): (.+) (?:播放错误|播放錯誤|Play error)\s*$")
 R_STOP = re.compile(r"I/PlayerFragment\(\s*\d+\): (.+) 播放停止\s*$")
@@ -58,13 +59,13 @@ def classify(log):
             if m:
                 ev.append((kind, "" if rx is R_RETRY else m.group(1), ln.strip(), n))
                 break
-    # Our switch is the pair '<T> playing' + '<T> 嘗試播放' (setReady -> setErrInfo("")).
+    # Our switch is the pair '<T> playing' + '<T> 尝试播放' (setReady -> setErrInfo("")).
     # Anchoring on it drops the previous channel's tail, which leaks into the window
     # while the three digit keys are being typed.
     pair = [i for i in range(len(ev) - 1)
             if ev[i][0] == "ok" and ev[i + 1][0] == "attempt" and ev[i + 1][1] == ev[i][1]]
     if not pair:
-        return "UNKNOWN", "", "no switch pair '<title> playing'+'<title> 嘗試播放' (input refused?)"
+        return "UNKNOWN", "", "no switch pair '<title> playing'+'<title> 尝试播放' (input refused?)"
     p = pair[-1]
     title, anchor, dec = ev[p][1], ev[p][3], None
     tail = ev[p + 2:]
@@ -147,6 +148,9 @@ def selftest():
     # played, then died -> FAILED (last decisive event wins)
     assert classify(sw + "\n" + P + "BBC News playing\n" + F + "retry 0 HLS 1/10")[0] == "FAILED"
     assert classify("")[0] == "UNKNOWN"
+    # v2.1.0+ logs simplified text (the cases above use the traditional form of older builds)
+    new = P + "CCTV1 综合 playing\n" + P + "CCTV1 综合 尝试播放\n" + P + "CCTV1 综合 playing"
+    assert classify(new) == ("PLAYING", "CCTV1 综合", P + "CCTV1 综合 playing"), classify(new)
     print("selftest ok")
 
 

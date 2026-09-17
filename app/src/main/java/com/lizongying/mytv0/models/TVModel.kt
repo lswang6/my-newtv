@@ -117,7 +117,11 @@ class TVModel(var tv: TV) : ViewModel() {
             val scheme = uri.scheme ?: return@let null
 
             val okHttpDataSource = OkHttpDataSource.Factory(HttpClient.okHttpClient)
-            tv.headers?.let { i ->
+            userAgent = ""
+            val headers = tv.uriHeaders.let { h ->
+                if (h == null) tv.headers else h.getOrNull(videoIndexValue)
+            }
+            headers?.let { i ->
                 okHttpDataSource.setDefaultRequestProperties(i)
                 i.forEach { (key, value) ->
                     if (key.equals("user-agent", ignoreCase = true)) {

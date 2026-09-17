@@ -1,6 +1,6 @@
 # tools
 
-维护频道列表的四个脚本，外加一个 gua64 编解码器。全部是 python3 标准库，没有第三方依赖。
+维护频道列表的五个脚本，外加一个 gua64 编解码器。全部是 python3 标准库，没有第三方依赖。
 
 ## 前置条件
 
@@ -57,7 +57,7 @@ Mac 的网络路径不一样，Mac 能连的电视未必能连，所以判定必
 
 装完 apk 之后在电视上真播一遍。用数字键切到第 N 个频道，然后读 app 自己打的 logcat 判断
 到底播起来没有。注意 app 每次切台都会先打一条假的 `<title> playing`，紧跟着一条
-`<title> 嘗試播放` —— 只有后面没跟「嘗試播放」的那条 playing 才是真的播起来了，脚本的
+`<title> 尝试播放`（v2.1.0 以前的版本打繁体「嘗試播放」，脚本两种都认）—— 只有后面没跟「尝试播放」的那条 playing 才是真的播起来了，脚本的
 `classify()` 就是在处理这件事，自检覆盖的也是它。
 
     python3 verify_playback.py --serial <tv-ip>:5555 --count 10
@@ -66,6 +66,40 @@ Mac 的网络路径不一样，Mac 能连的电视未必能连，所以判定必
 
 `--serial` 必填，没有默认值。`--pkg` 默认 `com.lizongying.newmytv`。失败的频道会把整段
 logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
+
+### scan_sources.py
+
+批量扫一批公开直播源（脚本里写死的 26 个地址），看哪些频道在这台 Mac 上能播。测法直接调
+`extract_test.py` 的 `test_twice()` / `probe_codec()`，走它的 Mac 模式，所以判定规则和上面完全
+一样；不同的是不按名单筛，所有 url 都测，测完再按规则自动分组（央视、凤凰、卫视、港澳台、新马、
+日本、体育、纪录片、国际新闻、数字频道、地方、海外·<类型>）。同一个 url 出现在几个源里只测一次。
+
+    python3 scan_sources.py --selftest      # txt 解析、垃圾条目过滤、分类器、按名合并的自检，不联网
+    python3 scan_sources.py --limit 300     # 试跑：从各个源轮流挑 300 条没测过的
+    python3 scan_sources.py --workers 48    # 全量跑，默认就是 48 并发
+    python3 scan_sources.py --report-only   # 不下载不测试，用缓存重新生成全部输出文件
+
+- 源列表下到 `tools/.cache/scan_src/`，下不下来就用上次的副本。
+- 每测完一条就往 `tools/.cache/scan_results.jsonl` 追加一行，全量要跑好几个小时，中断了直接重跑，
+  已经测过的会跳过。想重测就删掉这个文件。和 `extract_test.py` 的 `tvtest.json` 不共用：那个缓存
+  不区分是电视测的还是 Mac 测的。
+- 同一个 host 最多同时测 3 条。IPv6 字面量、rtmp 之类、局域网地址、youtube/github 不测，状态分别记
+  `ipv6`、`untested-protocol`、`excluded-lan`、`excluded-host`；还没轮到测的记 `untested`。
+- stream1/t.freetv.fun 的 2566 条地址读源时直接丢掉：这个主机约 20 秒才响应，超过测试协议的 10 秒超时，
+  删掉前测过的 1125 条一条都没通过。
+- 能播的 url 按名字合并成频道：去掉画质、编码、[BD]、「HK」、（备用）这类标记后按任何文字的字母和
+  数字比（简繁、大小写、重音不分，`+` 记作 plus，CCTV5+ 和 CCTV5、CCTV4K 和 CCTV4 仍是两个）。一个
+  频道只有一个分组，取各条 url 里最具体的；拉丁字母名字的 url 来自两个以上国家时按国家拆开，名字后加
+  `(国家码)`。apk 现有列表里的频道（按名字，对不上再按 url）沿用现有的名字和分组。港澳台频道按新闻 /
+  综艺表 / 其余分到 港台新闻、港台综艺、港澳台。
+- 频道内 uri 的顺序：apk 现有列表里有的频道，把现有列表里的 uri（在电视上真播过）放最前；其余按不带
+  请求头的优先（v2.1.3 及以前的 app 整个频道只用第一条的请求头），再 h264 优先，再按分片延迟从小到大。
+- 输出在 `playlists/scan/`：`merged.m3u`（每个频道能播的 uri 全部列出，同名条目连在一起，app 会把它们
+  合成一个频道、后面几条当备用）、`merged-lite.m3u`（同上的精简版，349 个频道：apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台（`LOCAL_PREFIX`），用 `LOCAL_DENY` 去掉广播、景区直播和点播；其余小分组去掉 `DROP` 里的重复、宗教和购物频道；不要 4K/8K 副本。名单里有没对上的会写进 report.md）、`available.m3u`（同样的频道，每个最多 3 个 uri）、`channels.csv`
+  （每个频道一行：分组、是否新建分组、国家、uri 数、在现有列表里叫什么、合并进来的原名、源、同一 url
+  的其他叫法）、`results.csv`（每条 url 一行，名字和分组是它最后所在的频道，列和 `candidates.csv`
+  类似，多一列 `sources`）、`report.md`（合并统计、分组、各源通过率、状态分布，以及和 apk 内置列表
+  逐频道的对比）。
 
 ### gua64.py
 
@@ -155,5 +189,6 @@ logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
 - `variant-http-N` / `no-variant` / `no-segment` / `seg-http-N` —— HLS 链条在哪一环断的
 - `untested-protocol` —— rtmp / rtsp / udp，curl 测不了
 - `excluded-host` —— youtube / github 这类 host，直接拒绝
-- `excluded-slate` —— CNN 的备播卡，画面完美但没有节目，不要
+- `excluded-slate` —— CNN 的备播卡，或者 epg.pw 源站离线时塞进来的「无信号」垫片（master 里唯一的变体指向
+  `nosignal_h264`，带二维码广告），画面完美但没有节目，不要
 - `skipped-cap` —— 这个频道的名额已经满了（每频道 8 条、每 host 3 条），没轮到测
