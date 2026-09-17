@@ -15,6 +15,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.marginBottom
@@ -39,6 +40,8 @@ class SettingFragment : Fragment() {
     private var server = "http://${PortUtil.lan()}:$PORT"
 
     private lateinit var viewModel: MainViewModel
+
+    private var dialog: AlertDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -295,8 +298,6 @@ class SettingFragment : Fragment() {
 
         val context = requireActivity()
         val mainActivity = (activity as MainActivity)
-        val application = context.applicationContext as MyTVApplication
-        val imageHelper = application.imageHelper
 
         viewModel = ViewModelProvider(context)[MainViewModel::class.java]
 
@@ -305,63 +306,14 @@ class SettingFragment : Fragment() {
         }
 
         binding.clear.setOnClickListener {
-            SP.channelNum = SP.DEFAULT_CHANNEL_NUM
-
-            SP.sources = SP.DEFAULT_SOURCES
-            Log.i(TAG, "DEFAULT_SOURCES ${SP.DEFAULT_SOURCES}")
-            viewModel.sources.init()
-
-            SP.channelReversal = SP.DEFAULT_CHANNEL_REVERSAL
-            SP.time = SP.DEFAULT_TIME
-            SP.bootStartup = SP.DEFAULT_BOOT_STARTUP
-            SP.repeatInfo = SP.DEFAULT_REPEAT_INFO
-            SP.configAutoLoad = SP.DEFAULT_CONFIG_AUTO_LOAD
-            SP.proxy = SP.DEFAULT_PROXY
-
-            imageHelper.clearImage()
-
-            // TODO update player
-            SP.softDecode = SP.DEFAULT_SOFT_DECODE
-
-            SP.configUrl = SP.DEFAULT_CONFIG_URL
-            Log.i(TAG, "config url: ${SP.configUrl}")
-            context.deleteFile(CACHE_FILE_NAME)
-            viewModel.reset(context)
-            confirmConfig()
-
-            SP.channel = SP.DEFAULT_CHANNEL
-            Log.i(TAG, "default channel: ${SP.channel}")
-            confirmChannel()
-
-            SP.deleteLike()
-            Log.i(TAG, "clear like")
-
-//            SP.positionGroup = SP.DEFAULT_POSITION_GROUP
-//            viewModel.groupModel.setPosition(SP.DEFAULT_POSITION_GROUP)
-//            viewModel.groupModel.setPositionPlaying(SP.DEFAULT_POSITION_GROUP)
-
-            SP.positionGroup = viewModel.groupModel.defaultPosition()
-            viewModel.groupModel.initPosition()
-
-            SP.position = SP.DEFAULT_POSITION
-            Log.i(TAG, "list position: ${SP.position}")
-            val tvListModel = viewModel.groupModel.getCurrentList()
-            tvListModel?.setPosition(SP.DEFAULT_POSITION)
-            tvListModel?.setPositionPlaying(SP.DEFAULT_POSITION)
-
-            viewModel.groupModel.setPositionPlaying()
-            viewModel.groupModel.getCurrentList()?.setPositionPlaying()
-            viewModel.groupModel.getCurrent()?.setReady()
-
-            SP.showAllChannels = SP.DEFAULT_SHOW_ALL_CHANNELS
-            SP.compactMenu = SP.DEFAULT_COMPACT_MENU
-
-            viewModel.setDisplaySeconds(SP.DEFAULT_DISPLAY_SECONDS)
-
-            SP.epg = SP.DEFAULT_EPG
-            viewModel.updateEPG()
-
-            R.string.config_restored.showToast()
+            mainActivity.settingActive()
+            dialog = AlertDialog.Builder(context)
+                .setTitle(R.string.clear)
+                .setItems(R.array.default_lists) { _, which ->
+                    if (which == 0) restoreDefault() else switchToLite()
+                }
+                .setOnDismissListener { if (!isHidden) mainActivity.settingActive() }
+                .show()
         }
 
         binding.switchShowAllChannels.setOnCheckedChangeListener { _, isChecked ->
@@ -372,6 +324,83 @@ class SettingFragment : Fragment() {
         }
 
         binding.remoteSettings.requestFocus()
+    }
+
+    private fun restoreDefault() {
+        val context = requireActivity()
+        val imageHelper = (context.applicationContext as MyTVApplication).imageHelper
+
+        SP.channelNum = SP.DEFAULT_CHANNEL_NUM
+
+        SP.sources = SP.DEFAULT_SOURCES
+        Log.i(TAG, "DEFAULT_SOURCES ${SP.DEFAULT_SOURCES}")
+        viewModel.sources.init()
+
+        SP.channelReversal = SP.DEFAULT_CHANNEL_REVERSAL
+        SP.time = SP.DEFAULT_TIME
+        SP.bootStartup = SP.DEFAULT_BOOT_STARTUP
+        SP.repeatInfo = SP.DEFAULT_REPEAT_INFO
+        SP.configAutoLoad = SP.DEFAULT_CONFIG_AUTO_LOAD
+        SP.proxy = SP.DEFAULT_PROXY
+
+        imageHelper.clearImage()
+
+        // TODO update player
+        SP.softDecode = SP.DEFAULT_SOFT_DECODE
+
+        SP.configUrl = SP.DEFAULT_CONFIG_URL
+        Log.i(TAG, "config url: ${SP.configUrl}")
+        context.deleteFile(CACHE_FILE_NAME)
+        viewModel.reset(context)
+        confirmConfig()
+
+        SP.channel = SP.DEFAULT_CHANNEL
+        Log.i(TAG, "default channel: ${SP.channel}")
+        confirmChannel()
+
+        SP.deleteLike()
+        Log.i(TAG, "clear like")
+
+//            SP.positionGroup = SP.DEFAULT_POSITION_GROUP
+//            viewModel.groupModel.setPosition(SP.DEFAULT_POSITION_GROUP)
+//            viewModel.groupModel.setPositionPlaying(SP.DEFAULT_POSITION_GROUP)
+
+        resetPosition()
+
+        SP.showAllChannels = SP.DEFAULT_SHOW_ALL_CHANNELS
+        SP.compactMenu = SP.DEFAULT_COMPACT_MENU
+
+        viewModel.setDisplaySeconds(SP.DEFAULT_DISPLAY_SECONDS)
+
+        SP.epg = SP.DEFAULT_EPG
+        viewModel.updateEPG()
+
+        R.string.config_restored.showToast()
+    }
+
+    private fun switchToLite() {
+        SP.configUrl = SP.DEFAULT_CONFIG_URL
+        // favourites are keyed by channel id; clear them before the new list reads them
+        SP.deleteLike()
+        viewModel.reset(requireContext(), R.raw.lite)
+        resetPosition()
+        viewModel.updateEPG()
+        R.string.switched_to_lite.showToast()
+    }
+
+    private fun resetPosition() {
+        SP.positionGroup = viewModel.groupModel.defaultPosition()
+        viewModel.groupModel.initPosition()
+
+        SP.position = SP.DEFAULT_POSITION
+        Log.i(TAG, "list position: ${SP.position}")
+        val tvListModel = viewModel.groupModel.getCurrentList()
+        tvListModel?.setPosition(SP.DEFAULT_POSITION)
+        tvListModel?.setPositionPlaying(SP.DEFAULT_POSITION)
+
+        viewModel.groupModel.setPositionPlaying()
+        viewModel.groupModel.getCurrentList()?.setPositionPlaying()
+        viewModel.groupModel.getCurrent()?.setReady()
     }
 
     private fun confirmConfig() {
@@ -412,6 +441,9 @@ class SettingFragment : Fragment() {
 
     override fun onHiddenChanged(hidden: Boolean) {
         super.onHiddenChanged(hidden)
+        if (hidden) {
+            dialog?.dismiss()
+        }
         if (_binding != null && !hidden) {
             binding.remoteSettings.requestFocus()
         }
@@ -457,6 +489,7 @@ class SettingFragment : Fragment() {
     }
 
     override fun onDestroyView() {
+        dialog?.dismiss()
         super.onDestroyView()
         _binding = null
     }

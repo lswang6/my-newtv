@@ -338,13 +338,20 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun reset(context: Context) {
-        val str = context.resources.openRawResource(DEFAULT_CHANNELS_FILE).bufferedReader()
+    fun reset(context: Context, rawId: Int = DEFAULT_CHANNELS_FILE) {
+        val str = context.resources.openRawResource(rawId).bufferedReader()
             .use { it.readText() }
 
         try {
-            // built-in list is small, and SettingFragment uses the new list right after reset()
-            runBlocking { str2Channels(str) }
+            // built-in lists are small, and SettingFragment uses the new list right after reset()
+            if (runBlocking { str2Channels(str) }) {
+                // str2Channels skips a list equal to cacheChannels, so it must track what is loaded
+                cacheChannels = str
+                // the default list is the fallback when there is no cache; any other must be cached
+                if (rawId != DEFAULT_CHANNELS_FILE) {
+                    cacheFile!!.writeText(str)
+                }
+            }
         } catch (e: Exception) {
             e.printStackTrace()
             R.string.channel_read_error.showToast()

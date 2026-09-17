@@ -95,7 +95,7 @@ logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
 - 频道内 uri 的顺序：apk 现有列表里有的频道，把现有列表里的 uri（在电视上真播过）放最前；其余按不带
   请求头的优先（v2.1.3 及以前的 app 整个频道只用第一条的请求头），再 h264 优先，再按分片延迟从小到大。
 - 输出在 `playlists/scan/`：`merged.m3u`（每个频道能播的 uri 全部列出，同名条目连在一起，app 会把它们
-  合成一个频道、后面几条当备用）、`merged-lite.m3u`（同上的精简版，349 个频道：apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台（`LOCAL_PREFIX`），用 `LOCAL_DENY` 去掉广播、景区直播和点播；其余小分组去掉 `DROP` 里的重复、宗教和购物频道；不要 4K/8K 副本。名单里有没对上的会写进 report.md）、`available.m3u`（同样的频道，每个最多 3 个 uri）、`channels.csv`
+  合成一个频道、后面几条当备用）、`merged-lite.m3u`（同上的精简版，349 个频道：apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台（`LOCAL_PREFIX`），用 `LOCAL_DENY` 去掉广播、景区直播和点播；其余小分组去掉 `DROP` 里的重复、宗教和购物频道；不要 4K/8K 副本。名单里有没对上的会写进 report.md；同时复制一份到 `app/src/main/res/raw/lite.m3u`，即 app 设置里的「切换到全球精简版」）、`available.m3u`（同样的频道，每个最多 3 个 uri）、`channels.csv`
   （每个频道一行：分组、是否新建分组、国家、uri 数、在现有列表里叫什么、合并进来的原名、源、同一 url
   的其他叫法）、`results.csv`（每条 url 一行，名字和分组是它最后所在的频道，列和 `candidates.csv`
   类似，多一列 `sources`）、`report.md`（合并统计、分组、各源通过率、状态分布，以及和 apk 内置列表

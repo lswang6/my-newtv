@@ -11,7 +11,7 @@ report.md (which also holds the comparison with the list the apk ships).
     python3 scan_sources.py --workers 48     # full run; resumes from tools/.cache/scan_results.jsonl
     python3 scan_sources.py --report-only    # rebuild the output files from the caches, no network
 """
-import csv, ipaddress, json, os, re, subprocess, sys, threading, time, unicodedata
+import csv, ipaddress, json, os, re, shutil, subprocess, sys, threading, time, unicodedata
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
@@ -776,6 +776,7 @@ def main():
     chs = channels(urls, cur)
     write_m3u(chs, urls, stamp, "merged.m3u")
     write_m3u([c for c in chs if lite(c)], urls, stamp, "merged-lite.m3u")
+    shutil.copy(os.path.join(OUT, "merged-lite.m3u"), os.path.join(REPO, "app/src/main/res/raw/lite.m3u"))  # 「切换到全球精简版」
     write_m3u(chs, urls, stamp, "available.m3u", 3)
     write_csv(urls, chs)
     write_report(urls, chs, counts, stamp, cur, gone, results)

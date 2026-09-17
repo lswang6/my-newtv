@@ -12,7 +12,12 @@
     <string name="title_config_auto_load">应用启动后更新视频源</string>
     <string name="exit">退出应用</string>
     <string name="default_channel">默认频道号</string>
-    <string name="clear">恢复默认</string>
+    <string name="clear">默认列表选择</string>
+    <string-array name="default_lists">
+        <item>恢复默认（119）频道</item>
+        <item>切换到全球精简版</item>
+    </string-array>
+    <string name="switched_to_lite">已切换到全球精简版</string>
     <string name="server">远程配置</string>
     <string name="title_default_like">应用启动后进入我的收藏</string>
     <string name="proxy">网络代理</string>
