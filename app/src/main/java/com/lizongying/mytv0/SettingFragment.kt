@@ -358,9 +358,6 @@ class SettingFragment : Fragment() {
         Log.i(TAG, "default channel: ${SP.channel}")
         confirmChannel()
 
-        SP.deleteLike()
-        Log.i(TAG, "clear like")
-
 //            SP.positionGroup = SP.DEFAULT_POSITION_GROUP
 //            viewModel.groupModel.setPosition(SP.DEFAULT_POSITION_GROUP)
 //            viewModel.groupModel.setPositionPlaying(SP.DEFAULT_POSITION_GROUP)
@@ -380,8 +377,7 @@ class SettingFragment : Fragment() {
 
     private fun switchToLite() {
         SP.configUrl = SP.DEFAULT_CONFIG_URL
-        // favourites are keyed by channel id; clear them before the new list reads them
-        SP.deleteLike()
+        // favourites are kept per list (SP.listKey), so switching keeps them
         viewModel.reset(requireContext(), R.raw.lite)
         resetPosition()
         viewModel.updateEPG()

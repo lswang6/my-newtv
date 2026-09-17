@@ -241,7 +241,6 @@ class TVModel(var tv: TV) : ViewModel() {
 
     init {
         _videoIndex.value = max(0, min(tv.uris.size - 1, tv.videoIndex))
-        _like.value = SP.getLike(tv.id)
     }
 
     companion object {

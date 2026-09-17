@@ -94,6 +94,8 @@ class TVGroupModel : ViewModel() {
 
         var count = 0
         for ((index, i) in tvGroupValue.withIndex()) {
+            // channel numbers count from 全部, not 收藏
+            if (index == 0) continue
             val countBefore = count
             count += i.size()
             if (count > position) {
@@ -203,6 +205,7 @@ class TVGroupModel : ViewModel() {
             tvGroupValue[0],
             tvGroupValue[1]
         )
+        tvGroupValue[0].initTVList()
         tvGroupValue[1].initTVList()
     }
 

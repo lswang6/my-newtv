@@ -7,6 +7,7 @@ import android.util.Log
 import com.lizongying.mytv0.data.Global.gson
 import com.lizongying.mytv0.data.Global.typeSourceList
 import com.lizongying.mytv0.data.Source
+import com.lizongying.mytv0.data.TV
 import io.github.lizongying.Gua
 
 object SP {
@@ -46,7 +47,11 @@ object SP {
 
     private const val KEY_COMPACT_MENU = "compact_menu"
 
+    // "like:<list key>": liked channel keys of that list; plain "like" is the ≤2.2.0 id set
     private const val KEY_LIKE = "like"
+
+    // which channel list is loaded: default, lite, url:<url>, text
+    private const val KEY_LIST = "list"
 
     private const val KEY_PROXY = "proxy"
 
@@ -172,24 +177,35 @@ object SP {
         get() = sp.getBoolean(KEY_SOFT_DECODE, DEFAULT_SOFT_DECODE)
         set(value) = sp.edit().putBoolean(KEY_SOFT_DECODE, value).apply()
 
-    fun getLike(id: Int): Boolean {
-        val stringSet = sp.getStringSet(KEY_LIKE, emptySet())
-        return stringSet?.contains(id.toString()) ?: false
+    var listKey: String?
+        get() = sp.getString(KEY_LIST, null)
+        set(value) = sp.edit().putString(KEY_LIST, value).apply()
+
+    // ids are only load order, so a favourite is its channel (the parser's merge key) in the current list
+    private fun likeKey(tv: TV) = tv.group + "\t" + tv.name.ifEmpty { tv.title }
+
+    fun getLike(tv: TV): Boolean {
+        val stringSet = sp.getStringSet("$KEY_LIKE:$listKey", emptySet())
+        return stringSet?.contains(likeKey(tv)) ?: false
     }
 
-    fun setLike(id: Int, liked: Boolean) {
-        val stringSet = sp.getStringSet(KEY_LIKE, emptySet())?.toMutableSet() ?: mutableSetOf()
+    fun setLike(tv: TV, liked: Boolean) {
+        val key = "$KEY_LIKE:$listKey"
+        val stringSet = sp.getStringSet(key, emptySet())?.toMutableSet() ?: mutableSetOf()
         if (liked) {
-            stringSet.add(id.toString())
+            stringSet.add(likeKey(tv))
         } else {
-            stringSet.remove(id.toString())
+            stringSet.remove(likeKey(tv))
         }
 
-        sp.edit().putStringSet(KEY_LIKE, stringSet).apply()
+        sp.edit().putStringSet(key, stringSet).apply()
     }
 
-    fun deleteLike() {
+    // the ≤2.2.0 liked ids, returned once and then forgotten
+    fun takeLegacyLike(): Set<String>? {
+        val ids = sp.getStringSet(KEY_LIKE, null) ?: return null
         sp.edit().remove(KEY_LIKE).apply()
+        return ids
     }
 
     var proxy: String?

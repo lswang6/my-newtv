@@ -242,7 +242,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             tvModel.like.observe(this) { _ ->
-                if (tvModel.like.value != null && tvModel.tv.id != -1) {
+                // a replaced list's models must not touch the loaded list's favourites
+                if (tvModel.like.value != null && viewModel.listModel.getOrNull(tvModel.tv.id) === tvModel) {
                     val liked = tvModel.like.value as Boolean
                     if (liked) {
                         viewModel.groupModel.getFavoritesList()?.replaceTVModel(tvModel)
@@ -250,7 +251,7 @@ class MainActivity : AppCompatActivity() {
                         viewModel.groupModel.getFavoritesList()
                             ?.removeTVModel(tvModel.tv.id)
                     }
-                    SP.setLike(tvModel.tv.id, liked)
+                    SP.setLike(tvModel.tv, liked)
                 }
             }
         }

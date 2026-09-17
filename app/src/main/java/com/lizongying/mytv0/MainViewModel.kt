@@ -120,6 +120,16 @@ class MainViewModel : ViewModel() {
 
         cacheChannels = getCache()
 
+        // ≤2.2.0 did not store which list is loaded; work it out from the cache until one is applied
+        val listKey = SP.listKey ?: when {
+            cacheChannels.isEmpty() -> "default"
+            cacheChannels == context.resources.openRawResource(R.raw.lite).bufferedReader()
+                .use { it.readText() } -> "lite"
+
+            !SP.configUrl.isNullOrEmpty() -> "url:${SP.configUrl}"
+            else -> "text"
+        }
+
         if (cacheChannels.isEmpty()) {
             Log.i(TAG, "cacheChannels isEmpty")
             cacheChannels =
@@ -134,7 +144,7 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             channelsMutex.withLock {
                 try {
-                    str2Channels(cacheChannels)
+                    str2Channels(cacheChannels, listKey)
                 } catch (e: Exception) {
                     Log.e(TAG, "init", e)
                     cacheFile!!.deleteOnExit()
@@ -344,7 +354,8 @@ class MainViewModel : ViewModel() {
 
         try {
             // built-in lists are small, and SettingFragment uses the new list right after reset()
-            if (runBlocking { str2Channels(str) }) {
+            val listKey = if (rawId == DEFAULT_CHANNELS_FILE) "default" else "lite"
+            if (runBlocking { str2Channels(str, listKey) }) {
                 // str2Channels skips a list equal to cacheChannels, so it must track what is loaded
                 cacheChannels = str
                 // the default list is the fallback when there is no cache; any other must be cached
@@ -381,7 +392,7 @@ class MainViewModel : ViewModel() {
         viewModelScope.launch {
             channelsMutex.withLock {
                 try {
-                    if (str2Channels(str)) {
+                    if (str2Channels(str, if (url.isNotEmpty()) "url:$url" else "text")) {
                         Log.i(TAG, "write to cacheFile $cacheFile ${str.length}")
                         withContext(Dispatchers.IO) { cacheFile!!.writeText(str) }
                         cacheChannels = str
@@ -413,7 +424,7 @@ class MainViewModel : ViewModel() {
 
     // Decoding and parsing run on Dispatchers.Default; the models (LiveData) are built back on the
     // calling main thread
-    private suspend fun str2Channels(str: String): Boolean {
+    private suspend fun str2Channels(str: String, listKey: String): Boolean {
         if (initialized && str == cacheChannels) {
             Log.w(TAG, "same channels")
             return true
@@ -440,7 +451,7 @@ class MainViewModel : ViewModel() {
             parseChannels(string)
         } ?: return false
 
-        applyChannels(list, isNew)
+        applyChannels(list, isNew, listKey)
         return true
     }
 
@@ -594,7 +605,13 @@ class MainViewModel : ViewModel() {
         return list
     }
 
-    private fun applyChannels(list: List<TV>, isNew: Boolean) {
+    private fun applyChannels(list: List<TV>, isNew: Boolean, listKey: String) {
+        // before any like is read or written (watch() replays them into this list on setChange)
+        SP.listKey = listKey
+        // ≤2.2.0 ids refer to this first load, the list they were saved with
+        val legacyLike = SP.takeLegacyLike()
+
+        // also empties 收藏, which watch() refills from the new list
         groupModel.initTVGroup()
 
         val map: MutableMap<String, MutableList<TVModel>> = mutableMapOf()
@@ -612,7 +629,10 @@ class MainViewModel : ViewModel() {
             val listTVModel = TVListModel(k.ifEmpty { "未知" }, groupIndex)
             for ((listIndex, v1) in v.withIndex()) {
                 v1.tv.id = id
-                v1.setLike(SP.getLike(id))
+                if (legacyLike?.contains(id.toString()) == true) {
+                    SP.setLike(v1.tv, true)
+                }
+                v1.setLike(SP.getLike(v1.tv))
                 v1.setGroupIndex(groupIndex)
                 v1.listIndex = listIndex
                 listModelNew.add(v1)
