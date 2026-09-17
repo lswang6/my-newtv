@@ -6,20 +6,21 @@ about (央视 / 凤凰 / 港台新闻 / 国际新闻), then proves every candida
 actually fetching it from the TV with the static curl that lives in
 /data/local/tmp. Codec info comes from ffprobe on the Mac and is advisory only.
 
-    python3 extract_test.py --selftest             # parser + normalizer checks
-    python3 extract_test.py --serial <tv-ip>:5555  # full run (TV is the reachability judge)
-    python3 extract_test.py --mac                  # same protocol, run from the Mac instead
-    python3 extract_test.py --out DIR              # write the three files somewhere else
+    python3 tools/probe/extract_test.py --selftest             # parser + normalizer checks
+    python3 tools/probe/extract_test.py --serial <tv-ip>:5555  # full run (TV is the reachability judge)
+    python3 tools/probe/extract_test.py --mac                  # same protocol, run from the Mac instead
+    python3 tools/probe/extract_test.py --out DIR              # write the three files somewhere else
 """
 import csv, json, os, re, shlex, subprocess, sys, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urljoin, urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CACHE = os.path.join(HERE, ".cache")
-# playlists/ next to tools/ holds both the upstream copies we read and, unless --out
+# the cache stays one level up, at tools/.cache (scan_sources.py keeps its files there too)
+CACHE = os.path.normpath(os.path.join(HERE, os.pardir, ".cache"))
+# playlists/ at the repo root holds both the upstream copies we read and, unless --out
 # says otherwise, the three files we write.
-DATA = os.path.normpath(os.path.join(HERE, os.pardir, "playlists"))
+DATA = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir, "playlists"))
 OUT = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else DATA
 # adb serial of the TV, "<tv-ip>:5555" for a network device. Required unless --mac.
 DEV = sys.argv[sys.argv.index("--serial") + 1] if "--serial" in sys.argv else ""

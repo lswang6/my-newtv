@@ -5,16 +5,16 @@ Two things happen here that the test run cannot do for itself: the three 凤凰�
 channels are given the app's own local route as their first uri, and the groups are
 put in the running order the app shows them in.
 
-    python3 merge.py                     # playlists/channels.json -> app/.../raw/channels.txt
-    python3 merge.py in.json out.txt     # explicit paths
-    python3 merge.py --selftest          # checks only, writes nothing
+    python3 tools/build/merge.py                     # playlists/channels.json -> app/.../raw/channels.txt
+    python3 tools/build/merge.py in.json out.txt     # explicit paths
+    python3 tools/build/merge.py --selftest          # checks only, writes nothing
 """
 import json, os, sys
 
 from gua64 import encode, decode
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.normpath(os.path.join(HERE, os.pardir))
+REPO = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir))
 IN = os.path.join(REPO, "playlists", "channels.json")
 RAW = os.path.join(REPO, "app", "src", "main", "res", "raw", "channels.txt")
 

@@ -34,11 +34,11 @@
 
 apk 见 [GitHub Releases](https://github.com/lswang6/my-newtv/releases)。
 
-当前版本 v2.1.3，修复内容见[更新记录](#更新记录)。
+当前版本 v2.2.1，也是 Releases 里唯一的版本（`my-newtv-v2.2.1.apk`），修复内容见[更新记录](#更新记录)。
 
 ```shell
 adb connect <电视IP>:5555
-adb install <下载的 apk 文件>
+adb install -r my-newtv-v2.2.1.apk
 ```
 
 注意：仓库没有配置 release 签名，Releases 里的 apk 是 **debug 签名**的。这意味着不同机器构建出的 apk 签名不同，升级时如果提示签名冲突，先卸载旧版再装；或者始终使用同一台机器/同一个 keystore 构建。
@@ -85,6 +85,84 @@ adb install <下载的 apk 文件>
 - 实际能播的 CCTV 源**全部来自 Guovin / iptv-org 列表里的境外镜像主机**；所有 China Mobile / cmvideo CDN 的地址在我们的出口上不是超时就是 403。
 - [`https://www.fengshows.com/live`](https://www.fengshows.com/live) 是凤凰官方网页播放器，用来确认某个镜像放的是不是对的台。
 
+### 参考的原始播放源
+
+原始播放源有两套。上面的表是 `tools/probe/extract_test.py` 下载的那一套，内置 119 个频道就是从里面筛出来的；下面是 `tools/probe/scan_sources.py` 批量扫描的 26 个地址，`playlists/scan/` 和全球精简版来自这一套。
+
+| 编号 | 地址 | 来源项目 | 通过数 |
+| --- | --- | --- | --- |
+| 01 | https://php.946985.filegear-sg.me/jackTV.m3u | php.946985.filegear-sg.me（个人站点） | 104 |
+| 02 | https://iptv-org.github.io/iptv/index.m3u | iptv-org/iptv | 7675 |
+| 03 | https://web.utako.moe/jp.m3u | web.utako.moe（个人站点） | —（下载失败） |
+| 04 | https://epg.pw/test_channels.m3u | epg.pw | 0 |
+| 05 | https://epg.pw/test_channels_hong_kong.m3u | epg.pw | 0 |
+| 06 | https://epg.pw/test_channels_macau.m3u | epg.pw | 0 |
+| 07 | https://epg.pw/test_channels_taiwan.m3u | epg.pw | 0 |
+| 08 | https://iptv-org.github.io/iptv/countries/tw.m3u | iptv-org/iptv | 7 |
+| 09 | https://epg.pw/test_channels_singapore.m3u | epg.pw | 0 |
+| 10 | https://epg.pw/test_channels_malaysia.m3u | epg.pw | 0 |
+| 11 | https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8 | Free-TV/IPTV | 1151 |
+| 12 | https://iptv-org.github.io/iptv/index.m3u | iptv-org/iptv | —（同 02） |
+| 13 | https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u | Kimentanm/aptv | 82 |
+| 14 | https://raw.githubusercontent.com/BigBigGrandG/IPTV-URL/release/Gather.m3u | BigBigGrandG/IPTV-URL | 433 |
+| 15 | https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u | YanG-1989/m3u | 0 |
+| 16 | https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.txt | PizazzGY/TV | —（404） |
+| 17 | https://raw.githubusercontent.com/PizazzGY/TV/master/output/user_result.m3u | PizazzGY/TV | —（404） |
+| 18 | https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u | Guovin/iptv-api | 591 |
+| 19 | https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv4/result.m3u | Guovin/iptv-api | 397 |
+| 20 | https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/ipv6/result.m3u | Guovin/iptv-api | 210 |
+| 21 | https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv4.m3u | suxuang/myIPTV | 351 |
+| 22 | https://raw.githubusercontent.com/suxuang/myIPTV/refs/heads/main/ipv6.m3u | suxuang/myIPTV | 78 |
+| 23 | https://live.zbds.top/tv/iptv4.txt | live.zbds.top（个人站点） | 650 |
+| 24 | https://live.zbds.top/tv/iptv4.m3u | live.zbds.top（个人站点） | 523 |
+| 25 | https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u | BurningC4/Chinese-IPTV | 0 |
+| 26 | https://raw.githubusercontent.com/vamoschuck/TV/main/M3U | vamoschuck/TV | 75 |
+
+- 通过数是这个源里测得能播的 url 条数，几个源共有的 url 每个源各算一次，所以加起来比总数 10029 多。
+- 12 和 02 是同一个地址，只下载一次，通过数算在 02 上。
+- 03 下载失败（SSL 连接出错），本地也没有缓存副本；16、17 返回 HTTP 404。
+- stream1/t.freetv.fun 的 2566 条 url 读源时直接丢掉：这个主机约 20 秒才响应，超过测试协议的 10 秒超时，删掉前测过的 1125 条一条都没通过。epg.pw 的 04–07、09、10 几乎全指向这个主机，删完分别只剩 18、0、0、14、0、0 个条目，所以通过数是 0。
+
+上面的数字来自 2026-09-17 那次扫描，每个源的完整统计（下载、条目、去重、已测、通过率、独有频道）见 [`playlists/scan/report.md`](playlists/scan/report.md)。
+
+<details><summary>应用内置的 29 个社区列表</summary>
+
+「直播源来源」第一张表里 lizongying/my-tv-0 那一行提到的 `app/src/main/res/raw/sources.txt`，gua64 解码后每行一个地址，app 的网页配置页（`/api/sources`）把它们列出来，点「新增」即可添加。脚本没有专门下载这份清单；其中 04、06 也在 extract_test 的表里，12、21 就是扫描表的 15、25。
+
+| 编号 | 地址 | 来源项目 |
+| --- | --- | --- |
+| 01 | https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/mobile.txt | lizongying/my-tv-0 |
+| 02 | https://raw.githubusercontent.com/lizongying/my-tv-0/main/app/src/main/res/raw/channels.txt | lizongying/my-tv-0 |
+| 03 | https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u | fanmingming/live |
+| 04 | https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/itv.m3u | fanmingming/live |
+| 05 | https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/index.m3u | fanmingming/live |
+| 06 | https://raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u | Guovin/iptv-api |
+| 07 | https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u | joevess/IPTV |
+| 08 | https://raw.githubusercontent.com/joevess/IPTV/main/sources/home_sources.m3u | joevess/IPTV |
+| 09 | https://raw.githubusercontent.com/joevess/IPTV/main/iptv.m3u8 | joevess/IPTV |
+| 10 | https://raw.githubusercontent.com/joevess/IPTV/main/home.m3u8 | joevess/IPTV |
+| 11 | https://raw.githubusercontent.com/zbefine/iptv/main/iptv.m3u | zbefine/iptv |
+| 12 | https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u | YanG-1989/m3u |
+| 13 | https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u | YueChan/Live |
+| 14 | https://raw.githubusercontent.com/YueChan/Live/main/Global.m3u | YueChan/Live |
+| 15 | https://raw.githubusercontent.com/YueChan/Live/main/IPTV.m3u | YueChan/Live |
+| 16 | https://raw.githubusercontent.com/SPX372928/MyIPTV/master/黑龙江PLTV移动CDN版.txt | SPX372928/MyIPTV |
+| 17 | https://raw.githubusercontent.com/SPX372928/MyIPTV/master/山东SNM移动CDN版.txt | SPX372928/MyIPTV |
+| 18 | https://live.zbds.top/tv/iptv6.m3u | live.zbds.top（个人站点） |
+| 19 | https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.m3u | vbskycn/iptv |
+| 20 | http://175.178.251.183:6689/live.m3u | 175.178.251.183（裸 IP，项目不明） |
+| 21 | https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u | BurningC4/Chinese-IPTV |
+| 22 | https://raw.githubusercontent.com/9527xiao9527/iptv/main/iptv.txt | 9527xiao9527/iptv |
+| 23 | https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv4.m3u | huang770101/my-iptv |
+| 24 | https://raw.githubusercontent.com/huang770101/my-iptv/main/IPTV-ipv6.m3u | huang770101/my-iptv |
+| 25 | https://raw.githubusercontent.com/maitel2020/iptv-self-use/main/iptv.m3u | maitel2020/iptv-self-use |
+| 26 | https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4.m3u | jisoypub/iptv |
+| 27 | https://raw.githubusercontent.com/jisoypub/iptv/main/ipv4_2.m3u | jisoypub/iptv |
+| 28 | https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6.m3u | jisoypub/iptv |
+| 29 | https://raw.githubusercontent.com/jisoypub/iptv/main/ipv6_2.m3u | jisoypub/iptv |
+
+</details>
+
 ## 测试方法与步骤
 
 完整细节在 [`tools/README.md`](tools/README.md) 和 [`playlists/report.md`](playlists/report.md)，这里只说流程。
@@ -92,8 +170,8 @@ adb install <下载的 apk 文件>
 ### 1. 抓取并测试候选源
 
 ```shell
-python3 tools/extract_test.py --serial <tv-ip>:5555   # 在电视上测（走 adb）
-python3 tools/extract_test.py --mac                   # 在 Mac 上测（同一个网络出口）
+python3 tools/probe/extract_test.py --serial <tv-ip>:5555   # 在电视上测（走 adb）
+python3 tools/probe/extract_test.py --mac                   # 在 Mac 上测（同一个网络出口）
 ```
 
 可达性判定规则：
@@ -112,17 +190,17 @@ python3 tools/extract_test.py --mac                   # 在 Mac 上测（同一�
 ### 2. 合并生成列表并重新构建
 
 ```shell
-python3 tools/merge.py                 # 读取 playlists/channels.json，加入凤凰卫视本地路由，gua64 编码写入 app/src/main/res/raw/channels.txt
+python3 tools/build/merge.py           # 读取 playlists/channels.json，加入凤凰卫视本地路由，gua64 编码写入 app/src/main/res/raw/channels.txt
 JAVA_HOME=<jdk21> ANDROID_HOME=<sdk> ./gradlew assembleDebug
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-`tools/gua64.py` 是 gua64 编解码库和命令行工具，`tools/export_m3u.py` 把同一份列表导出为 `playlists/current.m3u`。各脚本确切的输入输出和参数见 [`tools/README.md`](tools/README.md)。
+`tools/build/gua64.py` 是 gua64 编解码库和命令行工具，`tools/build/export_m3u.py` 把同一份列表导出为 `playlists/current.m3u`。各脚本确切的输入输出和参数见 [`tools/README.md`](tools/README.md)。
 
 ### 3. 在电视上验证真实播放
 
 ```shell
-python3 tools/verify_playback.py --serial <tv-ip>:5555 --only 1,21,29   # 频道序号，逗号分隔；--count N 则顺序测前 N 台
+python3 tools/device/verify_playback.py --serial <tv-ip>:5555 --only 1,21,29   # 频道序号，逗号分隔；--count N 则顺序测前 N 台
 ```
 
 这个脚本通过 adb 驱动遥控器切台，再从 logcat 里读 app 打的 `<title> playing` / `播放错误` / `retry`。注意 app 在切台的瞬间就会乐观地打一条 `playing`，所以脚本是以 `playing` + `尝试播放` 这一对日志为锚点判定的（v2.1.0 以前的版本打繁体 `嘗試播放`，两种都认）。
@@ -131,12 +209,12 @@ python3 tools/verify_playback.py --serial <tv-ip>:5555 --only 1,21,29   # 频道
 
 ### 批量扫描公开直播源
 
-`tools/scan_sources.py` 不按频道名单筛，把 26 个公开列表里的 url 全部测一遍（测法和 `extract_test.py --mac` 相同），能播的按名字合并成频道并自动分组。它只产出参考列表，不改 apk 内置的默认列表；精简版会复制一份进 apk，供设置里「切换到全球精简版」使用。
+`tools/probe/scan_sources.py` 不按频道名单筛，把 26 个公开列表里的 url 全部测一遍（测法和 `extract_test.py --mac` 相同），能播的按名字合并成频道并自动分组。它只产出参考列表，不改 apk 内置的默认列表；精简版会复制一份进 apk，供设置里「切换到全球精简版」使用。
 
 ```shell
-python3 tools/scan_sources.py --selftest      # 解析、分类、合并的自检，不联网
-python3 tools/scan_sources.py                 # 全量跑，要好几个小时；中断后重跑会跳过已测的
-python3 tools/scan_sources.py --report-only   # 不下载不测试，用缓存重新生成输出
+python3 tools/probe/scan_sources.py --selftest      # 解析、分类、合并的自检，不联网
+python3 tools/probe/scan_sources.py                 # 全量跑，要好几个小时；中断后重跑会跳过已测的
+python3 tools/probe/scan_sources.py --report-only   # 不下载不测试，用缓存重新生成输出
 ```
 
 输出在 [`playlists/scan/`](playlists/scan/)，各文件的说明见 [`playlists/README.md`](playlists/README.md)。2026-09-17 那次测了 17965 条 url，通过 10029 条（55.8%），合并成 8822 个频道，详细数字见 [`report.md`](playlists/scan/report.md)。
@@ -188,20 +266,37 @@ python3 tools/scan_sources.py --report-only   # 不下载不测试，用缓存�
 ## 仓库结构
 
 ```
-app/         Android 源码（fork 自上游）
-tools/       extract_test.py  抓取并测试候选源
-             gua64.py         res/raw/channels.txt 的 gua64 编解码
-             merge.py         channels.json + 凤凰路由 → 编码写入 res/raw/channels.txt
-             export_m3u.py    导出 current.m3u
-             verify_playback.py  通过 adb + logcat 验证真实播放
-             scan_sources.py  批量扫描公开直播源（在 Mac 上测）
-             README.md
-playlists/   channels.json    打进 apk 的那份实测列表
-             current.m3u      同一份列表导出成 m3u（凤凰是 app 内部路由）
-             candidates.csv   每个测过的 URL 及其判定结果
-             report.md        测试报告
-             scan/            scan_sources.py 的输出（merged.m3u、available.m3u 等）
-             README.md
+app/                            Android 源码（fork 自上游）
+└── src/main/res/raw/           打进 apk 的列表
+    ├── channels.txt            内置 119 台，gua64 编码
+    ├── lite.m3u                全球精简版 349 台（playlists/scan/merged-lite.m3u 的副本）
+    └── sources.txt             应用内社区源列表（29 个地址，gua64 编码）
+tools/                          维护列表的脚本，按用途分三类，详见 tools/README.md
+├── probe/                      连通性测试与筛选
+│   ├── extract_test.py         抓取候选源、按频道名单筛、逐条实测（电视或 Mac）→ playlists/ 根目录
+│   └── scan_sources.py         批量扫描 26 个公开列表（在 Mac 上测）→ playlists/scan/
+├── build/                      生成 apk 内置列表
+│   ├── merge.py                channels.json + 凤凰路由 → gua64 编码写入 res/raw/channels.txt
+│   ├── export_m3u.py           导出 playlists/current.m3u
+│   └── gua64.py                gua64 编解码库和命令行工具
+├── device/                     电视真机验证
+│   └── verify_playback.py      通过 adb + logcat 验证真实播放
+└── README.md
+playlists/                      按类型分三组，详见 playlists/README.md
+│                               根目录：内置列表的数据与测试记录
+├── channels.json               打进 apk 的那份实测列表
+├── current.m3u                 同一份列表导出成 m3u（凤凰是 app 内部路由）
+├── candidates.csv              每个测过的 url 及其判定结果
+├── report.md                   测试报告
+├── upstream/                   上游原始列表（my-tv-0 内置列表的解码副本）
+├── scan/                       批量扫描结果（scan_sources.py 的输出）
+│   ├── merged.m3u              能播的频道全部列出，8822 台
+│   ├── merged-lite.m3u         精简版 349 台
+│   ├── available.m3u           同样的频道，每台最多 3 条 uri
+│   ├── channels.csv            每个频道一行
+│   ├── results.csv             每条 url 一行
+│   └── report.md               扫描报告，含各源统计
+└── README.md
 README.md
 LICENSE
 ```
@@ -255,10 +350,10 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 
 - 数字键最多输入 4 位（原为 3 位）；没有更长的频道号可输时立即换台：输「1050」立即换，输「105」还可能是更长的号，等约 5 秒。
 - 冷启动时频道列表加载完之前忽略按键，加载完后接着播上次的频道。
-- `tools/verify_playback.py` 认简体的「尝试播放」日志：之前只认繁体，v2.1.0 及以后的版本全部报 UNKNOWN。
-- `tools/extract_test.py` 排除 epg.pw 源站离线时的「无信号」二维码广告垫片（`excluded-slate`）。
+- `tools/device/verify_playback.py` 认简体的「尝试播放」日志：之前只认繁体，v2.1.0 及以后的版本全部报 UNKNOWN。
+- `tools/probe/extract_test.py` 排除 epg.pw 源站离线时的「无信号」二维码广告垫片（`excluded-slate`）。
 - 重新导出 `playlists/current.m3u`：之前仍带着 v2.1.2、v2.1.3 已移除的 7 条 epg.pw 地址。
-- 新增 `tools/scan_sources.py` 和 `playlists/scan/`，见[批量扫描公开直播源](#批量扫描公开直播源)。
+- 新增 `tools/probe/scan_sources.py` 和 `playlists/scan/`，见[批量扫描公开直播源](#批量扫描公开直播源)。
 - 设置页「恢复默认」改为「默认列表选择」：可以恢复默认（119 个频道和全部设置），也可以切换到打包进 apk 的全球精简版（`merged-lite.m3u`，349 个频道，不联网，重启后保留，只清空收藏和远程配置地址）。已在电视上验证：切换、重启后保持、来回切换都正常。
 
 已知问题（老问题，未修）：在「收藏」里取消收藏，或显示「全部」时重新导入，列表变了却没通知菜单，和上面的菜单崩溃同类，只是更难碰到。列表这么大时，台标只在显示出来时才加载。

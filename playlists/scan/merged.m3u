@@ -1,6 +1,6 @@
 #EXTM3U
 # 从 26 个公开直播源里批量扫出来、在这台 Mac 上测得能播的频道，生成于 2026-09-17 18:52。
-# 测法和 tools/extract_test.py --mac 相同：HLS 要拿到 ≥50 KB 的分片，非 HLS 要 ffprobe 认出编码。
+# 测法和 tools/probe/extract_test.py --mac 相同：HLS 要拿到 ≥50 KB 的分片，非 HLS 要 ffprobe 认出编码。
 # 只在 Mac 上测过，没在电视上测。出口是路由器代理，落在韩国的 Oracle Cloud 节点，仅 IPv4。
 # 源里的 IPv6 地址一条都没测（Mac 和电视都没有 IPv6 路由），所以这里没有它们。
 # 能不能播随地区、网络和时间变化，依赖之前请自己重测。

@@ -5,14 +5,14 @@ channels.json is what the test run produced; the three 凤凰卫视 entries the 
 shows are built by merge.py, so we go through merge() rather than reading the json
 straight, and current.m3u then matches channels.txt channel for channel.
 
-    python3 export_m3u.py [out.m3u]
+    python3 tools/build/export_m3u.py [out.m3u]
 """
 import json, os, sys
 
 from merge import FH, IN, PHOENIX, merge
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.normpath(os.path.join(HERE, os.pardir, "playlists", "current.m3u"))
+OUT = os.path.normpath(os.path.join(HERE, os.pardir, os.pardir, "playlists", "current.m3u"))
 FH_PREFIX = FH.split("%s")[0]
 LIVE_ID = {FH % lid: lid for _, lid, _ in PHOENIX}
 

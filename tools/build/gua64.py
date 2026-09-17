@@ -2,9 +2,9 @@
 """gua64: the base64 variant upstream uses, with the 64 I Ching hexagram glyphs as its
 alphabet. This is the encoding of app/src/main/res/raw/channels.txt.
 
-    python3 gua64.py                        # self-test
-    python3 gua64.py encode in.json out.txt
-    python3 gua64.py decode in.txt
+    python3 tools/build/gua64.py                        # self-test
+    python3 tools/build/gua64.py encode in.json out.txt
+    python3 tools/build/gua64.py decode in.txt
 """
 import json, sys
 

@@ -1,6 +1,23 @@
 # tools
 
-维护频道列表的五个脚本，外加一个 gua64 编解码器。全部是 python3 标准库，没有第三方依赖。
+维护频道列表的五个脚本，外加一个 gua64 编解码器，按用途分在三个子目录里。全部是 python3 标准库，没有第三方依赖。
+
+```
+tools/
+├── probe/                  连通性测试与筛选
+│   ├── extract_test.py     抓取候选源、按频道名单筛、逐条实测 → playlists/ 根目录
+│   └── scan_sources.py     批量扫描 26 个公开列表（在 Mac 上测）→ playlists/scan/
+├── build/                  生成 apk 内置列表
+│   ├── merge.py            channels.json → app/src/main/res/raw/channels.txt
+│   ├── export_m3u.py       导出 playlists/current.m3u
+│   └── gua64.py            gua64 编解码库，merge.py 依赖它
+├── device/                 电视真机验证
+│   └── verify_playback.py  装完 apk 后在电视上真播一遍
+├── .cache/                 下载的源列表和测试结果缓存（gitignore，不提交）
+└── README.md
+```
+
+下面的命令都在仓库根目录下执行。脚本按自己所在的位置找 `playlists/` 和 `tools/.cache/`，换个目录跑也行。
 
 ## 前置条件
 
@@ -19,7 +36,9 @@
   脚本调用它时会带上 `--doh-url https://223.5.5.5/dns-query`，用 DNS over HTTPS 绕开
   电视上那个经常解析失败的 DNS。
 
-## 脚本
+## probe/ —— 连通性测试与筛选
+
+两个脚本的缓存都在 `tools/.cache/`（各用各的文件），判定规则相同。
 
 ### extract_test.py
 
@@ -27,90 +46,14 @@
 `playlists/channels.json`、`candidates.csv` 和 `report.md`。连通性由电视说了算 —— 电视和
 Mac 的网络路径不一样，Mac 能连的电视未必能连，所以判定必须在电视上做。
 
-    python3 extract_test.py --selftest             # 只跑解析器和归一化的自检，不联网
-    python3 extract_test.py --serial <tv-ip>:5555  # 完整跑一遍，电视当裁判
-    python3 extract_test.py --mac                  # 同样的流程，但改在 Mac 上测
-    python3 extract_test.py --retest               # 忽略连通性缓存，重新测
-    python3 extract_test.py --reprobe              # 忽略 codec 缓存，重新 ffprobe
-    python3 extract_test.py --out DIR              # 三个输出文件写到别处
+    python3 tools/probe/extract_test.py --selftest             # 只跑解析器和归一化的自检，不联网
+    python3 tools/probe/extract_test.py --serial <tv-ip>:5555  # 完整跑一遍，电视当裁判
+    python3 tools/probe/extract_test.py --mac                  # 同样的流程，但改在 Mac 上测
+    python3 tools/probe/extract_test.py --retest               # 忽略连通性缓存，重新测
+    python3 tools/probe/extract_test.py --reprobe              # 忽略 codec 缓存，重新 ffprobe
+    python3 tools/probe/extract_test.py --out DIR              # 三个输出文件写到别处
 
-### merge.py
-
-把 `playlists/channels.json` 编码成 apk 内置的 `app/src/main/res/raw/channels.txt`。
-顺手干两件测试脚本干不了的事：给凤凰卫视三个频道插上 app 内部的本地转发地址
-`http://127.0.0.1:34567/fh/<id>.flv` 作为第一个 uri（这是 app 自己起的 fengshows 代理，
-只有 app 里能用），以及把分组按 app 里显示的顺序排好。改完列表必须重新打包 apk 才生效。
-
-    python3 merge.py                     # 默认路径：playlists/channels.json -> app/.../raw/channels.txt
-    python3 merge.py in.json out.txt     # 指定路径
-    python3 merge.py --selftest          # 只跑自检，不写文件
-
-### export_m3u.py
-
-生成 `playlists/current.m3u`。走的是 `merge.py` 的 `merge()`，所以导出来的和 apk 实际播的
-一模一样，包括凤凰那三条本地地址。一个频道有几个 uri 就连着出几条 `#EXTINF`，标题相同；
-带 header 的频道会在 url 前面加上 `#EXTVLCOPT:http-user-agent=` / `http-referrer=`。
-
-    python3 export_m3u.py [out.m3u]
-
-### verify_playback.py
-
-装完 apk 之后在电视上真播一遍。用数字键切到第 N 个频道，然后读 app 自己打的 logcat 判断
-到底播起来没有。注意 app 每次切台都会先打一条假的 `<title> playing`，紧跟着一条
-`<title> 尝试播放`（v2.1.0 以前的版本打繁体「嘗試播放」，脚本两种都认）—— 只有后面没跟「尝试播放」的那条 playing 才是真的播起来了，脚本的
-`classify()` 就是在处理这件事，自检覆盖的也是它。
-
-    python3 verify_playback.py --serial <tv-ip>:5555 --count 10
-    python3 verify_playback.py --serial <tv-ip>:5555 --only 3,17,42
-    python3 verify_playback.py --selftest    # 纯日志分类的自检，不碰电视
-
-`--serial` 必填，没有默认值。`--pkg` 默认 `com.lizongying.newmytv`。失败的频道会把整段
-logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
-
-### scan_sources.py
-
-批量扫一批公开直播源（脚本里写死的 26 个地址），看哪些频道在这台 Mac 上能播。测法直接调
-`extract_test.py` 的 `test_twice()` / `probe_codec()`，走它的 Mac 模式，所以判定规则和上面完全
-一样；不同的是不按名单筛，所有 url 都测，测完再按规则自动分组（央视、凤凰、卫视、港澳台、新马、
-日本、体育、纪录片、国际新闻、数字频道、地方、海外·<类型>）。同一个 url 出现在几个源里只测一次。
-
-    python3 scan_sources.py --selftest      # txt 解析、垃圾条目过滤、分类器、按名合并的自检，不联网
-    python3 scan_sources.py --limit 300     # 试跑：从各个源轮流挑 300 条没测过的
-    python3 scan_sources.py --workers 48    # 全量跑，默认就是 48 并发
-    python3 scan_sources.py --report-only   # 不下载不测试，用缓存重新生成全部输出文件
-
-- 源列表下到 `tools/.cache/scan_src/`，下不下来就用上次的副本。
-- 每测完一条就往 `tools/.cache/scan_results.jsonl` 追加一行，全量要跑好几个小时，中断了直接重跑，
-  已经测过的会跳过。想重测就删掉这个文件。和 `extract_test.py` 的 `tvtest.json` 不共用：那个缓存
-  不区分是电视测的还是 Mac 测的。
-- 同一个 host 最多同时测 3 条。IPv6 字面量、rtmp 之类、局域网地址、youtube/github 不测，状态分别记
-  `ipv6`、`untested-protocol`、`excluded-lan`、`excluded-host`；还没轮到测的记 `untested`。
-- stream1/t.freetv.fun 的 2566 条地址读源时直接丢掉：这个主机约 20 秒才响应，超过测试协议的 10 秒超时，
-  删掉前测过的 1125 条一条都没通过。
-- 能播的 url 按名字合并成频道：去掉画质、编码、[BD]、「HK」、（备用）这类标记后按任何文字的字母和
-  数字比（简繁、大小写、重音不分，`+` 记作 plus，CCTV5+ 和 CCTV5、CCTV4K 和 CCTV4 仍是两个）。一个
-  频道只有一个分组，取各条 url 里最具体的；拉丁字母名字的 url 来自两个以上国家时按国家拆开，名字后加
-  `(国家码)`。apk 现有列表里的频道（按名字，对不上再按 url）沿用现有的名字和分组。港澳台频道按新闻 /
-  综艺表 / 其余分到 港台新闻、港台综艺、港澳台。
-- 频道内 uri 的顺序：apk 现有列表里有的频道，把现有列表里的 uri（在电视上真播过）放最前；其余按不带
-  请求头的优先（v2.1.3 及以前的 app 整个频道只用第一条的请求头），再 h264 优先，再按分片延迟从小到大。
-- 输出在 `playlists/scan/`：`merged.m3u`（每个频道能播的 uri 全部列出，同名条目连在一起，app 会把它们
-  合成一个频道、后面几条当备用）、`merged-lite.m3u`（同上的精简版，349 个频道：apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台（`LOCAL_PREFIX`），用 `LOCAL_DENY` 去掉广播、景区直播和点播；其余小分组去掉 `DROP` 里的重复、宗教和购物频道；不要 4K/8K 副本。名单里有没对上的会写进 report.md；同时复制一份到 `app/src/main/res/raw/lite.m3u`，即 app 设置里的「切换到全球精简版」）、`available.m3u`（同样的频道，每个最多 3 个 uri）、`channels.csv`
-  （每个频道一行：分组、是否新建分组、国家、uri 数、在现有列表里叫什么、合并进来的原名、源、同一 url
-  的其他叫法）、`results.csv`（每条 url 一行，名字和分组是它最后所在的频道，列和 `candidates.csv`
-  类似，多一列 `sources`）、`report.md`（合并统计、分组、各源通过率、状态分布，以及和 apk 内置列表
-  逐频道的对比）。
-
-### gua64.py
-
-`channels.txt` 用的那套编码：base64 的变体，字母表换成了 64 个易经卦象字符。
-`merge.py` 依赖它，也可以单独拿来看上游的列表里到底有什么。
-
-    python3 gua64.py                        # 自检
-    python3 gua64.py encode in.json out.txt
-    python3 gua64.py decode in.txt
-
-## 测试流程
+### extract_test.py 的测试流程
 
 `extract_test.py` 完整跑一遍是这么走的：
 
@@ -161,7 +104,7 @@ logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
    排最后 —— 这台 armeabi-v7a 的安卓 9 盒子这两种都解不利索。同一档之内，分片回来得快的
    在前。按模式匹配的四个分组（体育 30、卫视 30、纪录片 20、港台综艺 25）先按名气排序再截断。
 
-## 怎么读 candidates.csv
+### 怎么读 candidates.csv
 
 每行是一条候选 url，不管测没测过都在里面。
 
@@ -192,3 +135,85 @@ logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`。
 - `excluded-slate` —— CNN 的备播卡，或者 epg.pw 源站离线时塞进来的「无信号」垫片（master 里唯一的变体指向
   `nosignal_h264`，带二维码广告），画面完美但没有节目，不要
 - `skipped-cap` —— 这个频道的名额已经满了（每频道 8 条、每 host 3 条），没轮到测
+
+### scan_sources.py
+
+批量扫一批公开直播源（脚本里写死的 26 个地址），看哪些频道在这台 Mac 上能播。测法直接调
+同目录 `extract_test.py` 的 `test_twice()` / `probe_codec()`，走它的 Mac 模式，所以判定规则和上面完全
+一样；不同的是不按名单筛，所有 url 都测，测完再按规则自动分组（央视、凤凰、卫视、港澳台、新马、
+日本、体育、纪录片、国际新闻、数字频道、地方、海外·<类型>）。同一个 url 出现在几个源里只测一次。
+
+    python3 tools/probe/scan_sources.py --selftest      # txt 解析、垃圾条目过滤、分类器、按名合并的自检，不联网
+    python3 tools/probe/scan_sources.py --limit 300     # 试跑：从各个源轮流挑 300 条没测过的
+    python3 tools/probe/scan_sources.py --workers 48    # 全量跑，默认就是 48 并发
+    python3 tools/probe/scan_sources.py --report-only   # 不下载不测试，用缓存重新生成全部输出文件
+
+- 源列表下到 `tools/.cache/scan_src/`，下不下来就用上次的副本。
+- 每测完一条就往 `tools/.cache/scan_results.jsonl` 追加一行，全量要跑好几个小时，中断了直接重跑，
+  已经测过的会跳过。想重测就删掉这个文件。和 `extract_test.py` 的 `tvtest.json` 不共用：那个缓存
+  不区分是电视测的还是 Mac 测的。
+- 同一个 host 最多同时测 3 条。IPv6 字面量、rtmp 之类、局域网地址、youtube/github 不测，状态分别记
+  `ipv6`、`untested-protocol`、`excluded-lan`、`excluded-host`；还没轮到测的记 `untested`。
+- stream1/t.freetv.fun 的 2566 条地址读源时直接丢掉：这个主机约 20 秒才响应，超过测试协议的 10 秒超时，
+  删掉前测过的 1125 条一条都没通过。
+- 能播的 url 按名字合并成频道：去掉画质、编码、[BD]、「HK」、（备用）这类标记后按任何文字的字母和
+  数字比（简繁、大小写、重音不分，`+` 记作 plus，CCTV5+ 和 CCTV5、CCTV4K 和 CCTV4 仍是两个）。一个
+  频道只有一个分组，取各条 url 里最具体的；拉丁字母名字的 url 来自两个以上国家时按国家拆开，名字后加
+  `(国家码)`。apk 现有列表里的频道（按名字，对不上再按 url）沿用现有的名字和分组。港澳台频道按新闻 /
+  综艺表 / 其余分到 港台新闻、港台综艺、港澳台。
+- 频道内 uri 的顺序：apk 现有列表里有的频道，把现有列表里的 uri（在电视上真播过）放最前；其余按不带
+  请求头的优先（v2.1.3 及以前的 app 整个频道只用第一条的请求头），再 h264 优先，再按分片延迟从小到大。
+- 输出在 `playlists/scan/`：`merged.m3u`（每个频道能播的 uri 全部列出，同名条目连在一起，app 会把它们
+  合成一个频道、后面几条当备用）、`merged-lite.m3u`（同上的精简版，349 个频道：apk 内置频道全部保留；海外·*、国际新闻、体育、纪录片只留 `PICKS` 按名字挑的；地方只留省级和主要城市的电视台（`LOCAL_PREFIX`），用 `LOCAL_DENY` 去掉广播、景区直播和点播；其余小分组去掉 `DROP` 里的重复、宗教和购物频道；不要 4K/8K 副本。名单里有没对上的会写进 report.md；同时复制一份到 `app/src/main/res/raw/lite.m3u`，即 app 设置里的「切换到全球精简版」）、`available.m3u`（同样的频道，每个最多 3 个 uri）、`channels.csv`
+  （每个频道一行：分组、是否新建分组、国家、uri 数、在现有列表里叫什么、合并进来的原名、源、同一 url
+  的其他叫法）、`results.csv`（每条 url 一行，名字和分组是它最后所在的频道，列和 `candidates.csv`
+  类似，多一列 `sources`）、`report.md`（合并统计、分组、各源通过率、状态分布，以及和 apk 内置列表
+  逐频道的对比）。
+
+## build/ —— 生成 apk 内置列表
+
+`scan_sources.py` 也从这里导入 `merge.py`，拿现有列表做对比。
+
+### merge.py
+
+把 `playlists/channels.json` 编码成 apk 内置的 `app/src/main/res/raw/channels.txt`。
+顺手干两件测试脚本干不了的事：给凤凰卫视三个频道插上 app 内部的本地转发地址
+`http://127.0.0.1:34567/fh/<id>.flv` 作为第一个 uri（这是 app 自己起的 fengshows 代理，
+只有 app 里能用），以及把分组按 app 里显示的顺序排好。改完列表必须重新打包 apk 才生效。
+
+    python3 tools/build/merge.py                     # 默认路径：playlists/channels.json -> app/.../raw/channels.txt
+    python3 tools/build/merge.py in.json out.txt     # 指定路径
+    python3 tools/build/merge.py --selftest          # 只跑自检，不写文件
+
+### export_m3u.py
+
+生成 `playlists/current.m3u`。走的是 `merge.py` 的 `merge()`，所以导出来的和 apk 实际播的
+一模一样，包括凤凰那三条本地地址。一个频道有几个 uri 就连着出几条 `#EXTINF`，标题相同；
+带 header 的频道会在 url 前面加上 `#EXTVLCOPT:http-user-agent=` / `http-referrer=`。
+
+    python3 tools/build/export_m3u.py [out.m3u]
+
+### gua64.py
+
+`channels.txt` 用的那套编码：base64 的变体，字母表换成了 64 个易经卦象字符。
+`merge.py` 依赖它，也可以单独拿来看上游的列表里到底有什么。
+
+    python3 tools/build/gua64.py                        # 自检
+    python3 tools/build/gua64.py encode in.json out.txt
+    python3 tools/build/gua64.py decode in.txt
+
+## device/ —— 电视真机验证
+
+### verify_playback.py
+
+装完 apk 之后在电视上真播一遍。用数字键切到第 N 个频道，然后读 app 自己打的 logcat 判断
+到底播起来没有。注意 app 每次切台都会先打一条假的 `<title> playing`，紧跟着一条
+`<title> 尝试播放`（v2.1.0 以前的版本打繁体「嘗試播放」，脚本两种都认）—— 只有后面没跟「尝试播放」的那条 playing 才是真的播起来了，脚本的
+`classify()` 就是在处理这件事，自检覆盖的也是它。
+
+    python3 tools/device/verify_playback.py --serial <tv-ip>:5555 --count 10
+    python3 tools/device/verify_playback.py --serial <tv-ip>:5555 --only 3,17,42
+    python3 tools/device/verify_playback.py --selftest    # 纯日志分类的自检，不碰电视
+
+`--serial` 必填，没有默认值。`--pkg` 默认 `com.lizongying.newmytv`。失败的频道会把整段
+logcat 存成 `log_NNN.txt`，结果汇总进 `results.csv`（都写在当前目录，汇总文件名可用 `--out` 改）。

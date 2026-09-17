@@ -16,8 +16,8 @@ Trap: TVModel.setReady(retry=false) calls setErrInfo("") (TVModel.kt:97), so eve
 channel *switch* emits a bogus "<title> playing" immediately followed (same ms) by
 "<title> 尝试播放". Only a "playing" NOT followed by that attempt line is real.
 
-    python3 verify_playback.py --serial <tv-ip>:5555 --count 10
-    python3 verify_playback.py --selftest    # pure log-classifier checks, no TV needed
+    python3 tools/device/verify_playback.py --serial <tv-ip>:5555 --count 10
+    python3 tools/device/verify_playback.py --selftest    # pure log-classifier checks, no TV needed
 """
 import argparse, csv, re, struct, subprocess, sys, time
 

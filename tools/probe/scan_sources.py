@@ -6,10 +6,10 @@ its Mac mode, the passing ones are merged into channels by name, and playlists/s
 merged.m3u (every passing url), available.m3u (3 per channel), channels.csv, results.csv and
 report.md (which also holds the comparison with the list the apk ships).
 
-    python3 scan_sources.py --selftest       # parsers, junk filter, classifier, merging; no network
-    python3 scan_sources.py --limit 300      # pilot: 300 untested urls spread across the sources
-    python3 scan_sources.py --workers 48     # full run; resumes from tools/.cache/scan_results.jsonl
-    python3 scan_sources.py --report-only    # rebuild the output files from the caches, no network
+    python3 tools/probe/scan_sources.py --selftest       # parsers, junk filter, classifier, merging; no network
+    python3 tools/probe/scan_sources.py --limit 300      # pilot: 300 untested urls spread across the sources
+    python3 tools/probe/scan_sources.py --workers 48     # full run; resumes from tools/.cache/scan_results.jsonl
+    python3 tools/probe/scan_sources.py --report-only    # rebuild the output files from the caches, no network
 """
 import csv, ipaddress, json, os, re, shutil, subprocess, sys, threading, time, unicodedata
 from collections import Counter
@@ -17,6 +17,7 @@ from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
 
 import extract_test as et
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir, "build"))  # merge.py + gua64.py live in tools/build/
 from merge import FH, ORDER, merge
 
 et.USE_TV = False  # extract_test reads --mac from its own argv at import time; this is the Mac path
@@ -541,7 +542,7 @@ def write_m3u(chs, urls, stamp, name, cap=None):
     tested = sum(1 for u in urls.values() if u["pre"] is None and u["status"] != "untested")
     L = ["#EXTM3U",
          "# 从 26 个公开直播源里批量扫出来、在这台 Mac 上测得能播的频道，生成于 %s。" % stamp,
-         "# 测法和 tools/extract_test.py --mac 相同：HLS 要拿到 ≥50 KB 的分片，非 HLS 要 ffprobe 认出编码。",
+         "# 测法和 tools/probe/extract_test.py --mac 相同：HLS 要拿到 ≥50 KB 的分片，非 HLS 要 ffprobe 认出编码。",
          "# 只在 Mac 上测过，没在电视上测。出口是路由器代理，落在韩国的 Oracle Cloud 节点，仅 IPv4。",
          "# 源里的 IPv6 地址一条都没测（Mac 和电视都没有 IPv6 路由），所以这里没有它们。",
          "# 能不能播随地区、网络和时间变化，依赖之前请自己重测。",
@@ -605,7 +606,7 @@ def write_report(urls, chs, counts, stamp, cur, gone, results):
     ts = sorted(u["ts"] for u in tested if u.get("ts"))
     L = ["# 批量扫描报告", "",
          "- 生成时间：%s。" % stamp,
-         "- 测试位置：这台 Mac，协议与 `tools/extract_test.py --mac` 相同，**不是电视**。出口是路由器代理，落在韩国的 "
+         "- 测试位置：这台 Mac，协议与 `tools/probe/extract_test.py --mac` 相同，**不是电视**。出口是路由器代理，落在韩国的 "
          "Oracle Cloud 节点，只有 IPv4；结果说明的是这个出口能连上什么，不代表国内家庭宽带或港台线路。",
          "- 源：%d 个地址，其中 12 与 02 完全相同，只下载一次。" % len(SOURCES),
          "- 去重后共 %d 条 url（url 加请求头算一条）：可测 %d，已测 %d，通过 %d%s。"
@@ -706,9 +707,10 @@ def write_report(urls, chs, counts, stamp, cur, gone, results):
 
     # ------------------------------------------- comparison with the list the apk ships
     readme = open(os.path.join(REPO, "README.md"), encoding="utf-8").read().split("## 直播源来源")[1].split("\n## ")[0]
+    readme = readme.split("\n### 参考的原始播放源")[0]  # that subsection lists these 26 urls themselves; matching it would call every source "README 提到过"
     used = [u for _, u in et.SOURCES]
     L += ["", "## 与现有列表对比", "", "### 源列表", "",
-          "对照 README「直播源来源」表，也就是 `tools/extract_test.py` 实际下载的 %d 个源。" % len(used), "",
+          "对照 README「直播源来源」表，也就是 `tools/probe/extract_test.py` 实际下载的 %d 个源。" % len(used), "",
           "| # | 地址 | 关系 |", "| --- | --- | --- |"]
     for i, url in SOURCES:
         rel = ("完全相同" if url in used else
