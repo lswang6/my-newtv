@@ -38,7 +38,7 @@
         android:layout_width="40dp"
         android:layout_height="50dp"
         android:src="@drawable/baseline_favorite_border_24"
-        android:contentDescription="Heart Icon"
+        android:contentDescription="@string/favorite_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

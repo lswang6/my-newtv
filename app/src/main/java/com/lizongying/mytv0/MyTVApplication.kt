@@ -10,6 +10,7 @@ import android.os.Looper
 import android.util.DisplayMetrics
 import android.view.WindowManager
 import android.widget.Toast
+import com.lizongying.mytv0.BuildConfig
 import java.util.Locale
 
 class MyTVApplication : Application() {
@@ -107,8 +108,9 @@ class MyTVApplication : Application() {
 
     override fun attachBaseContext(base: Context) {
         try {
-            val locale = Locale.SIMPLIFIED_CHINESE
-            val config = Configuration()
+            val locale = if (BuildConfig.FLAVOR == "en") Locale.ENGLISH else Locale.SIMPLIFIED_CHINESE
+            Locale.setDefault(locale)
+            val config = Configuration(base.resources.configuration)
             config.setLocale(locale)
             super.attachBaseContext(
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {

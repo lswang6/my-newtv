@@ -1,0 +1,5 @@
+<resources>
+    <!-- Compact mode applies 2/3 and 4/5, yielding 180dp and 320dp. -->
+    <dimen name="menu_group_width">270dp</dimen>
+    <dimen name="menu_list_width">400dp</dimen>
+</resources>

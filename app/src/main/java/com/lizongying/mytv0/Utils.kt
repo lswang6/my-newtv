@@ -20,14 +20,14 @@ object Utils {
     fun getDateFormat(format: String): String {
         return SimpleDateFormat(
             format,
-            Locale.CHINA
+            Locale.getDefault()
         ).format(Date(System.currentTimeMillis() - between))
     }
 
     fun getDateFormat(format: String, seconds: Int): String {
         return SimpleDateFormat(
             format,
-            Locale.CHINA
+            Locale.getDefault()
         ).format(Date(seconds * 1000L))
     }
 

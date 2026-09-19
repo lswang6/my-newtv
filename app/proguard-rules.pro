@@ -22,4 +22,5 @@
 
 -keep class com.lizongying.mytv0.data.** {
     <fields>;
+    <init>();
 }

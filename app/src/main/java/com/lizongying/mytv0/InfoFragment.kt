@@ -118,7 +118,7 @@ class InfoFragment : Fragment() {
         if (!epg.isNullOrEmpty()) {
             binding.desc.text = epg.last().title
         } else {
-            binding.desc.text = "精彩節目"
+            binding.desc.setText(R.string.program_unavailable)
         }
 
         handler.removeCallbacks(removeRunnable)

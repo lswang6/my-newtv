@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.JsonSyntaxException
+import com.lizongying.mytv0.BuildConfig
 import com.lizongying.mytv0.ImageHelper
 import com.lizongying.mytv0.MyTVApplication
 import com.lizongying.mytv0.R
@@ -616,6 +617,7 @@ class MainViewModel : ViewModel() {
 
         val map: MutableMap<String, MutableList<TVModel>> = mutableMapOf()
         for (v in list) {
+            v.uris = v.uris.map(::rewritePhoenixProxyPort)
             if (v.group !in map) {
                 map[v.group] = mutableListOf()
             }
@@ -659,10 +661,17 @@ class MainViewModel : ViewModel() {
         }
     }
 
+    private fun rewritePhoenixProxyPort(uri: String): String {
+        if (!uri.startsWith(PHOENIX_PROXY_PREFIX)) return uri
+        return "http://127.0.0.1:${BuildConfig.SERVER_PORT}/fh/" +
+                uri.removePrefix(PHOENIX_PROXY_PREFIX)
+    }
+
     companion object {
         private const val TAG = "MainViewModel"
         const val CACHE_FILE_NAME = "channels.txt"
         const val CACHE_EPG = "epg.xml"
+        private const val PHOENIX_PROXY_PREFIX = "http://127.0.0.1:34567/fh/"
         private const val PRELOAD_LOGO_MAX = 500
         val DEFAULT_CHANNELS_FILE = R.raw.channels
     }

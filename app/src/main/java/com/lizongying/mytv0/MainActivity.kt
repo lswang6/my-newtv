@@ -24,6 +24,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.lizongying.mytv0.BuildConfig
 import com.lizongying.mytv0.databinding.SettingsWebBinding
 import java.util.Locale
 import kotlin.math.abs
@@ -837,8 +838,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun attachBaseContext(base: Context) {
         try {
-            val locale = Locale.SIMPLIFIED_CHINESE
-            val config = Configuration()
+            val locale = if (BuildConfig.FLAVOR == "en") Locale.ENGLISH else Locale.SIMPLIFIED_CHINESE
+            Locale.setDefault(locale)
+            val config = Configuration(base.resources.configuration)
             config.setLocale(locale)
             super.attachBaseContext(
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {

@@ -172,6 +172,7 @@ class GroupAdapter(
             binding.title.text = when (text) {
                 "我的收藏" -> context.getString(R.string.my_favorites)
                 "全部頻道" -> context.getString(R.string.all_channels)
+                "未知" -> context.getString(R.string.unknown_group)
                 else -> text
             }
         }
@@ -234,4 +235,3 @@ class GroupAdapter(
         private const val TAG = "GroupAdapter"
     }
 }
-

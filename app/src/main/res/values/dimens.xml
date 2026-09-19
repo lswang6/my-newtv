@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="menu_group_width">200dp</dimen>
+    <dimen name="menu_list_width">250dp</dimen>
+</resources>
