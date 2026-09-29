@@ -1,0 +1,97 @@
+name: NewMyTV
+options:
+  bundleIdPrefix: com.lswang
+settings:
+  base:
+    DEVELOPMENT_TEAM: TX57ZT87FD
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: 5
+    SWIFT_VERSION: "5.0"
+targets:
+  NewMyTV:
+    type: application
+    platform: tvOS
+    deploymentTarget: "17.0"
+    sources:
+      - NewMyTV/Shared
+      - NewMyTV/tvOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lswang.newmytv
+        ASSETCATALOG_COMPILER_APPICON_NAME: App Icon & Top Shelf Image
+    info:
+      path: NewMyTV/tvOS/Info.plist
+      properties:
+        CFBundleDisplayName: 我的电视
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: zh-Hans
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}
+        UIRequiredDeviceCapabilities: [arm64]
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+  NewMyTV-iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - NewMyTV/Shared
+      - path: NewMyTV/Apple
+        excludes: [Info-*.plist]  # generated; each target points at its own
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lswang.newmytv  # universal purchase
+        PRODUCT_NAME: NewMyTV
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: NewMyTV/Apple/Info-iOS.plist
+      properties:
+        CFBundleDisplayName: 我的电视
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: zh-Hans
+        ITSAppUsesNonExemptEncryption: false
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+  NewMyTV-macOS:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - NewMyTV/Shared
+      - path: NewMyTV/Apple
+        excludes: [Info-*.plist]  # generated; each target points at its own
+      - path: ../playlists/current.m3u
+        buildPhase: resources
+      - path: ../app/src/main/res/raw/lite.m3u
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lswang.newmytv  # universal purchase
+        PRODUCT_NAME: NewMyTV
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: NewMyTV/Apple/Info-macOS.plist
+      properties:
+        CFBundleDisplayName: 我的电视
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: zh-Hans
+        ITSAppUsesNonExemptEncryption: false
+        LSApplicationCategoryType: public.app-category.entertainment
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
