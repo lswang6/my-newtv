@@ -116,6 +116,12 @@ class TVGroupModel : ViewModel() {
             return null
         }
 
+        getCurrentList()?.getCurrent()?.let { return it }
+
+        // restored group is empty or its position is stale (e.g. favourites of another list):
+        // fall back to the first channel of the first group so playback and number keys work
+        setPosition(defaultPosition())
+        getCurrentList()?.setPosition(0)
         return getCurrentList()?.getCurrent()
     }
 

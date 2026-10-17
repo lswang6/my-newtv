@@ -134,6 +134,7 @@ class PlayerFragment : Fragment() {
                 }
 
                 val tv = tvModel!!
+                Log.w(TAG, "${tv.tv.title} ${error.errorCodeName} ${tv.getVideoUrl()}", error)
 
                 if (tv.retryTimes < tv.retryMaxTimes) {
                     var last = true

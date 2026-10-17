@@ -47,8 +47,17 @@ class SimpleServer(private val context: Context, private val viewModel: MainView
             "/api/epg" -> handleEPG(session)
             "/api/default-channel" -> handleDefaultChannel(session)
             "/api/remove-source" -> handleRemoveSource(session)
+            "/api/log" -> if (BuildConfig.DEBUG) handleLog() else handleStaticContent()
             else -> handleStaticContent()
         }
+    }
+
+    // debug builds only: this process's own logcat, readable without READ_LOGS
+    private fun handleLog(): Response {
+        val log = Runtime.getRuntime()
+            .exec(arrayOf("logcat", "-d", "-v", "time", "--pid=${android.os.Process.myPid()}"))
+            .inputStream.bufferedReader().use { it.readText() }
+        return newFixedLengthResponse(Response.Status.OK, "text/plain; charset=utf-8", log)
     }
 
     private fun handleSettings(): Response {
