@@ -11,8 +11,8 @@ android {
         applicationId = "com.lizongying.newmytv"
         minSdk = 21
         targetSdk = 35
-        versionCode = 33751040
-        versionName = "2.3.0"
+        versionCode = 33751296
+        versionName = "2.3.1"
     }
 
     flavorDimensions += "language"

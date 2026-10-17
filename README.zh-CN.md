@@ -18,14 +18,14 @@
 - 通过本地凤凰卫视路由调用公开的 fengshows API，获取短时有效的签名播放地址。
 - `minSdk 21`、`targetSdk 35`。
 
-## v2.3.0 发布版本
+## v2.3.1 发布版本
 
-v2.3.0 提供两个可以独立安装的优化版 APK：
+v2.3.1 提供两个可以独立安装的优化版 APK：
 
 | 发布版本 | 文件名 | 本地化范围 | application ID | 本地网页服务 |
 | --- | --- | --- | --- | --- |
-| [`v2.3.0-zh`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.0-zh) | `my-newtv-v2.3.0-zh.apk` | 简体中文界面；内置频道标签保留电视台或来源使用的原生名称 | `com.lizongying.newmytv` | `http://<电视IP>:34567` |
-| [`v2.3.0-en`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.0-en) | `my-newtv-v2.3.0-en.apk` | 英文界面；内置频道和分组标签使用英文 | `com.lizongying.newmytv.en` | `http://<电视IP>:34568` |
+| [`v2.3.1-zh`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.1-zh) | `my-newtv-v2.3.1-zh.apk` | 简体中文界面；内置频道标签保留电视台或来源使用的原生名称 | `com.lizongying.newmytv` | `http://<电视IP>:34567` |
+| [`v2.3.1-en`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.1-en) | `my-newtv-v2.3.1-en.apk` | 英文界面；内置频道和分组标签使用英文 | `com.lizongying.newmytv.en` | `http://<电视IP>:34568` |
 
 中文版保留现有包名和签名身份，可以覆盖升级旧版；英文版使用 `.en` 包名后缀和独立端口，因此两个版本可以同时安装在同一台电视上。
 
@@ -39,8 +39,8 @@ v2.3.0 提供两个可以独立安装的优化版 APK：
 
 ```shell
 adb connect <电视IP>:5555
-adb install -r my-newtv-v2.3.0-zh.apk
-adb install -r my-newtv-v2.3.0-en.apk
+adb install -r my-newtv-v2.3.1-zh.apk
+adb install -r my-newtv-v2.3.1-en.apk
 ```
 
 两个版本可以同时安装。如果更新中文版时 Android 提示签名冲突，说明电视里已有 APK 使用了不同的签名密钥。
@@ -83,12 +83,12 @@ JAVA_HOME=<jdk21> ANDROID_HOME=<android-sdk> \
   ./gradlew assembleZhRelease assembleEnRelease
 
 apksigner sign --ks <现有本地-debug-keystore> \
-  --out my-newtv-v2.3.0-zh.apk <zh-release-unsigned-apk>
+  --out my-newtv-v2.3.1-zh.apk <zh-release-unsigned-apk>
 apksigner sign --ks <现有本地-debug-keystore> \
-  --out my-newtv-v2.3.0-en.apk <en-release-unsigned-apk>
+  --out my-newtv-v2.3.1-en.apk <en-release-unsigned-apk>
 
-apksigner verify --print-certs my-newtv-v2.3.0-zh.apk
-apksigner verify --print-certs my-newtv-v2.3.0-en.apk
+apksigner verify --print-certs my-newtv-v2.3.1-zh.apk
+apksigner verify --print-certs my-newtv-v2.3.1-en.apk
 ```
 
 release 构建会启用压缩和优化，之后使用旧 APK 对应的现有本地 Android debug key 手工签名。已确认的证书 SHA-256 指纹为：

@@ -18,14 +18,14 @@ The app itself injects no advertising and includes no analytics or tracking SDK.
 - A local Phoenix TV route that obtains short-lived signed playback URLs from the public fengshows API.
 - `minSdk 21` and `targetSdk 35`.
 
-## v2.3.0 release editions
+## v2.3.1 release editions
 
-v2.3.0 is published as two independently installable, optimized APKs:
+v2.3.1 is published as two independently installable, optimized APKs:
 
 | Release | Filename | Localization | Application ID | Local web server |
 | --- | --- | --- | --- | --- |
-| [`v2.3.0-zh`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.0-zh) | `my-newtv-v2.3.0-zh.apk` | Simplified Chinese UI; bundled channel labels retain native broadcaster/source names | `com.lizongying.newmytv` | `http://<TV-IP>:34567` |
-| [`v2.3.0-en`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.0-en) | `my-newtv-v2.3.0-en.apk` | English UI; bundled channel and group labels in English | `com.lizongying.newmytv.en` | `http://<TV-IP>:34568` |
+| [`v2.3.1-zh`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.1-zh) | `my-newtv-v2.3.1-zh.apk` | Simplified Chinese UI; bundled channel labels retain native broadcaster/source names | `com.lizongying.newmytv` | `http://<TV-IP>:34567` |
+| [`v2.3.1-en`](https://github.com/lswang6/my-newtv/releases/tag/v2.3.1-en) | `my-newtv-v2.3.1-en.apk` | English UI; bundled channel and group labels in English | `com.lizongying.newmytv.en` | `http://<TV-IP>:34568` |
 
 The Chinese edition keeps the existing package ID and signing identity, so it can update the previous app in place. The `.en` package suffix and separate server port let the English edition coexist on the same TV.
 
@@ -39,8 +39,8 @@ Download the APK for the language you want, then install it with ADB or a TV fil
 
 ```shell
 adb connect <TV-IP>:5555
-adb install -r my-newtv-v2.3.0-zh.apk
-adb install -r my-newtv-v2.3.0-en.apk
+adb install -r my-newtv-v2.3.1-zh.apk
+adb install -r my-newtv-v2.3.1-en.apk
 ```
 
 Both editions may be installed together. If Android reports a signature conflict while updating the Chinese edition, the installed APK was signed with a different key.
@@ -83,12 +83,12 @@ JAVA_HOME=<jdk21> ANDROID_HOME=<android-sdk> \
   ./gradlew assembleZhRelease assembleEnRelease
 
 apksigner sign --ks <existing-local-debug-keystore> \
-  --out my-newtv-v2.3.0-zh.apk <zh-release-unsigned-apk>
+  --out my-newtv-v2.3.1-zh.apk <zh-release-unsigned-apk>
 apksigner sign --ks <existing-local-debug-keystore> \
-  --out my-newtv-v2.3.0-en.apk <en-release-unsigned-apk>
+  --out my-newtv-v2.3.1-en.apk <en-release-unsigned-apk>
 
-apksigner verify --print-certs my-newtv-v2.3.0-zh.apk
-apksigner verify --print-certs my-newtv-v2.3.0-en.apk
+apksigner verify --print-certs my-newtv-v2.3.1-zh.apk
+apksigner verify --print-certs my-newtv-v2.3.1-en.apk
 ```
 
 The release builds are minified and optimized, then manually signed with the same existing local Android debug key used by the old APK. Its confirmed SHA-256 certificate fingerprint is:
